@@ -2,4 +2,3 @@
 A repository for Web Development class
 Authors
 Alexegiev Theodore, Karagianni Andriana
-New line
