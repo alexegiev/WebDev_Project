@@ -1,4 +1,4 @@
 # WebDev_Project
 A repository for Web Development class
-Authors
+Authors:
 Alexegiev Theodore, Karagianni Andriana
