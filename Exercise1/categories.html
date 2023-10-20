@@ -7,53 +7,25 @@
     </head>
 
     <body>
-        <center><h1>Website Name</h1></center>
-
-        <label for="renting">Ενοικίαση</label>
-        <select id="renting" name="renting_category">
-            <option value="cars">Αυτοκίνητα</option>
-            <option value="motorcicles">Μηχανές</option>
-            <option value="houses">Σπίτια</option>
-            <option value="prof_spaces">Επαγγελματικών Χώρων</option>
-            <option value="parking">Χώροι Στάθμευσης</option> 
-        </select>
-
-        <label for="buy">Αγορά</label>
-        <select id="buy" name="buy_category">
-            <optgroup label="Ακίνητα">
-                <option value="houses">Σπίτια</option>
-                <option value="prof_spaces">Επαγγελματικών Χώρων</option>
-                <option value="parking">Χώροι Στάθμευσης</option> 
-            </optgroup>
-            <optgroup label="Οχήματα">
-                <option value="cars">Αυτοκίνητα</option>
-                <option value="motorcicles">Μηχανές</option>
-                <option value="car_moto_accessories">Αξεσουάρ Αυτοκινήτων/Μηχανών</option>
-            </optgroup>
-            <optgroup label="Ένδυση">
-                <option value="clothes">Ρούχα</option>
-                <option value="shoes">Παπούτσια</option>
-                <option value="accessories">Αξεσουάρ</option>
-                <option value="jewellery">Κοσμήματα</option>
-                <option value="bags_wallets">Τσάντες/Πορτοφόλια</option>
-            </optgroup>
-            <optgroup label="Οικιακές Συσκευές">
-                <option value="fridges">Ψυγεία</option>
-                <option value="dishwashers">Πλυντήρια Πιάτων</option>
-                <option value="ovens">Κουζίνες και Φούρνοι</option>
-                <option value="washing_machine">Πλυντήρια Ρούχων</option>
-                <option value="vaccums">Συσκευές Καθαρισμού</option>
-                <option value="coffee_makers">Καφετιέρες</option>
-                <option value="irons">Συσκευές Σιδερώματος</option>
-            </optgroup>
-            <optgroup label="Τεχνολογία">
-                <option value="phones_tablets">Κινητά Τηλέφωνα/Tablets</option>
-                <option value="computers_monitors">Ηλεκτρονικοί Υπολογιστές/Οθόνες</option>
-                <option value="tvs">Τηλεοράσεις</option>
-                <option value="consoles">Κονσόλες</option>
-                <option value="video_games">Ηλεκτρονικά Παιχνίδια</option>
-            </optgroup>
-            
-        </select>
+        <h1>ElectroFind</h1>
+ 
+        <ul>
+            <li>
+                <img src="./assets/desktop.png" alt width="161" height="150">
+                <label for="Computers">Computers</label>
+                <select id="computers" name="computer_categories">
+                    <option value="desktop">Desktops</option>
+                    <option value="laptop">Laptops</option>
+                </select>
+            </li>
+            <li>
+                <img src="./assets/smartphones.png" alt width="161" height="150">
+                <label for="smartphones">Smartphones</label>
+                <select id="smatphones" name="smartphones_categories">
+                    <option value="android">Android</option>
+                    <option value="apple">Apple</option>
+                </select>
+            </li>
+        </ul>
     </body>
 </html>
