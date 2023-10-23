@@ -9,23 +9,37 @@
     <body>
         <h1>ElectroFind</h1>
  
-        <ul>
-            <li>
-                <img src="./assets/desktop.png" alt width="161" height="150">
-                <label for="Computers">Computers</label>
-                <select id="computers" name="computer_categories">
-                    <option value="desktop">Desktops</option>
-                    <option value="laptop">Laptops</option>
-                </select>
-            </li>
-            <li>
-                <img src="./assets/smartphones.png" alt width="161" height="150">
-                <label for="smartphones">Smartphones</label>
-                <select id="smatphones" name="smartphones_categories">
-                    <option value="android">Android</option>
-                    <option value="apple">Apple</option>
-                </select>
-            </li>
-        </ul>
+        <img src="./assets/desktop.png" alt width="161" height="150">
+        <button class="dropbtn">Computers</button>
+        <div class="dropdown-content">
+        <a href="#">Desktops</a>
+        <a href="#">Laptops</a>
+        </div>
+
+        <img src="./assets/smartphones.png" alt width="161" height="150">
+        <button class="dropbtn">Smartphones</button>
+        <div class="dropdown-content">
+        <a href="#">Android</a>
+        <a href="#">Apple</a>
+        </div>
+
+        <img src="./assets/consoles.png" alt width="161" height="150">
+        <label for="gaming">Gaming</label>
+        <select id="gaming" name="gaming_categories">
+            <option value="consoles">Consoles</option>
+            <option value="games">Games</option>
+            <option value="peripherals">Peripherals</option>
+        </select>
+    
+        <img src="./assets/hardware.jpg" alt width="161" height="150">
+        <label for="pc_hardware">Computer Hardware</label>
+        <select id="pc_hardware" name="pc_hardware_categories">
+            <option value="cpu">CPU</option>            
+            <option value="hdd">HDD</option>
+            <option value="ssd">SSD</option>
+            <option value="motherboards">Motherboards</option>
+            <option value="towers">Towers</option>
+        </select>
+        <a href="./gpu.html">GPU</a>
     </body>
 </html>
