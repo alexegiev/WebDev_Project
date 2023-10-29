@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en, el">
+    <head>
+        <head>
+            <title>Τεχνική Υποστήριξη</title>
+            <link rel="icon" type="icon" href="../assets/website_logo.png">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+    </head>
+
+    <body>
+        <header> 
+            <h1><a href="index.html"><img src="../assets/website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Αρχική</a></li>
+                    <li><a href="categories.html">Κατηγορίες</a></li>
+                    <li><a href="about_us.html">Ποιοί Είμαστε</a></li>
+                    <li><a href="technical_support.html">Τεχνική Υποστήριξη</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <Fieldset>
+            <legend>Στοιχεία Επικοινωνίας</legend>
+            <label for="name">Όνομα:</label>
+            <input type="text" id= "name" name="name" value="" pattern="[Α-Ωα-ω[A-Za-z]]{2,}" required > 
+            
+            <label for="surname">Επώνυμο:</label>
+            <input type="text" id= "surname" name="surname" value="" pattern="[Α-Ωα-ω[A-Za-z]]{2,}" required  >
+
+            <label for="email">Email:</label>
+            <input type="text" id= "email" name="email" value="" autocomplete="email" required  >
+
+            <label for="txt_phone_number">Τηλέφωνο:</label>
+            <input type="text" id= "txt_phone_number" name="phone_number" value="" pattern="[0-9]{10}" required  >
+
+            <label for="txt_ad_code">Κωδικός Αγγελίας:</label>
+            <input type="text" id= "txt_ad_code" name="ad_code" value=""  pattern="[0-9]{8}" required  >
+
+            <label for="problem_desc">Περιγραφή Προβλήματος:</label>
+            <input type="text" id= "problem_desc" name="description" value=""  pattern="[Α-Ωα-ω[A-Za-z]][\\S]*+" required  >
+        </Fieldset>
+        <button type="reset">Εκκαθάριση</button>
+        <input type="submit" id="submit_form" name="submit">
+
+        <footer>
+            <h1><a href="index.html"><img src="../assets/website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>
+            <ul class="contact_means">Στοιχεία Επικοινωνίας
+                <ul>Emails
+                    <li><address>p3200004@aueb</address></li>
+                    <li><address>p3200062@aueb.gr</address></li>
+                </ul>
+                <ul>Τηλέφωνα
+                    <li>210-2424424</li>
+                </ul>
+            </ul>
+            <ul class="social_media_buttons">
+                <li><a href="https://www.facebook.com/"><img src="../assets/facebook_logo.png" alt="facebook logo"></a></li>
+                <li><a href="https://www.instagram.com/"><img src="../assets/instagram_logo.png" alt="instagram logo"></a></li>
+                <li><a href="https://twitter.com/"><img src="../assets/twitter_logo.png" alt="twitter logo"></a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
