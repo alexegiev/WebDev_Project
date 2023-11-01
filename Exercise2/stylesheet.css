@@ -77,3 +77,8 @@ a
     display: inline;                /*social media media buttons in one line*/
 }
 
+.product_photos>img
+{
+    max-width: 10%;
+    max-height: 10%;
+}
