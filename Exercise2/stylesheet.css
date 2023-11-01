@@ -1,13 +1,14 @@
-
+/*styling the background*/
 body
 {
-    background: #b5f3ec;   /*styling the background*/
+    background: #b5f3ec; 
+    font-family:'Courier New', Courier, monospace;
 }
 
-
+/*styling the header*/
 header
 {
-    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);      /*styling the header*/
+    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);     
     left: 0;
     right: 0;
     top: 0;
@@ -15,70 +16,132 @@ header
     margin-bottom: 5%;
 }
 
+/*styling the footer*/
 footer
 {
-    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);/*styling the footer*/
-    left:0;
+    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);
     right:0;
     bottom: 0;
-    margin-top: 15%;
-    
+    margin-top: 20%;
+    height: auto;
 }
 
+/*remove bullets from unordered lists*/
 ul
 {
-    list-style-type: none;         /*remove bullets from unordered lists*/
-    
+    list-style-type: none;         
 }
 
+/*styling the main navigation bar*/
 .main_nav 
 {
-    background: #256b94;/*styling the navigation bar*/
-   
-
+    background: #256b94;
 }
 .main_nav li
 {
-    /*styling the navigation bar*/
-    text-align: center; 
+     
     font-size: 20px;
     margin-left: 7em;
     margin-right: 7em;
 }
 
-
+/*styling anchor navigation*/      
 .anchor_navigation
 {
-    background: #256b94;  /*styling anchor navigation*/
-               
+    background: #256b94;    
 }
 
 .anchor_navigation li
 {
-    text-align: center;                  /*styling the navigation bar*/
+    text-align: center;      
     font-size: 20px;
     margin-left: 4em;
     margin-right: 4em;
 }
 
+/*add effect to current category*/
 .pressed_button
 {
-    font-weight:bold;    /*add effect to current category*/
+    font-weight:bold;    
 }
 
+/*remove underline from links */
 a
 {
-   text-decoration: none;           /*remove underline from links */
+   text-decoration: none;           
    color: black;
 }
 
+/*social media media buttons in one line*/
 .social_media_buttons>li
 {
-    display: inline;                /*social media media buttons in one line*/
+    display: inline;
 }
 
-.product_photos>img
+/*resizing images*/
+.product_photos>img         
 {
     max-width: 10%;
     max-height: 10%;
 }
+
+.team>img
+{
+    float: left;
+    clear: both;
+    margin-top:10px;
+}
+.team
+{
+    text-align:left;
+}
+
+.dropdown>img
+{
+    width:10%;
+    height:10%;
+    
+}
+
+/* Styling the dropdown content */
+.dropbtn 
+{
+    background-color: #256b94;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+  
+.dropdown 
+{
+    position: relative;
+    
+}
+  
+/* Dropdown Content */
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}
+
