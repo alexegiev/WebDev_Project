@@ -8,18 +8,13 @@ body
 /*styling the header*/
 header
 {
-    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);     
-    left: 0;
-    right: 0;
-    top: 0;
-    margin-top: 0;
-    margin-bottom: 5%;
+    background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);     
 }
 
 /*styling the footer*/
 footer
 {
-    background: linear-gradient(15deg, #256b94 0%, #b5f3ec 100%);
+    background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
     right:0;
     bottom: 0;
     margin-top: 20%;
@@ -33,36 +28,50 @@ ul
 }
 
 /*styling the main navigation bar*/
-.main_nav 
+.main_nav li>a
 {
-    background: #256b94;
+    background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
 }
 .main_nav li
 {
-     
     font-size: 20px;
-    margin-left: 7em;
-    margin-right: 7em;
+
+}
+.main_nav a:hover
+{
+    background: #19465e;
+}
+#pressed_nav_link a
+{
+    background: linear-gradient(15deg, #1a4b68 0%, #188679 100%);
 }
 
 /*styling anchor navigation*/      
-.anchor_navigation
+#anchor_navigation
 {
-    background: #256b94;    
+    position: sticky;   
+    top: 0;
 }
 
-.anchor_navigation li
+#anchor_navigation li
 {
-    text-align: center;      
     font-size: 20px;
-    margin-left: 4em;
-    margin-right: 4em;
 }
 
-/*add effect to current category*/
-.pressed_button
+#anchor_navigation li>a
 {
-    font-weight:bold;    
+    background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+}
+
+#anchor_navigation a:hover
+{
+    background: #19465e;
 }
 
 /*remove underline from links */
@@ -113,10 +122,14 @@ a
     border: none;
 }
   
-.dropdown 
+.dropdown
 {
-    position: relative;
-    
+    width: max-content;
+}
+
+.dropdown button
+{
+    border-radius: 10px;
 }
   
 /* Dropdown Content */
@@ -139,9 +152,50 @@ a
     display: block;
 }
 
+/*Set a darker color for the buttons when hovered*/
+.dropdown:hover button
+{
+    background-color: #19465e;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content 
 {
     display: block;
 }
 
+.dropdown-content a:hover
+{
+    background-color: #657279;
+    border-radius: 10px;
+}
+
+
+
+.latest_adv, .gpu_adv, .phone_adv
+{
+    background-color: white;
+    width: 20%;
+    border: 7px solid #256b94;
+    border-width: 0.5em;
+}
+
+/*Styling the the area of the avatars*/
+.photo_avatars_holder
+{
+    border-radius: 999em;
+    width: 20em;
+    height: 20em;
+    padding: 5px;
+    line-height: 0;
+    border: 7px solid #000;
+    background-color: #eee;
+}
+
+/*Styling avatars in about us*/
+.photo_avatars_holder>img
+{
+    border-radius: 999em;
+    height: 100%;
+    width: 100%;
+}

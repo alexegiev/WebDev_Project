@@ -50,17 +50,28 @@ ul
 }
 
 /*styling anchor navigation*/      
-.anchor_navigation
+#anchor_navigation
 {
-    background: #256b94;    
+    position: sticky;   
+    top: 0;
 }
 
-.anchor_navigation li
+#anchor_navigation li
 {
-    text-align: center;      
     font-size: 20px;
-    margin-left: 4em;
-    margin-right: 4em;
+}
+
+#anchor_navigation li>a
+{
+    background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+}
+
+#anchor_navigation a:hover
+{
+    background: #19465e;
 }
 
 /*remove underline from links */
@@ -127,7 +138,6 @@ a
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    border-radius: 10px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -158,4 +168,34 @@ a
 {
     background-color: #657279;
     border-radius: 10px;
+}
+
+
+
+.latest_adv, .gpu_adv, .phone_adv
+{
+    background-color: white;
+    width: 20%;
+    border: 7px solid #256b94;
+    border-width: 0.5em;
+}
+
+/*Styling the the area of the avatars*/
+.photo_avatars_holder
+{
+    border-radius: 999em;
+    width: 20em;
+    height: 20em;
+    padding: 5px;
+    line-height: 0;
+    border: 7px solid #000;
+    background-color: #eee;
+}
+
+/*Styling avatars in about us*/
+.photo_avatars_holder>img
+{
+    border-radius: 999em;
+    height: 100%;
+    width: 100%;
 }
