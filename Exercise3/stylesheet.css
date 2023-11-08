@@ -170,8 +170,6 @@ a
     border-radius: 10px;
 }
 
-
-
 .latest_adv, .gpu_adv, .phone_adv
 {
     background-color: white;
@@ -198,4 +196,10 @@ a
     border-radius: 999em;
     height: 100%;
     width: 100%;
+}
+
+.main_container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

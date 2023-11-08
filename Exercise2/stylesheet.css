@@ -105,19 +105,25 @@ a
     text-align:left;
 }
 
-.dropdown>img
+#categories
 {
-    width:10%;
-    height:10%;
-    
+    width: 10%;
+}
+
+#categories img
+{
+    max-width: 100%;
 }
 
 /* Styling the dropdown content */
 .dropbtn 
 {
+    width: auto;
+    height: auto;
     background-color: #256b94;
     color: white;
     padding: 16px;
+    text-align: center;
     font-size: 16px;
     border: none;
 }
