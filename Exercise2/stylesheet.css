@@ -176,7 +176,13 @@ a
     border-radius: 10px;
 }
 
+/*Styling index advertisment*/
+.latest_adv>img
+{
+    max-width: 2em;
+}
 
+/*Add a small border for each advertisment*/
 .latest_adv, .gpu_adv, .phone_adv
 {
     background-color: white;
