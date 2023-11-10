@@ -186,12 +186,14 @@ a
 
 .latest_adv,.gpu_adv, .phone_adv
 {
+    width: min-content;
     background-color: white;
-    width: 20%;
     border: 10px solid #256b94;
     border-width: 0.5em;
-    display: flex;
-    flex-flow: nowrap;
+}
+.latest_adv>p, .gpu_adv>p, .phone_adv>p
+{
+    text-align: center;
 }
 
 /*Styling the the area of the avatars*/
@@ -256,4 +258,8 @@ button:hover
 
 }
 
-
+.latest_adv, .gpu_adv, .phone_adv
+{
+    display: flex;
+    flex-flow: column;
+}
