@@ -3,6 +3,7 @@ body
 {
     background: #e7eaf6; 
     font-family:'Courier New', Courier, monospace;
+    
 }
 
 /*styling the header*/
@@ -183,12 +184,14 @@ a
 }
 
 
-.latest_adv, .gpu_adv, .phone_adv
+.latest_adv,.gpu_adv, .phone_adv
 {
     background-color: white;
     width: 20%;
-    border: 7px solid #256b94;
+    border: 10px solid #256b94;
     border-width: 0.5em;
+    display: flex;
+    flex-flow: nowrap;
 }
 
 /*Styling the the area of the avatars*/
@@ -218,6 +221,7 @@ fieldset>label,fieldset>legend
     text-align: start;
 }
 
+/*styling the buttons in the technical support form*/
 #reset_form,#submit_form
 {
     border: none;
@@ -232,6 +236,8 @@ button:hover
 {
     cursor: pointer;
 }
+
+/*styling the website using flexbox and grid*/
 
 .main_nav > ul
 {
@@ -249,3 +255,5 @@ button:hover
     align-items: center;
 
 }
+
+
