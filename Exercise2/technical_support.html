@@ -24,7 +24,7 @@
             </ul>
         </nav>
 
-        <Fieldset>
+        <fieldset>
             <legend>Στοιχεία Επικοινωνίας</legend>
             <label for="name">Όνομα:</label>
             <input type="text" id= "name" name="name" value="" pattern="[Α-Ωα-ω[A-Za-z]]{2,}" required > 
@@ -43,9 +43,11 @@
 
             <label for="problem_desc">Περιγραφή Προβλήματος:</label>
             <input type="text" id= "problem_desc" name="description" value=""  pattern="[Α-Ωα-ω[A-Za-z]][\\S]*+" required  >
-        </Fieldset>
-        <button type="reset">Εκκαθάριση</button>
-        <input type="submit" id="submit_form" name="submit">
+
+            <button type="reset" id="reset_form">Reset</button>
+            <button type="submit" id="submit_form">Submit</button>
+        </fieldset>
+
 
         <footer>
             <h1><a href="index.html"><img src="../assets/website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>

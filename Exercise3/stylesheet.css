@@ -1,7 +1,7 @@
 /*styling the background*/
 body
 {
-    background: #b5f3ec; 
+    background: #e7eaf6; 
     font-family:'Courier New', Courier, monospace;
 }
 
@@ -209,6 +209,28 @@ a
     border-radius: 999em;
     height: 100%;
     width: 100%;
+}
+
+/*Styling about us page*/
+fieldset>label,fieldset>legend
+{
+    font-weight: bold;
+    text-align: start;
+}
+
+#reset_form,#submit_form
+{
+    border: none;
+    background-color:#256b94;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+button:hover
+{
+    cursor: pointer;
 }
 
 .main_nav > ul
