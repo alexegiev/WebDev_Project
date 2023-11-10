@@ -258,8 +258,24 @@ button:hover
 
 }
 
-.latest_adv, .gpu_adv, .phone_adv
+.adverts
 {
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    column-gap: 0;
+    row-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(20em, auto));
 }
+
+/*  δεν πανε οι κατηγοριες στη σειρα με αυτο- θελει αλλαγες
+#categories > .product
+{
+    display: grid;
+    column-gap: 0;
+    row-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(20em, auto));
+}
+*/
+
+
+
+
