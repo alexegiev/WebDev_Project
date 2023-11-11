@@ -3,6 +3,7 @@
     <head>
         <title>Αρχική Σελίδα</title>
         <link rel="icon" type="icon" href="../assets/website_logo.png">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -10,11 +11,10 @@
     <body>
         <header> 
             <h1><a href="index.html"><img src="../assets/website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>
-            
         </header>
-        <nav class="main_nav" >
+        <nav class="main_nav">
             <ul>
-                <li><a href="index.html">Αρχική</a></li>
+                <li id="pressed_nav_link"><a href="index.html">Αρχική</a></li>
                 <li><a href="categories.html">Κατηγορίες</a></li>
                 <li><a href="about_us.html">Ποιοί Είμαστε</a></li>
                 <li><a href="technical_support.html">Τεχνική Υποστήριξη</a></li>
@@ -27,14 +27,14 @@
             </h2>
             <p>
                 Εδώ μπορείτε να βρείτε αγγελίες που ανεβάζουν οι
-                χρήστες του ιστότοπου μας που αφορούν πωλήσεις μεταχειρισμένων
+                χρήστες του ιστότοπου μας που αφορούν πωλήσεις μεταχειρισμένων <br>
                 ή καινούργιων προϊόντων τεχνολογίας. Από κινητά τηλέφωνα, κονσολές, εώς και προϊόντα
                 για να αναβαθμίσετε τον υπολογιστή σας.
             </p>
         </article>
 
-        <section>
-            <ul>Πρόσφατες Αγγελίες
+        <section class="latest_adv">
+            <ul><h2>Πρόσφατες Αγγελίες</h2>
                 <li>
                     <a href="gpu_categories_rx_6600.html">
                         <img src="../assets/sapphire_radeon_rx_6600_8gb.jpeg" alt="RX 6600">
@@ -43,6 +43,19 @@
                 </li>
             </ul>
         </section>
+        <aside class="sidebar"> 
+            <article class="news_sidebar">
+                <ul><h3>Νέα στον κόσμο της τεχνολογίας!</h3>
+                    <li><a href="https://www.gamesradar.com/upcoming-ps4-games/">Καινούργια Παιχνίδια για το PS4<img src="../assets/games_ps4_news.jpg"></a></li>
+                    <li><a href="https://www.stuff.tv/features/most-anticipated-upcoming-phones/">Νέες Κυκλοφορίες σε Κινητά Τηλέφωνα<img src="../assets/new_xiaomi_news.jpg"></a></li>
+                    <li><a href="https://www.tomshardware.com/reviews/best-gpus,4380.html">Οι καλύτερες κάρτες γραφικών για Gaming enthusiasts<img src="../assets/gpu_news.jpg"></a></li>
+                    <li><a href="https://www.pcworld.com/article/436674/the-best-pc-laptops-of-the-year.html">Τα καλύτερα laptops του 2023<img src="../assets/laptops_news.jpg"></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </article>
+        </aside>
+        
+        
 
         <footer>
             <h1><a href="index.html"><img src="../assets/website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>
