@@ -16,9 +16,6 @@ header
 footer
 {
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
-    right:0;
-    bottom: 0;
-    margin-top: 20%;
     height: auto;
 }
 
@@ -310,9 +307,45 @@ aside
     color: #19465e;
 }
   
-aside
+body
 {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px, 1fr, 1fr, 10px;
+    row-gap: 1em;
+    column-gap: 1em;
+    justify-content: center;
+    align-content: center;
 }
 
+header
+{
+    grid-column: 1/4;
+}
 
+footer
+{
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
+
+.main_nav
+{
+    grid-column: 1/3;
+}
+
+.latest_adv
+{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+#main_menu_welcome
+{
+    grid-column: 2/3;
+}
+
+aside
+{
+
+}
