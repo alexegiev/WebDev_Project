@@ -91,33 +91,21 @@ a
     display: inline;
 }
 
-/*resizing images*/
-.product_photos>img         
-{
-    max-width: 10%;
-    max-height: 10%;
-}
-
 .team>img
 {
     float: left;
     clear: both;
     margin-top:10px;
 }
+
 .team
 {
     text-align:left;
 }
 
-
 #categories
 {
     width: 10%;
-}
-
-#categories img
-{
-    max-width: 100%;
 }
 
 /* Styling the dropdown content */
@@ -133,9 +121,9 @@ a
     border: none;
 }
   
-.dropdown
+.dropdown>button
 {
-    width: max-content;
+    width: 15em;
 }
 
 .dropdown button
@@ -335,8 +323,8 @@ footer
 
 .main_nav
 {
-   
     grid-column: 1/3;
+    grid-row: 2/3;
 }
 
 .latest_adv
@@ -359,11 +347,17 @@ footer
 δεν πανε οι κατηγοριες στη σειρα με αυτο- θελει αλλαγες*/
 #categories 
 {
-    justify-items: center;
-    justify-content: space-evenly;
-    grid-column: 1/4;
-    grid-row: 3/4;
-   
-    
-   
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.product
+{
+    margin: 1em;
+}
+
+#categories_container
+{
+    grid-column: 2/3;    
 }
