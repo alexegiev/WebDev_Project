@@ -287,16 +287,6 @@ aside
 {
     color: #19465e;
 }
-/*#categories 
-{
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 1em;
-    align-items: center;
-   
-   
-}
-*/
 
 body 
 {
@@ -355,3 +345,33 @@ footer
 {
     grid-column: 2/3;    
 }
+
+.description
+{
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+}
+
+.team
+{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.team > .resume 
+{
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+}
+
+
+.support
+{
+    grid-column: 1/4;
+    grid-row: 3/4;
+}
+
+
+
+
