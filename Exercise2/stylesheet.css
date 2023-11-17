@@ -94,13 +94,13 @@ a
     max-height: 10%;
 }
 
-.team>img
+#team>img
 {
     float: left;
     clear: both;
     margin-top:10px;
 }
-.team
+#team
 {
     text-align:left;
 }
