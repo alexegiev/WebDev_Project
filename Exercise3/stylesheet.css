@@ -17,8 +17,6 @@ footer
 {
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
     height: auto;
-
-    
 }
 
 /*remove bullets from unordered lists*/
@@ -242,6 +240,10 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    margin-top: 7em;
+}
  
 /*styling the buttons*/
 button:hover
@@ -266,12 +268,21 @@ aside
 .product
 {
     margin: 1em;
+
 } 
+.product_ad
+{
+    margin-top: 5em;
+}
 /* resizing the product photos*/
 .product_photos > img
 {
     width: 10em;
     height: 10em;
+}
+.adverts > .phone_adv, .gpu_adv
+{
+   margin-top: 7em;
 }
 
 /*-------------------------Exercise 3-------------------------*/
@@ -413,25 +424,23 @@ footer
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    margin: 1em;
     align-items:stretch;
 }
 .support
 {
     grid-column: 2/4;
     grid-row: 2/4;
-    margin-top: 7em;
-
+    
 }
 
 /*using grid and setting the ads in place*/
 .adverts
 {
     display: grid;
-    column-gap: 0;
-    row-gap: 1em;
-    grid-column: 1/5;
     grid-template-columns: repeat(auto-fill, minmax(20em, auto));
+    column-gap: 0;
+    grid-column: 1/5;
+    grid-row-end: 3;
 }
 
 /*setting the product elements in place*/
@@ -441,4 +450,9 @@ footer
     grid-row: 2/4;
 }
 
+.product_ad
+{
+    grid-column: 1/5;
+    grid-row: 2/4;
+}
 

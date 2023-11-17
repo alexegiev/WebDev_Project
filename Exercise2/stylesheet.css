@@ -36,6 +36,7 @@ ul
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin: 0.5em;
+    
     border-radius: 10px;
 }
 .main_nav li
@@ -242,6 +243,10 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    margin-top: 7em;
+}
  
 /*styling the buttons*/
 button:hover
@@ -272,4 +277,8 @@ aside
 {
     width: 10em;
     height: 10em;
+}
+.adverts > .phone_adv, .gpu_adv
+{
+   margin-top: 7em;
 }

@@ -36,6 +36,7 @@ ul
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin: 0.5em;
+    
     border-radius: 10px;
 }
 .main_nav li
@@ -242,6 +243,11 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    margin-top: 7em;
+}
+ 
  
 /*styling the buttons*/
 button:hover
@@ -273,7 +279,10 @@ aside
     width: 10em;
     height: 10em;
 }
-
+.adverts > .phone_adv, .gpu_adv
+{
+   margin-top: 7em;
+}
 /*-------------------------Exercise 3-------------------------*/
 /*styling the website using flexbox and grid*/
 
@@ -432,6 +441,7 @@ footer
     row-gap: 1em;
     grid-column: 1/5;
     grid-template-columns: repeat(auto-fill, minmax(20em, auto));
+    grid-row-start: 2;
 }
 
 /*setting the product elements in place*/
