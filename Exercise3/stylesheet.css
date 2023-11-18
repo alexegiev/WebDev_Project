@@ -16,7 +16,14 @@ header
 footer
 {
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
-    height: auto;
+    height: 100%;
+    font-weight: bold;
+}
+
+footer ul
+{
+    display: flex;
+    margin: 0.5em;
 }
 
 /*remove bullets from unordered lists*/
