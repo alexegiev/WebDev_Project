@@ -16,8 +16,10 @@ header
 footer
 {
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);
-    height: auto;
+    height: 100%;
+    font-weight: bold;
 }
+
 
 /*remove bullets from unordered lists*/
 ul
@@ -34,7 +36,6 @@ ul
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin: 0.5em;
-    
     border-radius: 10px;
 }
 .main_nav li
@@ -86,10 +87,11 @@ a
    color: black;
 }
 
-/*social media media buttons in one line*/
-.social_media_buttons>li
+/*social media media buttons costumizations*/
+#social_media_buttons
 {
-    display: inline;
+    position: absolute;
+    right: 0;
 }
 
 /*styling the photos in about_us.html*/
@@ -255,11 +257,11 @@ button:hover
 /* Styling the sidebar */
 aside
 {
-    height: 100%; 
+    height: 60%; 
     width: 430px; 
     position: fixed; 
     z-index: 1; 
-    top: 0; 
+    top: 13%; 
     right: 0;
     background-color: #e7eaf6; 
     overflow-x: hidden; 
@@ -269,7 +271,12 @@ aside
 .product
 {
     margin: 1em;
+
 } 
+.product_ad
+{
+    margin-top: 5em;
+}
 /* resizing the product photos*/
 .product_photos > img
 {
