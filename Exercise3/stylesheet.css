@@ -180,6 +180,7 @@ a
     background-color: white;
     border: 10px solid #256b94;
     border-width: 0.5em;
+    border-radius: 2em;
 }
 .latest_adv>p, .gpu_adv>p, .phone_adv>p
 {
@@ -264,7 +265,7 @@ button:hover
 }
 
 /* Styling the sidebar */
-aside
+.sidebar
 {
     height: 60%; 
     width: 430px; 
@@ -449,6 +450,7 @@ footer
     column-gap: 0;
     grid-column: 1/5;
     grid-row: 3/4;
+    justify-content: center;
 }
 
 /*setting the product elements in place*/
