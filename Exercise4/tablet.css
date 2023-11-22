@@ -10,6 +10,7 @@ body
 header
 {
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);     
+    width: 100vw;
 }
 
 /*styling the footer*/
@@ -477,4 +478,219 @@ footer ul
 #emails, #phone{
     display: flex;
     flex-direction: column;
+}
+
+/*-------------------------Exercise 4-------------------------*/
+
+.main_head
+{
+    grid-area: header;
+}
+
+.main_nav
+{
+    grid-area: nav;
+}
+
+.main_menu_welcome
+{
+    grid-area: main_welcome;
+}
+
+.latest_adv
+{
+    grid-area: main_adv;
+}
+
+.sidebar
+{
+    grid-area: sidebar_news;
+}
+
+.main_footer
+{
+    grid-area: footer;
+}
+/* about_us.html grid areas*/
+.description
+{
+    grid-area: description;
+}
+
+#team
+{
+    grid-area: team_h3;
+}
+
+.member1
+{
+    grid-area: member1;
+}
+
+.member2
+{
+    grid-area: member2;
+}
+
+/* android and gpu categories grid areas*/
+.adverts
+{
+    grid-area: ads;
+}
+
+
+@media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
+{
+    .index_body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "header       header"
+        "nav          nav"
+        "main_welcome main_adv"
+        "sidebar_news sidebar_news"
+        "footer       footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 3em;
+        width: 100vw;
+    }
+
+    .main_nav > ul
+    {
+        flex-wrap: wrap;
+    }
+
+    .main_nav li>a{
+        padding-left: 0.10em;
+        padding-right: 0.10em;
+        padding-top: 0.05em;
+        padding-bottom: 0.05em;
+        margin: 0.1em;
+        row-gap: 1em;
+    }
+    .latest_adv img
+    {
+        width: 50%;
+        height: 50%;
+    }
+    .sidebar img
+    {
+        height:30%;
+        width: 30%;
+    }
+    .sidebar
+    {
+        position: static;
+        background-color: #e7eaf6; 
+        font-size: smaller;
+        height: 150px;
+        overflow-y: hidden;
+        width: 80vw;
+    }
+    .sidebar ul
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-items: center;
+        overflow-x: auto;
+    }
+    .main_footer
+    {
+        height: 30vh;
+        width: 100vw;
+    }
+    /*styling the ads*/
+    .latest_adv
+    {
+        height: fit-content;
+        background-color: white;
+        border: 10px solid #256b94;
+        border-width: 0.25em;
+        width: 50vw;
+    }
+    .latest_adv>p
+    {
+        text-align: center;
+    }
+    .main_menu_welcome
+    {
+        width: 60%;
+    }
+    .main_menu_welcome p
+    {
+        word-wrap: break-word;
+    };
+
+    /* fluid grid in about_us.html*/
+    .about_us_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "description  description"
+        "team_h3      team_h3"
+        "member1      member2"
+        "footer       footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 2em;
+        width: 100vw;
+    }
+    .description
+    {
+        width: 60%;
+    }
+
+    .description h2, p
+    {
+        word-wrap: break-word;
+    }
+
+    .member1, .member2
+    {
+        width: 60%;
+    }
+    .member1 p 
+    {
+        word-wrap: break-word;
+    }
+    .member2 p
+    {
+        word-wrap: break-word;
+    }
+
+    /* fluid grid in android_categories.html and gpu_categories.html*/
+    .android_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer";
+        font-size: smaller;
+        text-align: center;
+        row-gap: 2em;
+        width: 100vw;
+    }
+
+    .gpu_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer"; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: em;
+        width: 100vw;
+    }
 }
