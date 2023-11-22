@@ -515,6 +515,33 @@ footer ul
 {
     grid-area: footer;
 }
+/* about_us.html grid areas*/
+.description
+{
+    grid-area: description;
+}
+
+#team
+{
+    grid-area: team_h3;
+}
+
+.member1
+{
+    grid-area: member1;
+}
+
+.member2
+{
+    grid-area: member2;
+}
+
+/* android and gpu categories grid areas*/
+.adverts
+{
+    grid-area: ads;
+}
+
 
 @media (min-width: 360px) and (max-width: 959px)   /*Ερευνώντας το Responsive Design
                             Mode που παρέχει ο Mozila Browser,
@@ -617,6 +644,78 @@ footer ul
         flex-wrap: wrap;
         justify-items: center;
     }
+
+    /* fluid grid in about_us.html*/
+    .about_us_body {
+        grid-template-areas:
+        "header"
+        "nav"
+        "description"
+        "team_h3"
+        "member1"
+        "member2"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 5em;
+        width: 100vw;
+    }
+
+    .description
+    {
+        width: 60%;
+    }
+
+    .description h2, p
+    {
+        word-wrap: break-word;
+    }
+
+    .member1, .member2
+    {
+        width: 60%;
+    }
+    .member1 p 
+    {
+        word-wrap: break-word;
+    }
+    .member2 p
+    {
+        word-wrap: break-word;
+    }
+    
+    /* fluid grid in android_categories.html and gpu_categories.html*/
+    .android_body
+    {
+        grid-template-areas:
+        "header"
+        "nav"
+        "ads"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 5em;
+        width: 100vw;
+    }
+
+    .gpu_body
+    {
+        grid-template-areas:
+        "header"
+        "nav"
+        "ads"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 5em;
+        width: 100vw;
+    }
 }
 
 @media(min-width: 960px) /*Landscape tablets*/
@@ -708,4 +807,74 @@ footer ul
     {
         word-wrap: break-word;
     };
+
+    /* fluid grid in about_us.html*/
+    .about_us_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "description  description"
+        "team_h3      team_h3"
+        "member1      member2"
+        "footer       footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 2em;
+        width: 100vw;
+    }
+    .description
+    {
+        width: 60%;
+    }
+
+    .description h2, p
+    {
+        word-wrap: break-word;
+    }
+
+    .member1, .member2
+    {
+        width: 60%;
+    }
+    .member1 p 
+    {
+        word-wrap: break-word;
+    }
+    .member2 p
+    {
+        word-wrap: break-word;
+    }
+
+    /* fluid grid in android_categories.html and gpu_categories.html*/
+    .android_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer";
+        font-size: smaller;
+        text-align: center;
+        row-gap: 2em;
+        width: 100vw;
+    }
+
+    .gpu_body
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer"; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: em;
+        width: 100vw;
+    }
 }
