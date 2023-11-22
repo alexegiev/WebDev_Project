@@ -176,6 +176,7 @@ a
 /*styling the ads*/
 .latest_adv,.gpu_adv, .phone_adv
 {
+    height: fit-content;
     width: min-content;
     background-color: white;
     border: 10px solid #256b94;
@@ -517,14 +518,13 @@ footer ul
         "nav"
         "main_welcome"
         "main_adv"
-        "."
         "sidebar_news"
         "footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 5em;
+        row-gap: 7em;
         width: 100vw;
 
     }
@@ -555,13 +555,34 @@ footer ul
     }
     .latest_adv img
     {
-        width: 50%;
-        height: 50%;
+        width: 100px;
+        height: 100px;
     }
+    /*styling the ads*/
+    .latest_adv
+    {
+        background-color: white;
+        border: 10px solid #256b94;
+        border-width: 0.25em;
+        width: 50vw;
+        height: fit-content;
+    }
+    .latest_adv>p
+    {
+        text-align: center;
+    }
+    .main_menu_welcome
+    {
+        width: 60%;
+    }
+    .main_menu_welcome p
+    {
+        word-wrap: break-word;
+    };
     .sidebar img
     {
-        height:30%;
-        width: 30%;
+        height:20%;
+        width: 20%;
     }
     .sidebar
     {
@@ -588,25 +609,11 @@ footer ul
         height: 200px;
         width: 100vw;
     }
-    /*styling the ads*/
-    .latest_adv
+    .main_footer ul
     {
-        height: fit-content;
-        background-color: white;
-        border: 10px solid #256b94;
-        border-width: 0.25em;
-        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-items: center;
     }
-    .latest_adv>p
-    {
-        text-align: center;
-    }
-    .main_menu_welcome
-    {
-        width: 60%;
-    }
-    .main_menu_welcome p
-    {
-        word-wrap: break-word;
-    };
 }
