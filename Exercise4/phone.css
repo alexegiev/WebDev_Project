@@ -539,6 +539,11 @@ footer ul
     grid-area: cat_container;
 }
 
+/*support grid areas*/
+.support
+{
+    grid-area: sup;
+}
 
 @media (min-width: 360px) and (max-width: 959px)   /*Ερευνώντας το Responsive Design
                             Mode που παρέχει ο Mozila Browser,
@@ -731,6 +736,21 @@ footer ul
         "header"
         "nav"
         "ads"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 5em;
+        width: 100vw;
+    }
+
+    .support_body
+    {
+        grid-template-areas:
+        "header"
+        "nav"
+        "sup"
         "footer";
         align-content: center;
         justify-items: center; 

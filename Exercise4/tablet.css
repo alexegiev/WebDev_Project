@@ -539,6 +539,11 @@ footer ul
     grid-area: cat_container;
 }
 
+/*support grid areas*/
+.support
+{
+    grid-area: sup;
+}
 
 @media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
 {
@@ -712,6 +717,21 @@ footer ul
         font-size: smaller;
         text-align: center;
         row-gap: em;
+        width: 100vw;
+    }
+
+    .support_body
+    {
+        grid-template-areas:
+        "header header"
+        "nav    nav"
+        "sup    sup"
+        "footer footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 5em;
         width: 100vw;
     }
 }
