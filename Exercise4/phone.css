@@ -550,7 +550,11 @@ footer ul
 {
     grid-area: product;
 }
-#anchor_navigation
+.product_desc
+{
+    grid-area: product_desciption;
+}
+/* #anchor_navigation
 {
     grid-area: anchor_nav;
 }
@@ -567,17 +571,17 @@ footer ul
 
 #extended_description_section
 {
-    grid-area: extended_description;
+    grid-area: extended_description; 
 }
+#pic2
+{
+    grid-area: pic_2;
+}
+*/
 
 #desc
 {
     grid-area: desc;
-}
-
-#pic2
-{
-    grid-area: pic_2;
 }
 
 .yt_video
@@ -585,10 +589,10 @@ footer ul
     grid-area: video;
 }
 
-#specifications_section
+/* #specifications_section
 {
     grid-area: specs;
-}
+} */
 @media (min-width: 360px) and (max-width: 959px)   /*Ερευνώντας το Responsive Design
                             Mode που παρέχει ο Mozila Browser,
                             διαπιστώθηκε ότι το minimum width 
@@ -811,12 +815,7 @@ footer ul
         "header"
         "nav"
         "product"
-        "anchor_nav"
-        "user_description"
-        "product_photos"
-        "extended_description"
-        "desc"
-        "pic_2"
+        "product_desciption"
         "video"
         "footer";
         align-content: center;
