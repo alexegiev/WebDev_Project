@@ -106,9 +106,6 @@ a
     text-align:left;
 } 
 
-/*styling the width of categories*/
-
-
 /* Styling the dropdown content */
 .dropbtn 
 {
@@ -282,6 +279,7 @@ button:hover
 } 
 .product_ad
 {
+    
     margin-top: 5em;
 }
 /* resizing the product photos*/
@@ -291,6 +289,12 @@ button:hover
     height: 10em;
 }
 
+.yt_video
+{
+    width: 560px;
+    height: 315px;
+}
+
 /*-------------------------Exercise 3-------------------------*/
 /*styling the website using flexbox and grid*/
 
@@ -298,12 +302,12 @@ button:hover
 .main_nav > ul
 {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 1em;
     align-items: center;
 }
 
-#anchor_navigation > ul
+.product_ad > #anchor_navigation > ul
 {
     display: flex;
     flex-wrap: nowrap;
@@ -363,7 +367,7 @@ footer
 /* setting the main navigation in place  */
 .main_nav
 {
-    grid-column: 1/3;
+    grid-column: 1/4;
     grid-row: 2/3;
 }
 
@@ -376,7 +380,7 @@ footer
 }
 
 /* setting the welcome text in place  */
-#main_menu_welcome
+.main_menu_welcome
 {
     grid-column: 2/3;
     grid-row-start: 3;
@@ -384,7 +388,7 @@ footer
 }
 
 /* using flex in categories  */
-#categories 
+.categories 
 {
     display: flex;
     flex-wrap: nowrap;
@@ -392,7 +396,7 @@ footer
 }
 
 /*setting the categories in place*/
-#categories_container
+.categories_container
 {
     grid-column: 2/3;   
     grid-row-start: 3; 
@@ -460,7 +464,19 @@ footer
 .product_ad
 {
     grid-column: 1/5;
-    grid-row: 2/4;
+    grid-row-start: 3;
+    align-items: center;
+    justify-content: center;
+}
+.product_desc
+{
+    grid-column: 1/3;
+    grid-row: 4/6;
+}
+.yt_video
+{
+    grid-column: 4/5;
+    grid-row: 3/4;
 }
 
 /*putting contact means in place */
