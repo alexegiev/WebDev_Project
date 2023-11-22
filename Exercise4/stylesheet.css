@@ -504,7 +504,12 @@ footer ul
     grid-area: footer;
 }
 
-@media (max-width: 500px)
+@media (min-width: 360px)   /*Ερευνώντας το Responsive Design
+                            Mode που παρέχει ο Mozila Browser,
+                            διαπιστώθηκε ότι το minimum width 
+                            είναι τα 360 px της συσκευής Samsung
+                            Galaxy S10/S10+, εξού και η επιλογή 
+                            min-width 360px*/
 {
     .index_body {
         grid-template-areas:
@@ -512,19 +517,29 @@ footer ul
         "nav"
         "main_welcome"
         "main_adv"
+        "."
         "sidebar_news"
         "footer";
+        align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
+        row-gap: 5em;
+        width: 100vw;
+
     }
     header
     {
-        width: 100%;
+        width: 100vw;
     }
     header h1
     {
         text-align: center;
+    }
+    .main_nav
+    {
+        width: 100vw;
+        height: 80vw;
     }
     .main_nav > ul
     {
@@ -557,6 +572,7 @@ footer ul
         font-size: smaller;
         position: relative;
         height: max-content;
+        width: 80vw;
         margin-bottom: 2em;
     }
     .sidebar ul
@@ -564,21 +580,22 @@ footer ul
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        justify-items: center;
         overflow-x: auto;
     }
     .main_footer
     {
-        display: block;
+        height: 200px;
+        width: 100vw;
     }
     /*styling the ads*/
     .latest_adv
     {
-        width: fit-content;
         height: fit-content;
         background-color: white;
         border: 10px solid #256b94;
         border-width: 0.25em;
-        margin-bottom: 2em;
+        width: 50vw;
     }
     .latest_adv>p
     {
@@ -586,6 +603,10 @@ footer ul
     }
     .main_menu_welcome
     {
-        word-wrap: break-word;   
+        width: 60%;
     }
+    .main_menu_welcome p
+    {
+        word-wrap: break-word;
+    };
 }
