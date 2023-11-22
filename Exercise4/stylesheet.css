@@ -9,7 +9,19 @@ body
 /*styling the header*/
 header
 {
+    width: 100vw;
     background: linear-gradient(15deg, #256b94 0%, #27e4ce 100%);     
+}
+
+header h1
+{
+    text-align: center;
+}
+
+.main_nav
+{
+    width: 100vw;
+    height: 20wh;
 }
 
 /*styling the footer*/
@@ -505,7 +517,7 @@ footer ul
     grid-area: footer;
 }
 
-@media (min-width: 360px)   /*Ερευνώντας το Responsive Design
+@media (min-width: 360px) and (max-width: 959px)   /*Ερευνώντας το Responsive Design
                             Mode που παρέχει ο Mozila Browser,
                             διαπιστώθηκε ότι το minimum width 
                             είναι τα 360 px της συσκευής Samsung
@@ -528,23 +540,12 @@ footer ul
         width: 100vw;
 
     }
-    header
-    {
-        width: 100vw;
-    }
-    header h1
-    {
-        text-align: center;
-    }
-    .main_nav
-    {
-        width: 100vw;
-        height: 80vw;
-    }
+
     .main_nav > ul
     {
         flex-wrap: wrap;
     }
+
     .main_nav li>a{
         padding-left: 0.10em;
         padding-right: 0.10em;
@@ -594,6 +595,104 @@ footer ul
         position: relative;
         height: max-content;
         width: 80vw;
+        margin-bottom: 2em;
+    }
+    .sidebar ul
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-items: center;
+        overflow-x: auto;
+    }
+    .main_footer
+    {
+        height: 200px;
+        width: 100vw;
+    }
+    .main_footer ul
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-items: center;
+    }
+}
+
+@media(min-width: 960px) /*Landscape tablets*/
+{
+    .index_body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "header       header"
+        "nav          nav"
+        "main_welcome main_adv"
+        "sidebar_news sidebar_news"
+        "footer       footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 2em;
+        width: 100vw;
+
+    }
+
+    .main_nav > ul
+    {
+        flex-wrap: wrap;
+    }
+
+    .main_nav li>a{
+        padding-left: 0.10em;
+        padding-right: 0.10em;
+        padding-top: 0.05em;
+        padding-bottom: 0.05em;
+        margin: 0.1em;
+        row-gap: 1em;
+    }
+    .latest_adv img
+    {
+        width: 100px;
+        height: 100px;
+    }
+    /*styling the ads*/
+    .latest_adv
+    {
+        background-color: white;
+        border: 10px solid #256b94;
+        border-width: 0.25em;
+        width: 50vw;
+        height: fit-content;
+    }
+    .latest_adv>p
+    {
+        text-align: center;
+    }
+    .main_menu_welcome
+    {
+        width: 60%;
+    }
+    .main_menu_welcome p
+    {
+        word-wrap: break-word;
+    }
+    .sidebar img
+    {
+        width: 200px;
+        height: 100px;
+    }
+    .sidebar
+    {
+        background-color: #e7eaf6; 
+        overflow-y: visible;
+        overflow-x: hidden; 
+        padding-top: 20px;
+        font-size: smaller;
+        position: relative;
+        height: max-content;
+        width: 80vw;
+        height: 20vh;
         margin-bottom: 2em;
     }
     .sidebar ul
