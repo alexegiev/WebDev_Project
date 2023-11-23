@@ -901,6 +901,8 @@ footer ul
         "nav     nav"
         "sup     sup"
         "footer  footer";
+        align-content: center;
+        justify-items: center; 
         font-size: smaller;
         text-align: center;
         row-gap: 3em;
