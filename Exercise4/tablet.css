@@ -56,7 +56,7 @@ ul
 #anchor_navigation
 {
     position: sticky;   
-    top: 1em;
+    top: 0;
 }
 
 #anchor_navigation li
@@ -105,6 +105,9 @@ a
 {
     text-align:left;
 } 
+
+/*styling the width of categories*/
+
 
 /* Styling the dropdown content */
 .dropbtn 
@@ -247,6 +250,10 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    margin-top: 7em;
+}
  
 /*styling the buttons*/
 button:hover
@@ -257,7 +264,9 @@ button:hover
 /* Styling the sidebar */
 .sidebar
 {
+    height: 60%; 
     width: 430px; 
+    position: fixed; 
     z-index: 1; 
     top: 13%; 
     right: 0;
@@ -271,29 +280,16 @@ button:hover
     margin: 1em;
 
 } 
-
+.product_ad
+{
+    margin-top: 5em;
+}
 /* resizing the product photos*/
 .product_photos > img
 {
     width: 10em;
     height: 10em;
 }
-
-.yt_video, .ps5_unbox, .ryzen_unbox
-{
-    width: 560px;
-    height: 315px;
-}
-
-.ps5, .ryzen_5
-{
-    text-align: center;
-}
-/* #pic2
-{
-    float: right;
-    clear: both;
-} */
 
 /*-------------------------Exercise 3-------------------------*/
 /*styling the website using flexbox and grid*/
@@ -302,12 +298,10 @@ button:hover
 .main_nav > ul
 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 1em;
     align-items: center;
 }
-
-
 
 #anchor_navigation > ul
 {
@@ -345,9 +339,9 @@ body
 {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px 50px 1fr 2fr 100px;
+    grid-template-rows: 100px 50px 2fr 100px; */
     row-gap: 1em;
-    column-gap: 1em; */
+    column-gap: 1em;
     justify-content: center;
     align-content: center;
 }
@@ -363,13 +357,13 @@ header
 footer
 {
     grid-column: 1/5;
-    grid-row: 5/6;
+    grid-row: 6/7;
 }
 
 /* setting the main navigation in place  */
 .main_nav
 {
-    grid-column: 1/4;
+    grid-column: 1/3;
     grid-row: 2/3;
 }
 
@@ -378,18 +372,14 @@ footer
 {
     grid-column: 1/2;
     grid-row-start: 3;
-    height: fit-content;
+    
 }
 
 /* setting the welcome text in place  */
 .main_menu_welcome
 {
-
-    grid-column: 2/4;
-    grid-row: 3/4;
-    height: fit-content;
-    justify-content: center;
-    align-content: center;
+    grid-column: 2/3;
+    grid-row-start: 3;
     text-align: center;
 }
 
@@ -397,7 +387,7 @@ footer
 .categories 
 {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -405,7 +395,7 @@ footer
 .categories_container
 {
     grid-column: 2/3;   
-    grid-row: 3/5; 
+    grid-row-start: 3; 
 }
 
 /*setting description of the site in place*/
@@ -415,16 +405,23 @@ footer
     grid-row: 3/4;
 }
 
-/*setting the team resumes in place*/  
+/*setting the team resumes in place*/
+#team
+{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    
+    
+}   
 .member1
 {
     grid-column: 1/3;
-    grid-row: 4/5;
+    grid-row: 5/6;
 }
 .member2
 {
     grid-column: 3/5;
-    grid-row: 4/5;
+    grid-row: 5/6;
 }
 
 /*using flex and setting the technical support form in place*/
@@ -438,7 +435,7 @@ footer
 .support
 {
     grid-column: 2/4;
-    grid-row: 3/5;
+    grid-row: 2/4;
     
 }
 
@@ -449,7 +446,7 @@ footer
     grid-template-columns: repeat(auto-fill, minmax(20em, auto));
     column-gap: 0;
     grid-column: 1/5;
-    grid-row: 3/5;
+    grid-row: 3/4;
     justify-content: center;
 }
 
@@ -463,28 +460,8 @@ footer
 .product_ad
 {
     grid-column: 1/5;
-    grid-row: 3/4;
-
+    grid-row: 2/4;
 }
-.product_desc
-{
-    grid-column: 1/5;
-    grid-row: 4/6;
-}
-.yt_video
-{
-    grid-column: 4/5;
-    grid-row: 3/4;
-}
-/* #pic2
-{
-    justify-content: center;
-    align-items: center;
-    grid-column: 3/5;
-    grid-row: 4/5;
-} */
-
-
 
 /*putting contact means in place */
 footer ul
@@ -497,36 +474,6 @@ footer ul
 #emails, #phone{
     display: flex;
     flex-direction: column;
-}
-
-.sidebar
-{
-    grid-column: 4/5;
-    grid-row: 3/5;
-}
-
-.ps5_unbox
-{
-    grid-column-end: 3;
-    grid-row: 4/5;
-}
-
-.ps5
-{
-    grid-row: 4/5;
-    grid-column: 3/4;
-}
-
-.ryzen_unbox
-{
-    grid-column-end: 4;
-    grid-row: 4/5;
-}
-
-.ryzen_5
-{
-    grid-row: 4/5;
-    grid-column: 2/3;
 }
 
 /*-------------------------Exercise 4-------------------------*/
@@ -556,16 +503,6 @@ footer ul
     grid-area: sidebar_news;
 }
 
-.ps5
-{
-    grid-area: ps5;
-}
-
-.ryzen_5
-{
-    grid-area: ryzen5;
-}
-
 .main_footer
 {
     grid-area: footer;
@@ -574,6 +511,11 @@ footer ul
 .description
 {
     grid-area: description;
+}
+
+#team
+{
+    grid-area: team_h3;
 }
 
 .member1
@@ -603,57 +545,15 @@ footer ul
     grid-area: sup;
 }
 
-/*gpu rx6600 ad grid areas*/
-.product_ad
-{
-    grid-area: product;
-}
-
-#anchor_navigation
-{
-    grid-area: anchor;
-}
-
-#users_description_section
-{
-    grid-area: user_desc;
-}
-
-#extended_description_section
-{
-    grid-area: ext_desc;
-}
-
-#desc
-{
-    grid-area: desc;
-}
-
-#pic2
-{
-    grid-area: pic2;
-}
-
-#specifications_section
-{
-    grid-area: specs;
-}
-
-.yt_video
-{
-    grid-area: video;
-}
-
 @media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
 {
     .index_body {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "header       header"
         "nav          nav"
         "main_welcome main_adv"
         "sidebar_news sidebar_news"
-        "ps5          ps5"
-        "ryzen5       ryzen5"
         "footer       footer";
         align-content: center;
         justify-items: center; 
@@ -661,18 +561,15 @@ footer ul
         text-align: center;
         row-gap: 3em;
         width: 100vw;
-
     }
-    
+
     .main_head
     {
         width: 100vw;
     }
-
     .main_nav > ul
     {
         flex-wrap: wrap;
-        width: 100vw;
     }
 
     .main_nav li>a{
@@ -685,18 +582,44 @@ footer ul
     }
     .latest_adv img
     {
-        width: 100px;
-        height: 100px;
+        width: 50%;
+        height: 50%;
+    }
+    .sidebar img
+    {
+        height:30%;
+        width: 30%;
+    }
+    .sidebar
+    {
+        position: static;
+        background-color: #e7eaf6; 
+        font-size: smaller;
+        height: 150px;
+        overflow-y: hidden;
+        width: 80vw;
+    }
+    .sidebar ul
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-items: center;
+        overflow-x: auto;
+    }
+    .main_footer
+    {
+        height: 30vh;
+        width: 100vw;
     }
     /*styling the ads*/
     .latest_adv
     {
+        height: fit-content;
         background-color: white;
         border: 10px solid #256b94;
         border-width: 0.25em;
-        width: 35vw;
-        height: fit-content;
-        margin-right: 5em;
+        width: 50vw;
     }
     .latest_adv>p
     {
@@ -709,86 +632,26 @@ footer ul
     .main_menu_welcome p
     {
         word-wrap: break-word;
-    }
-    .sidebar img
-    {
-        height: 50%;
-        width: 50%;
-    }
-    .sidebar
-    {
-        background-color: #e7eaf6; 
-        overflow-y: visible;
-        overflow-x: hidden; 
-        padding-top: 20px;
-        font-size: smaller;
-        position: relative;
-        height: max-content;
-        width: 80vw;
-        margin-bottom: 2em;
-    }
-    .sidebar h3
-    {
-        text-align: center;
-        justify-content: center;
-    }
-    .sidebar ul
-    {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-items: center;
-        overflow-x: auto;
-    }
-    .main_footer
-    {
-        height: 200px;
-        width: 100vw;
-    }
-    .main_footer ul
-    {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-items: center;
-    }
-    .ps5
-    {
-        width: 60%;
-    }
-    .ps5 > .ps5_unbox
-    {
-        width: 70vw;
-        height: 40vh;
-    }
-    .ryzen_5
-    {
-        width: 60%;
-    }
-    .ryzen_5 > .ryzen_unbox
-    {
-        width: 70vw;
-        height: 40vh;
-    }
-
+    };
 
     /* fluid grid in about_us.html*/
-    .about_us_body 
+    .about_us_body
     {
-        grid-template-areas:
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
         "header       header"
         "nav          nav"
         "description  description"
+        "team_h3      team_h3"
         "member1      member2"
         "footer       footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
+        row-gap: 2em;
         width: 100vw;
     }
-
     .description
     {
         width: 60%;
@@ -798,12 +661,8 @@ footer ul
     {
         word-wrap: break-word;
     }
-    
-    .member1
-    {
-        width: 60%;
-    }
-    .member2
+
+    .member1, .member2
     {
         width: 60%;
     }
@@ -828,151 +687,87 @@ footer ul
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
+        row-gap: 5em;
         width: 100vw;
     }
-    .categories 
-    {
-        display: flex;
-        flex-wrap: wrap;
-        align-items:center;
-        margin-left: 2em;
-    }
 
-   
     /* fluid grid in android_categories.html and gpu_categories.html*/
     .android_body
     {
-        grid-template-areas:
-        "header header"
-        "nav    nav"
-        "ads    ads"
-        "footer footer";
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer";
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
+        row-gap: 2em;
         width: 100vw;
     }
 
     .gpu_body
     {
-        grid-template-areas:
-        "header header"
-        "nav    nav"
-        "ads    ads"
-        "footer footer";
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header       header"
+        "nav          nav"
+        "ads          ads"
+        "footer       footer"; 
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
+        row-gap: em;
         width: 100vw;
     }
 
-    /* fluid grid in technical_support.html*/
     .support_body
     {
         grid-template-areas:
-        "header  header"
-        "nav     nav"
-        "sup     sup"
-        "footer  footer";
+        "header header"
+        "nav    nav"
+        "sup    sup"
+        "footer footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
-        width:  100vw;
-    }
-    .support
-    {
-        width: 90vw;
-    }
-    
-    /* fluid grid in gpu_categories_rx_6600.html*/
-    .rx_6600_body
-    {
-        grid-template-areas:
-        "header    header"
-        "nav       nav"
-        "product   product"
-        "user_desc user_desc"
-        "video     video"
-        "anchor    anchor"
-        "photos    photos"
-        "ext_desc  pic2"
-        "desc      desc"
-        "specs     specs"
-        "footer    footer";
-        align-content: center;
-        justify-items: center; 
-        font-size: smaller;
-        text-align: center;
-        row-gap: 3em;
+        row-gap: 5em;
         width: 100vw;
-    }
-
-    #users_description_section
-    {
-        width: 90vw;
-        
-    }
-
-    #pic1
-    {
-        width: 30vw;
-        height: 20vh;
-    }
-    #pic2
-    {
-        width: 50vw;
-        height: 30vh;
-    }
-
-    .product_photos
-    {
-        justify-content:center;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .product_photos img
-    {
-        width: 30vw;
-        height: 15vh;
     }
 
     .product_ad
     {
-        width: 50vw;
-        
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 460px, 80px, 220px, 195px, 200px, 290px;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        row-gap: 2em;
     }
 
-    #extended_description_section
+    .product_ad
     {
-        width: 50vw;
+        grid-area: product;
     }
-
-    #desc
+    .front_view
     {
-        width: 50vw;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 100vw;
+        justify-self: center;
     }
-
-    #users_description_section
-    {
-        width: 50vw;
-    }
-
-    #specifications_section
-    {
-        width: 50vw;
-    }
-    
     #anchor_navigation
     {
-        width: 100vw;
-        top: 1em;
+        grid-column: 1/3;
+        grid-row: 2/3;
+        width: 80vw;
+        justify-self: center;
     }
-
+    #anchor_navigation > ul
+    {
+        flex-wrap: wrap;
+    }
     #anchor_navigation li>a
     {
         padding-left: 0.10em;
@@ -982,9 +777,82 @@ footer ul
         margin: 0.1em;
         row-gap: 1em;
     }
+    #users_description_section
+    {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 50vw;
+        justify-self: center;
+        word-wrap: break-word;
+    }
+    .product_photos
+    {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-self: center;
+    }
+    .product_photos > img
+    {
+        width: 100px;
+        height: 100px;
+        justify-self: center;
+    }
+    #extended_description_section
+    {
+        grid-column: 1/2;
+        grid-row: 4/5;
+        width: 50vw;
+        justify-self: center;
+        word-wrap: break-word;
+    }
+    #second_extended_description_section
+    {
+        grid-column: 2/3;
+        grid-row: 5/6;
+        width: 50vw;
+        justify-self: center;
+        word-wrap: break-word;
+    }
+    .arch_photo
+    {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        width: 300px;
+        height: 150px;
+        justify-self: center;
+    }
     .yt_video
     {
-        width: 70vw;
-        height: 40vh;
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 400px;
+        height: 200px;
+        justify-self: center;
+    }
+    #specifications_section
+    {
+        grid-column: 1/3;
+        grid-row: 6/7;
+        width: 50vw;
+        justify-self: center;
+    }
+
+    .rx_6600_body
+    {
+        grid-template-areas: 
+        "header  header"
+        "nav     nav"
+        "product product"
+        "footer  footer";
+        align-content: center;
+        justify-content: center; 
+        justify-content: center;
+        font-size: smaller;
+        text-align: center;
+        row-gap: 3em;
+        width: 100vw;
     }
 }

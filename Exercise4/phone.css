@@ -56,7 +56,7 @@ ul
 #anchor_navigation
 {
     position: sticky;   
-    top: 1em;
+    top: 0;
 }
 
 #anchor_navigation li
@@ -105,6 +105,9 @@ a
 {
     text-align:left;
 } 
+
+/*styling the width of categories*/
+
 
 /* Styling the dropdown content */
 .dropbtn 
@@ -247,6 +250,10 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    margin-top: 7em;
+}
  
 /*styling the buttons*/
 button:hover
@@ -257,7 +264,9 @@ button:hover
 /* Styling the sidebar */
 .sidebar
 {
+    height: 60%; 
     width: 430px; 
+    position: fixed; 
     z-index: 1; 
     top: 13%; 
     right: 0;
@@ -279,21 +288,6 @@ button:hover
     height: 10em;
 }
 
-.yt_video, .ps5_unbox, .ryzen_unbox
-{
-    width: 560px;
-    height: 315px;
-}
-
-.ps5, .ryzen_5
-{
-    text-align: center;
-}
-#pic2
-{
-    float: left;
-}
-
 /*-------------------------Exercise 3-------------------------*/
 /*styling the website using flexbox and grid*/
 
@@ -301,17 +295,15 @@ button:hover
 .main_nav > ul
 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 1em;
     align-items: center;
 }
 
-
-
-.product_desc > #anchor_navigation > ul
+#anchor_navigation > ul
 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 1em;
     align-items: center;
 
@@ -362,13 +354,13 @@ header
 footer
 {
     grid-column: 1/5;
-    grid-row: 5/6;
+    grid-row: 6/7;
 }
 
 /* setting the main navigation in place  */
 .main_nav
 {
-    grid-column: 1/4;
+    grid-column: 1/3;
     grid-row: 2/3;
 }
 
@@ -377,35 +369,30 @@ footer
 {
     grid-column: 1/2;
     grid-row-start: 3;
-    height: fit-content;
+    
 }
 
 /* setting the welcome text in place  */
-.main_menu_welcome
+#main_menu_welcome
 {
-
-    grid-column: 2/4;
-    grid-row: 3/4;
-    height: fit-content;
-    justify-content: center;
-    align-content: center;
+    grid-column: 2/3;
+    grid-row-start: 3;
     text-align: center;
 }
 
 /* using flex in categories  */
-.categories 
+#categories 
 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
 }
 
 /*setting the categories in place*/
-.categories_container
+#categories_container
 {
     grid-column: 2/3;   
-    grid-row: 3/5; 
+    grid-row-start: 3; 
 }
 
 /*setting description of the site in place*/
@@ -415,30 +402,37 @@ footer
     grid-row: 3/4;
 }
 
-/*setting the team resumes in place*/  
+/*setting the team resumes in place*/
+#team
+{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    
+    
+}   
 .member1
 {
     grid-column: 1/3;
-    grid-row: 4/5;
+    grid-row: 5/6;
 }
 .member2
 {
     grid-column: 3/5;
-    grid-row: 4/5;
+    grid-row: 5/6;
 }
 
 /*using flex and setting the technical support form in place*/
 .support
 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items:stretch;
 }
 .support
 {
     grid-column: 2/4;
-    grid-row: 3/5;
+    grid-row: 2/4;
     
 }
 
@@ -449,7 +443,7 @@ footer
     grid-template-columns: repeat(auto-fill, minmax(20em, auto));
     column-gap: 0;
     grid-column: 1/5;
-    grid-row: 3/5;
+    grid-row: 3/4;
     justify-content: center;
 }
 
@@ -463,24 +457,8 @@ footer
 .product_ad
 {
     grid-column: 1/5;
-    grid-row: 3/4;
-
+    grid-row: 2/4;
 }
-
-.yt_video
-{
-    grid-column: 4/5;
-    grid-row: 3/4;
-}
-#pic2
-{
-    justify-content: center;
-    align-items: center;
-    grid-column: 3/5;
-    grid-row: 4/5;
-}
-
-
 
 /*putting contact means in place */
 footer ul
@@ -495,35 +473,6 @@ footer ul
     flex-direction: column;
 }
 
-.sidebar
-{
-    grid-column: 4/5;
-    grid-row: 3/5;
-}
-
-.ps5_unbox
-{
-    grid-column-end: 3;
-    grid-row: 4/5;
-}
-
-.ps5
-{
-    grid-row: 4/5;
-    grid-column: 3/4;
-}
-
-.ryzen_unbox
-{
-    grid-column-end: 4;
-    grid-row: 4/5;
-}
-
-.ryzen_5
-{
-    grid-row: 4/5;
-    grid-column: 2/3;
-}
 /*-------------------------Exercise 4-------------------------*/
 
 .main_head
@@ -551,16 +500,6 @@ footer ul
     grid-area: sidebar_news;
 }
 
-.ps5
-{
-    grid-area: ps5;
-}
-
-.ryzen_5
-{
-    grid-area: ryzen5;
-}
-
 .main_footer
 {
     grid-area: footer;
@@ -569,6 +508,11 @@ footer ul
 .description
 {
     grid-area: description;
+}
+
+#team
+{
+    grid-area: team_h3;
 }
 
 .member1
@@ -655,10 +599,8 @@ footer ul
         "nav"
         "main_welcome"
         "main_adv"
-        "sidebar_news"
         "."
-        "ps5"
-        "ryzen5"
+        "sidebar_news"
         "footer";
         align-content: center;
         justify-items: center; 
@@ -677,7 +619,6 @@ footer ul
     .main_nav > ul
     {
         flex-wrap: wrap;
-        width: 100vw;
     }
 
     .main_nav li>a{
@@ -756,41 +697,22 @@ footer ul
         flex-wrap: wrap;
         justify-items: center;
     }
-    .ps5
-    {
-        width: 60%;
-    }
-    .ps5 > .ps5_unbox
-    {
-        width: 70vw;
-        height: 20vh;
-    }
-    .ryzen_5
-    {
-        width: 60%;
-    }
-    .ryzen_5 > .ryzen_unbox
-    {
-        width: 70vw;
-        height: 20vh;
-    }
-
 
     /* fluid grid in about_us.html*/
-    .about_us_body 
-    {
+    .about_us_body {
         grid-template-areas:
         "header"
         "nav"
         "description"
+        "team_h3"
         "member1"
         "member2"
         "footer";
-        align-items: center;
+        align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 2em;
+        row-gap: 5em;
         width: 100vw;
     }
 
@@ -804,11 +726,7 @@ footer ul
         word-wrap: break-word;
     }
 
-    .member1
-    {
-        width: 60%;
-    }
-    .member2
+    .member1, .member2
     {
         width: 60%;
     }
@@ -837,7 +755,6 @@ footer ul
         width: 100vw;
     }
 
-   
     /* fluid grid in android_categories.html and gpu_categories.html*/
     .android_body
     {
@@ -869,7 +786,6 @@ footer ul
         width: 100vw;
     }
 
-    /* fluid grid in technical_support.html*/
     .support_body
     {
         grid-template-areas:
