@@ -720,8 +720,9 @@ footer ul
         background-color: white;
         border: 10px solid #256b94;
         border-width: 0.25em;
-        width: 50vw;
+        width: 35vw;
         height: fit-content;
+        margin-right: 5em;
     }
     .latest_adv>p
     {
@@ -737,8 +738,8 @@ footer ul
     }
     .sidebar img
     {
-        height: 30%;
-        width: 30%;
+        height: 50%;
+        width: 50%;
     }
     .sidebar
     {
@@ -784,7 +785,7 @@ footer ul
     .ps5 > .ps5_unbox
     {
         width: 70vw;
-        height: 20vh;
+        height: 40vh;
     }
     .ryzen_5
     {
@@ -793,7 +794,7 @@ footer ul
     .ryzen_5 > .ryzen_unbox
     {
         width: 70vw;
-        height: 20vh;
+        height: 40vh;
     }
 
 
@@ -801,17 +802,16 @@ footer ul
     .about_us_body 
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "description"
-        "member1"
-        "member2"
-        "footer";
-        align-items: center;
+        "header       header"
+        "nav          nav"
+        "description  description"
+        "member1      member2"
+        "footer       footer";
+        align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 2em;
+        row-gap: 3em;
         width: 100vw;
     }
 
@@ -824,7 +824,7 @@ footer ul
     {
         word-wrap: break-word;
     }
-
+    
     .member1
     {
         width: 60%;
@@ -846,16 +846,23 @@ footer ul
     .categories_body
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "cat_container"
-        "footer";
+        "header        header"
+        "nav           nav"
+        "cat_container cat_container"
+        "footer        footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 5em;
+        row-gap: 3em;
         width: 100vw;
+    }
+    .categories 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        margin-left: 2em;
     }
 
    
@@ -863,30 +870,26 @@ footer ul
     .android_body
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "ads"
-        "footer";
-        align-content: center;
-        justify-items: center; 
+        "header header"
+        "nav    nav"
+        "ads    ads"
+        "footer footer";
         font-size: smaller;
         text-align: center;
-        row-gap: 5em;
+        row-gap: 3em;
         width: 100vw;
     }
 
     .gpu_body
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "ads"
-        "footer";
-        align-content: center;
-        justify-items: center; 
+        "header header"
+        "nav    nav"
+        "ads    ads"
+        "footer footer";
         font-size: smaller;
         text-align: center;
-        row-gap: 5em;
+        row-gap: 3em;
         width: 100vw;
     }
 
@@ -894,17 +897,22 @@ footer ul
     .support_body
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "sup"
-        "footer";
-        align-content: center;
-        justify-items: center; 
+        "header  header"
+        "nav     nav"
+        "sup     sup"
+        "footer  footer";
         font-size: smaller;
         text-align: center;
-        row-gap: 5em;
-        width: 100vw;
+        row-gap: 3em;
+        width:  100vw;
     }
+    .support
+    {
+        width: 80vw;
+    }
+    
+    
+
     /* fluid grid in gpu_categories_rx_6600.html*/
     .rx_6600_body
     {

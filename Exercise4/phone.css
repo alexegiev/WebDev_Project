@@ -343,7 +343,7 @@ button:hover
 body 
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
     /* grid-template-rows: 100px 50px 1fr 2fr 100px; */
     row-gap: 1em;
     column-gap: 1em;
@@ -614,7 +614,7 @@ footer ul
     grid-area: user_desc;
 }
 
-.product_photos
+
 
 #extended_description_section
 {
