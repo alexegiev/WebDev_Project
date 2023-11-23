@@ -291,7 +291,7 @@ button:hover
 }
 #pic2
 {
-    float: left;
+    float: right;
 }
 
 /*-------------------------Exercise 3-------------------------*/
@@ -308,7 +308,7 @@ button:hover
 
 
 
-.product_desc > #anchor_navigation > ul
+#anchor_navigation > ul
 {
     display: flex;
     flex-wrap: nowrap;
@@ -346,7 +346,6 @@ body
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100px 50px 1fr 2fr 100px;
     row-gap: 1em;
-    column-gap: 1em;
     justify-content: center;
     align-content: center;
 }
@@ -453,36 +452,29 @@ footer
 }
 
 /*setting the product elements in place*/
-.product
-{
-    grid-column: 1/5;
-    grid-row: 2/4;
-}
-
 .product_ad
 {
     grid-column: 1/5;
     grid-row: 3/4;
-
 }
-.product_desc
+
+.desc
 {
-    grid-column: 1/5;
-    grid-row: 4/6;
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 4/5;
 }
 .yt_video
 {
     grid-column: 4/5;
     grid-row: 3/4;
 }
-#pic2
+
+.product_photos
 {
-    justify-content: center;
-    align-items: center;
-    grid-column: 3/5;
+    grid-column: 1/5;
     grid-row: 4/5;
 }
-
 
 
 /*putting contact means in place */

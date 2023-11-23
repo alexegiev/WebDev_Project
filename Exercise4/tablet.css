@@ -289,10 +289,11 @@ button:hover
 {
     text-align: center;
 }
-#pic2
+/* #pic2
 {
-    float: left;
-}
+    float: right;
+    clear: both;
+} */
 
 /*-------------------------Exercise 3-------------------------*/
 /*styling the website using flexbox and grid*/
@@ -308,7 +309,7 @@ button:hover
 
 
 
-.product_desc > #anchor_navigation > ul
+#anchor_navigation > ul
 {
     display: flex;
     flex-wrap: nowrap;
@@ -475,13 +476,13 @@ footer
     grid-column: 4/5;
     grid-row: 3/4;
 }
-#pic2
+/* #pic2
 {
     justify-content: center;
     align-items: center;
     grid-column: 3/5;
     grid-row: 4/5;
-}
+} */
 
 
 
@@ -618,8 +619,6 @@ footer ul
     grid-area: user_desc;
 }
 
-.product_photos
-
 #extended_description_section
 {
     grid-area: ext_desc;
@@ -644,31 +643,6 @@ footer ul
 {
     grid-area: video;
 }
-#extended_description_section
-{
-    grid-area: ext_desc;
-}
-
-#desc
-{
-    grid-area: desc;
-}
-
-#pic2
-{
-    grid-area: pic2;
-}
-
-#specifications_section
-{
-    grid-area: specs;
-}
-
-.yt_video
-{
-    grid-area: video;
-}
-
 
 @media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
 {
@@ -910,27 +884,24 @@ footer ul
     }
     .support
     {
-        width: 80vw;
+        width: 90vw;
     }
     
-    
-
     /* fluid grid in gpu_categories_rx_6600.html*/
     .rx_6600_body
     {
         grid-template-areas:
-        "header"
-        "nav"
-        "product"
-        "anchor"
-        "user_desc"
-        "photos"
-        "ext_desc"
-        "desc"
-        "pic2"
-        "video"
-        "specs"
-        "footer";
+        "header    header"
+        "nav       nav"
+        "product   product"
+        "user_desc user_desc"
+        "video     video"
+        "anchor    anchor"
+        "photos    photos"
+        "ext_desc  pic2"
+        "desc      desc"
+        "specs     specs"
+        "footer    footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
@@ -941,53 +912,59 @@ footer ul
 
     #users_description_section
     {
-        width: 100vw;
+        width: 90vw;
         
     }
 
-    #pic1, #pic2
+    #pic1
+    {
+        width: 30vw;
+        height: 20vh;
+    }
+    #pic2
     {
         width: 50vw;
-        height: 20vh;
+        height: 30vh;
     }
 
     .product_photos
     {
-        justify-content: center;
+        justify-content:center;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     .product_photos img
     {
-        width: 40vw;
-        height: 20vh;
+        width: 30vw;
+        height: 15vh;
     }
 
     .product_ad
     {
-        width: 100vw;
+        width: 50vw;
+        
     }
 
     #extended_description_section
     {
-        width: 90vw;
+        width: 50vw;
     }
 
     #desc
     {
-        width: 90vw;
+        width: 50vw;
     }
 
     #users_description_section
     {
-        width: 90vw;
+        width: 50vw;
     }
 
     #specifications_section
     {
-        width: 90vw;
+        width: 50vw;
     }
     
     #anchor_navigation
@@ -1008,6 +985,6 @@ footer ul
     .yt_video
     {
         width: 70vw;
-        height: 20vh;
+        height: 40vh;
     }
 }
