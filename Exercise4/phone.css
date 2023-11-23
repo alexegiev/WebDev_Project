@@ -466,11 +466,7 @@ footer
     grid-row: 3/4;
 
 }
-.product_desc
-{
-    /* grid-column: 1/5;
-    grid-row: 4/6; */
-}
+
 .yt_video
 {
     grid-column: 4/5;
