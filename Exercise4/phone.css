@@ -344,10 +344,10 @@ body
 {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
-    /* grid-template-rows: 100px 50px 1fr 2fr 100px; */
+    grid-template-rows: 100px 50px 2fr 100px;
     row-gap: 1em;
     column-gap: 1em;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
 }
 
@@ -598,10 +598,9 @@ footer ul
     grid-area: sup;
 }
 
-/*gpu rx6600 ad grid areas*/
-.product_ad
+/* .front_view
 {
-    grid-area: product;
+    grid-area: front;
 }
 
 #anchor_navigation
@@ -614,57 +613,35 @@ footer ul
     grid-area: user_desc;
 }
 
-
+.product_photos
+{
+    grid-area: photos;
+}
 
 #extended_description_section
 {
     grid-area: ext_desc;
 }
 
-#desc
+#second_extended_description_section
 {
-    grid-area: desc;
+    grid-area: ext_desc2;
 }
 
-#pic2
+.arch_photo
 {
-    grid-area: pic2;
+    grid-area: arch_photo;
+}
+
+.yt_video
+{
+    grid-area: yt_video;
 }
 
 #specifications_section
 {
     grid-area: specs;
-}
-
-.yt_video
-{
-    grid-area: video;
-}
-#extended_description_section
-{
-    grid-area: ext_desc;
-}
-
-#desc
-{
-    grid-area: desc;
-}
-
-#pic2
-{
-    grid-area: pic2;
-}
-
-#specifications_section
-{
-    grid-area: specs;
-}
-
-.yt_video
-{
-    grid-area: video;
-}
-
+} */
 @media (min-width: 360px) and (max-width: 959px)   /*Ερευνώντας το Responsive Design
                             Mode που παρέχει ο Mozila Browser,
                             διαπιστώθηκε ότι το minimum width 
@@ -907,20 +884,20 @@ footer ul
         row-gap: 5em;
         width: 100vw;
     }
-    /* fluid grid in gpu_categories_rx_6600.html*/
-    .rx_6600_body
+
+    /* .rx_6600_body
     {
         grid-template-areas:
         "header"
         "nav"
-        "product"
+        "front"
         "anchor"
         "user_desc"
         "photos"
         "ext_desc"
-        "desc"
-        "pic2"
-        "video"
+        "ext_desc2"
+        "arch_photo"
+        "yt_video"
         "specs"
         "footer";
         align-content: center;
@@ -929,65 +906,37 @@ footer ul
         text-align: center;
         row-gap: 3em;
         width: 100vw;
-    }
+    } */
 
-    #users_description_section
+    .product_ad
     {
-        width: 100vw;
-        
-    }
-
-    #pic1, #pic2
-    {
-        width: 50vw;
-        height: 20vh;
-    }
-
-    .product_photos
-    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 150px, 130px, 200px, 500px, 280px, 150px, 320px, 480px;
         justify-content: center;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .product_photos img
-    {
-        width: 40vw;
-        height: 20vh;
+        align-items: center;
+        width: 100vw;
     }
 
     .product_ad
     {
+        grid-area: product;
+    }
+
+    .front_view
+    {
+        grid-row: 1/2;
         width: 100vw;
     }
-
-    #extended_description_section
-    {
-        width: 90vw;
-    }
-
-    #desc
-    {
-        width: 90vw;
-    }
-
-    #users_description_section
-    {
-        width: 90vw;
-    }
-
-    #specifications_section
-    {
-        width: 90vw;
-    }
-    
     #anchor_navigation
     {
-        width: 100vw;
-        top: 1em;
+        grid-row: 2/3;
+        width: 80vw;
     }
-
+    #anchor_navigation > ul
+    {
+        flex-wrap: wrap;
+    }
     #anchor_navigation li>a
     {
         padding-left: 0.10em;
@@ -997,9 +946,64 @@ footer ul
         margin: 0.1em;
         row-gap: 1em;
     }
+    #users_description_section
+    {
+        grid-row: 3/4;
+        width: 80vw;
+    }
+    .product_photos
+    {
+        grid-row: 4/5;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .product_photos > img
+    {
+        width: 100px;
+        height: 100px;
+    }
+    #extended_description_section
+    {
+        grid-row: 5/6;
+        width: 80vw;
+    }
+    #second_extended_description_section
+    {
+        grid-row: 6/7;
+        width: 80vw;
+    }
+    .arch_photo
+    {
+        grid-row: 7/8;
+        width: 300px;
+        height: 150px;
+    }
     .yt_video
     {
-        width: 70vw;
-        height: 20vh;
+        grid-row: 8/9;
+        width: 80vw;
+        height: 50hw;
+    }
+    #specifications_section
+    {
+        grid-row: 9/10;
+        width: 80vw;
+    }
+
+
+    .rx_6600_body
+    {
+        grid-template-areas:
+        "header"
+        "nav"
+        "product"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 3em;
+        width: 100vw;
     }
 }
