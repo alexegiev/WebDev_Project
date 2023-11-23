@@ -306,8 +306,6 @@ button:hover
     align-items: center;
 }
 
-
-
 #anchor_navigation > ul
 {
     display: flex;
@@ -458,6 +456,20 @@ footer
     grid-row: 3/4;
 }
 
+#anchor_navigation
+{
+    grid-column: 1/5;
+    grid-row: 4/5;
+    align-self: start;
+}
+
+#extended_description_section
+{
+    grid-column: 1/1;
+    grid-row: 4/5;
+    align-self: end;
+}
+
 .desc
 {
     text-align: center;
@@ -472,10 +484,15 @@ footer
 
 .product_photos
 {
-    grid-column: 1/5;
-    grid-row: 4/5;
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
 
+#users_description_section
+{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
 
 /*putting contact means in place */
 footer ul
