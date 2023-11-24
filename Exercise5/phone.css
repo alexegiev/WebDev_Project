@@ -500,6 +500,16 @@ footer ul
     grid-area: sidebar_news;
 }
 
+.ps5
+{
+    grid-area: ps5;
+}
+
+.ryzen5
+{
+    grid-area: ryzen5;
+}
+
 .main_footer
 {
     grid-area: footer;
@@ -541,7 +551,8 @@ footer ul
 {
     grid-area: sup;
 }
-/*signup.html frid areas*/
+
+/*signup.html grid areas*/
 
 .personal_info
 {
@@ -571,6 +582,9 @@ footer ul
         "nav"
         "main_welcome"
         "main_adv"
+        "main_adv"
+        "ps5"
+        "ryzen5"
         "."
         "sidebar_news"
         "footer";
@@ -591,6 +605,17 @@ footer ul
     .main_nav > ul
     {
         flex-wrap: wrap;
+    }
+
+    .ps5
+    {
+        word-wrap: break-word;
+        width: 70vw;
+    }
+    .ryzen_5
+    {
+        word-wrap: break-word;
+        width: 70vw;
     }
 
     .main_nav li>a{
@@ -773,6 +798,29 @@ footer ul
         width: 100vw;
     }
 
+    /* .rx_6600_body
+    {
+        grid-template-areas:
+        "header"
+        "nav"
+        "front"
+        "anchor"
+        "user_desc"
+        "photos"
+        "ext_desc"
+        "ext_desc2"
+        "arch_photo"
+        "yt_video"
+        "specs"
+        "footer";
+        align-content: center;
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 3em;
+        width: 100vw;
+    } */
+
     .product_ad
     {
         display: grid;
@@ -878,15 +926,19 @@ footer ul
         grid-template-areas: 
         "header"
         "nav"
+        "nav"
+        "personal_info"
+        "personal_info"
         "personal_info"
         "login_info"
+        "questionnair"
         "questionnair"
         "footer";
         align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
-        row-gap: 3em;
+        row-gap: 5em;
         width: 100vw;
     }
     .personal_info

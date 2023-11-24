@@ -250,7 +250,7 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
- 
+
 /*styling the buttons*/
 button:hover
 {
@@ -494,6 +494,16 @@ footer ul
     grid-area: main_adv;
 }
 
+.ps5
+{
+    grid-area: ps5;
+}
+
+.ryzen5
+{
+    grid-area: ryzen5;
+}
+
 .sidebar
 {
     grid-area: sidebar_news;
@@ -558,6 +568,7 @@ footer ul
     grid-area: questionnair;
 }
 
+
 @media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
 {
     .index_body {
@@ -566,6 +577,7 @@ footer ul
         "header       header"
         "nav          nav"
         "main_welcome main_adv"
+        "ps5          ryzen5"
         "sidebar_news sidebar_news"
         "footer       footer";
         align-content: center;
@@ -595,8 +607,8 @@ footer ul
     }
     .latest_adv img
     {
-        width: 50%;
-        height: 50%;
+        width: 40%;
+        height: 40%;
     }
     .sidebar img
     {
@@ -628,11 +640,11 @@ footer ul
     /*styling the ads*/
     .latest_adv
     {
+        width: 40vw;
         height: fit-content;
         background-color: white;
         border: 10px solid #256b94;
         border-width: 0.25em;
-        width: 50vw;
     }
     .latest_adv>p
     {
@@ -740,14 +752,19 @@ footer ul
         "nav    nav"
         "sup    sup"
         "footer footer";
-        align-content: center;
+        align-items: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
         row-gap: 5em;
         width: 100vw;
     }
+    .support
+    {
+        width: 90vw;
+    }
 
+    /* rx 6600 subgrid*/
     .product_ad
     {
         display: grid;
