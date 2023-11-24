@@ -500,6 +500,16 @@ footer ul
     grid-area: sidebar_news;
 }
 
+.ps5
+{
+    grid-area: ps5;
+}
+
+.ryzen5
+{
+    grid-area: ryzen5;
+}
+
 .main_footer
 {
     grid-area: footer;
@@ -599,6 +609,9 @@ footer ul
         "nav"
         "main_welcome"
         "main_adv"
+        "main_adv"
+        "ps5"
+        "ryzen5"
         "."
         "sidebar_news"
         "footer";
@@ -619,6 +632,17 @@ footer ul
     .main_nav > ul
     {
         flex-wrap: wrap;
+    }
+
+    .ps5
+    {
+        word-wrap: break-word;
+        width: 70vw;
+    }
+    .ryzen_5
+    {
+        word-wrap: break-word;
+        width: 70vw;
     }
 
     .main_nav li>a{

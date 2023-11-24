@@ -498,6 +498,16 @@ footer ul
     grid-area: main_adv;
 }
 
+.ps5
+{
+    grid-area: ps5;
+}
+
+.ryzen5
+{
+    grid-area: ryzen5;
+}
+
 .sidebar
 {
     grid-area: sidebar_news;
@@ -553,6 +563,7 @@ footer ul
         "header       header"
         "nav          nav"
         "main_welcome main_adv"
+        "ps5          ryzen5"
         "sidebar_news sidebar_news"
         "footer       footer";
         align-content: center;
