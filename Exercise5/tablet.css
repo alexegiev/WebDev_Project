@@ -250,7 +250,7 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
-
+ 
 /*styling the buttons*/
 button:hover
 {
@@ -541,6 +541,23 @@ footer ul
     grid-area: sup;
 }
 
+/*signup.html frid areas*/
+
+.personal_info
+{
+    grid-area: personal_info;
+}
+
+.login_info
+{
+    grid-area: login_info;
+}
+
+.questionnair
+{
+    grid-area: questionnair;
+}
+
 @media(min-width: 960px) and (max-width: 1200px) /*Landscape tablets*/
 {
     .index_body {
@@ -578,8 +595,8 @@ footer ul
     }
     .latest_adv img
     {
-        width: 40%;
-        height: 40%;
+        width: 50%;
+        height: 50%;
     }
     .sidebar img
     {
@@ -611,11 +628,11 @@ footer ul
     /*styling the ads*/
     .latest_adv
     {
-        width: 40vw;
         height: fit-content;
         background-color: white;
         border: 10px solid #256b94;
         border-width: 0.25em;
+        width: 50vw;
     }
     .latest_adv>p
     {
@@ -723,19 +740,14 @@ footer ul
         "nav    nav"
         "sup    sup"
         "footer footer";
-        align-items: center;
+        align-content: center;
         justify-items: center; 
         font-size: smaller;
         text-align: center;
         row-gap: 5em;
         width: 100vw;
     }
-    .support
-    {
-        width: 90vw;
-    }
 
-    /* rx 6600 subgrid*/
     .product_ad
     {
         display: grid;
@@ -856,4 +868,57 @@ footer ul
         row-gap: 3em;
         width: 100vw;
     }
+
+    /* signup.html grid*/
+    .signup_body
+    {
+        grid-template-areas: 
+        "header        header"
+        "nav           nav"
+        "personal_info login_info"
+        "questionnair  questionnair"
+        "footer        footer";
+        justify-items: center; 
+        font-size: smaller;
+        text-align: center;
+        row-gap: 3em;
+        width: 100vw;
+    }
+    .personal_info
+    {
+        width: 40vw;
+        height: fit-content;
+    }
+    .login_info
+    {
+        width: 40vw;
+        height: fit-content;
+    }
+    .questionnair
+    {
+        width: 80vw;
+        height: fit-content;
+    }
+
+    .personal_info, .login_info, .questionnair
+    {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items:stretch;
+        height: fit-content;
+    }
+
+    #name , #surname, #email, #txt_phone_number, 
+    #txt_home_number, #address, #username, #psw, #psw_check, 
+    #contact
+    {
+        margin: 1em; 
+    }
+
+    #suggestions
+    {
+        margin: 1em;
+        height: 4em;
+    } 
 }
