@@ -7,6 +7,7 @@
             <link rel="stylesheet" media= '(min-width: 360px) and (max-width: 959px)' type="text/css" href="phone.css">
             <link rel="stylesheet" media= '(min-width: 960px) and (max-width: 1200px)'type="text/css" href="tablet.css">
             <link rel="stylesheet" media= '(min-width: 1201px)'type="text/css" href="stylesheet.css">
+            <script type="text/javascript" src="validation.js"></script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
         </head>
@@ -27,11 +28,11 @@
             </ul>
         </nav>
 
-        <fieldset class="personal_info">
+        <form class="personal_info">
             <legend>Στοιχεία Χρήστη</legend>
             <label for="name">Όνομα:</label>
-            <input type="text" id= "name" name="name" value="" required> 
-            
+            <input type="text" id= "name" name="name" value="" > 
+    
             <label for="surname">Επώνυμο:</label>
             <input type="text" id= "surname" name="surname" value="" required>
 
@@ -51,10 +52,10 @@
                 <input type="checkbox" id="contact" name="contact" value="contact">
             </label>
 
-            <button type="submit" id="submit_form">Αποθήκευση στοιχείων</button>
-        </fieldset>
+            <button type="submit" id="submit_form" value="submit">Αποθήκευση στοιχείων</button>
+        </form>
 
-        <fieldset class="login_info">
+        <form class="login_info">
             <legend>Στοιχεία Πρόσβασης Χρήστη:</legend>
             <label for="username">Username:</label>
             <input type="text" id= "username" name="username" value="" required> 
@@ -66,9 +67,9 @@
             <input type="password" id= "psw_check" name="psw_check" value="" required>
 
             <button type="submit" id="submit_form">Login</button>     
-        </fieldset>
+        </form>
 
-        <fieldset class="questionnair">
+        <form class="questionnair">
             <legend>Ερωτηματολόγιο:</legend>
             <!-- Question 1 -->
             <label for="ad_pref"> 1. Για ποια/ες κατηγορίες αγγελιών ενδιαφέρεστε περισσότερο;</label>
@@ -125,7 +126,7 @@
 
             <button type="submit" id="submit_form">Υποβολή φόρμας</button>
 
-        </fieldset>
+        </form>
         
         <footer class="main_footer">
             <ul>
