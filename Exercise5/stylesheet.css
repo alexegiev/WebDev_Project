@@ -301,6 +301,7 @@ button:hover
 .support
 {
     border: 5px solid #256b94;
+    border-radius: 15px;
 }
 
 /*-------------------------Exercise 3-------------------------*/

@@ -248,11 +248,7 @@ fieldset>label,fieldset>legend
 {
     margin: 1em;
     width: fit-content;
-
-}
-.support
-{
-    border: 5px solid #256b94;
+    border-radius:10px;
 }
 
 /*styling the buttons*/
@@ -474,6 +470,11 @@ footer ul
 #emails, #phone{
     display: flex;
     flex-direction: column;
+}
+.support
+{
+    border: 5px solid #256b94;
+    border-radius: 15px;
 }
 
 /*-------------------------Exercise 4-------------------------*/
@@ -945,31 +946,51 @@ footer ul
     
     form 
     {
-        border: 5px solid #256b94;
+        border: 3px solid #256b94;
+        border-radius: 15px;
     }
+    #form_name
+    {
+        text-align: center;
+        font-weight:bold;
+        font-size: large;
+        margin-bottom: 1em;
+    }
+
     
     /* Styling the  inputs */
     input[type=text], input[type=password] 
     {
-        width: 90%;
-        padding: 12px 20px;
+        width: 95%;
         margin: 8px 0;
         display: inline-block;
-        border: 1px solid #256b94;
+        border: 2px solid #256b94;
         box-sizing: border-box;
+        padding:10px;
+        border-radius:10px;
     }
 
-    input:invalid
+    input[type="text"]:not(:focus):placeholder-shown
     {
-        border: 2px solid red;
+        border: 2px solid #256b94;
+    }
+
+    input[type="password"]:not(:focus):placeholder-shown
+    {
+        border: 2px solid #256b94;
     }
     
     input:valid 
     {
         border: 2px solid green;
-    }  
+    } 
 
-    #psw_requierments 
+    input:invalid
+    {
+        border: 2px solid red;
+    }
+
+    #username_requierments 
     {
         display:none;
         background: #e7eaf6;
@@ -980,14 +1001,42 @@ footer ul
         height: fit-content;
     }
     
+    #username_requierments p
+    {
+        padding: 10px 35px;
+        font-size: 18px;
+    }
+
+
+    #psw_requierments 
+    {
+        display:none;
+        background: #e7eaf6;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+        height: min-content;
+        border: 3px solid #256b94;
+        border-radius: 15px;
+        width: min-content;
+        text-align: center;
+    }
+    
     #psw_requierments p
     {
         padding: 10px 35px;
         font-size: 18px;
     }
+    #psw_requierments h3
+    {
+        font-size: large;
+        font-weight: bold;
+        text-decoration:underline;
+    }
     
     /* Add a green text color and a checkmark when the requirements are right */
-    .valid 
+    .valid
     {
         color: green;
     }
@@ -1011,4 +1060,6 @@ footer ul
         left: -35px;
         content: "✖"; 
     }
+
+
 }

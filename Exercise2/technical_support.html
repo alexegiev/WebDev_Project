@@ -23,28 +23,29 @@
                 <li><a href="categories.html">Κατηγορίες</a></li>
                 <li><a href="about_us.html">Ποιοί Είμαστε</a></li>
                 <li id="pressed_nav_link"><a href="technical_support.html">Τεχνική Υποστήριξη</a></li>
+                <li><a href="signup.html">Εγγραφή Χρήστη</a></li>
             </ul>
         </nav>
 
         <fieldset class="support">
             <legend>Στοιχεία Επικοινωνίας</legend>
             <label for="name">Όνομα:</label>
-            <input type="text" id= "name" name="name" value="" required> 
+            <input type="text" id= "name" name="name" placeholder="Εισάγεται όνομα" value="" required> 
             
             <label for="surname">Επώνυμο:</label>
-            <input type="text" id= "surname" name="surname" value="" required>
+            <input type="text" id= "surname" name="surname" placeholder="Εισάγεται επώνυμο" value="" required>
 
             <label for="email">Email:</label>
-            <input type="text" id= "email" name="email" value="" autocomplete="email" required>
+            <input type="text" id= "email" name="email" placeholder="Εισάγεται έγκυρο email" value="" autocomplete="email" required>
 
             <label for="txt_phone_number">Τηλέφωνο:</label>
-            <input type="text" id= "txt_phone_number" name="phone_number" value="" required>
+            <input type="text" id= "txt_phone_number" name="phone_number" placeholder="Εισάγεται κινητό τηλέφωνο" value="" required>
 
             <label for="txt_ad_code">Κωδικός Αγγελίας:</label>
-            <input type="text" id= "txt_ad_code" name="ad_code" value="" required>
+            <input type="text" id= "txt_ad_code" name="ad_code" placeholder="Εισάγεται κωδικό αγγελίας" value="" required>
 
             <label for="problem_desc">Περιγραφή Προβλήματος:</label>
-            <input type="text" id= "problem_desc" name="description" value="" required>
+            <input type="text" id= "problem_desc" name="description" placeholder="Παραθέστε το πρόβλημα/προβλήματα που είχατε με την παραγγελία σας." value="" required>
 
             <button type="reset" id="reset_form">Reset</button>
             <button type="submit" id="submit_form">Submit</button>
