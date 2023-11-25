@@ -650,7 +650,12 @@ input:invalid
 }
   
 /* Add a green text color and a checkmark when the requirements are right */
-.valid 
+.valid
+{
+    color: green;
+}
+
+.valid_psw
 {
     color: green;
 }
@@ -661,14 +666,31 @@ input:invalid
     left: -35px;
     content: "✔"; 
 }
-  
+ 
+.valid_psw:before
+{
+    position: relative;
+    left: -35px;
+    content: "✔"; 
+}
 /* Add a red text color and an "x" icon when the requirements are wrong */
 .invalid 
 {
     color: red;
 }
+.invalid_psw
+{
+    color: red;
+}
   
 .invalid:before 
+{
+    position: relative;
+    left: -35px;
+    content: "✖"; 
+}
+
+.invalid_psw:before
 {
     position: relative;
     left: -35px;
