@@ -594,6 +594,15 @@ input[type=text], input[type=password]
     border-radius:10px;
 }
 
+input[type="text"]:not(:focus):placeholder-shown
+{
+    border: 2px solid #256b94;
+}
+
+input[type="password"]:not(:focus):placeholder-shown
+{
+    border: 2px solid #256b94;
+}
   
 input:valid 
 {
@@ -603,6 +612,23 @@ input:valid
 input:invalid
 {
     border: 2px solid red;
+}
+
+#username_requierments 
+{
+    display:none;
+    background: #e7eaf6;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    height: fit-content;
+}
+  
+#username_requierments p
+{
+    padding: 10px 35px;
+    font-size: 18px;
 }
 
 

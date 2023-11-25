@@ -38,6 +38,15 @@ function main()
         }
     })   
 
+    username.onfocus = function() 
+    {
+        document.getElementById("username_requierments").style.display = "block";
+    }
+    username.onblur = function()
+    {
+        document.getElementById("username_requierments").style.display = "none";
+    }
+
     password.addEventListener('change', function(evt){
         if(password.value.match(psw_ok)) 
         { 
