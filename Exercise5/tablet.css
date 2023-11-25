@@ -250,6 +250,10 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
+.support
+{
+    border: 5px solid #256b94;
+}
 
 /*styling the buttons*/
 button:hover
@@ -937,5 +941,74 @@ footer ul
     {
         margin: 1em;
         height: 4em;
-    } 
+    }
+    
+    form 
+    {
+        border: 5px solid #256b94;
+    }
+    
+    /* Styling the  inputs */
+    input[type=text], input[type=password] 
+    {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #256b94;
+        box-sizing: border-box;
+    }
+
+    input:invalid
+    {
+        border: 2px solid red;
+    }
+    
+    input:valid 
+    {
+        border: 2px solid green;
+    }  
+
+    #psw_requierments 
+    {
+        display:none;
+        background: #e7eaf6;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+        height: fit-content;
+    }
+    
+    #psw_requierments p
+    {
+        padding: 10px 35px;
+        font-size: 18px;
+    }
+    
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid 
+    {
+        color: green;
+    }
+    
+    .valid:before 
+    {
+        position: relative;
+        left: -35px;
+        content: "✔"; 
+    }
+    
+    /* Add a red text color and an "x" icon when the requirements are wrong */
+    .invalid 
+    {
+        color: red;
+    }
+    
+    .invalid:before 
+    {
+        position: relative;
+        left: -35px;
+        content: "✖"; 
+    }
 }

@@ -28,25 +28,25 @@
             </ul>
         </nav>
 
-        <form class="personal_info">
+        <form class="personal_info" >
             <legend>Στοιχεία Χρήστη</legend>
             <label for="name">Όνομα:</label>
-            <input type="text" id= "name" name="name" value="" > 
+            <input type="text" id="name" name="name" placeholder="Εισάγεται όνομα" value="" required> 
     
             <label for="surname">Επώνυμο:</label>
-            <input type="text" id= "surname" name="surname" value="" required>
+            <input type="text" id= "surname" name="surname" placeholder="Εισάγεται επώνυμο" value="" required>
 
             <label for="email">Email:</label>
-            <input type="text" id= "email" name="email" value="" autocomplete="email" required>
+            <input type="text" id= "email" name="email" placeholder="Εισάγεται έγκυρο email" value="" autocomplete="email" required>
 
             <label for="address">Διεύθυνση:</label>
-            <input type="text" id= "address" name="address" value="" required>
+            <input type="text" id= "address" name="address" placeholder="Εισάγεται διεύθυνση και αριθμό κατοικίας" value="" required>
 
             <label for="txt_phone_number"> Κινητό Τηλέφωνο:</label>
-            <input type="text" id= "txt_phone_number" name="phone_number" value="" required>
+            <input type="text" id= "txt_phone_number" name="phone_number" placeholder="Εισάγεται κινητό τηλέφωνο" value="" required>
 
             <label for="txt_home_number">Σταθερό Τηλέφωνο:</label>
-            <input type="text" id= "txt_home_number" name="home_number" value="" required>
+            <input type="text" id= "txt_home_number" name="home_number" placeholder="Εισάγεται σταθερό τηλέφωνο" value="" required>
 
             <label for="contact">Επιθυμώ να ενημερώνομαι για  καινούργιες προσφορές!
                 <input type="checkbox" id="contact" name="contact" value="contact">
@@ -58,16 +58,24 @@
         <form class="login_info">
             <legend>Στοιχεία Πρόσβασης Χρήστη:</legend>
             <label for="username">Username:</label>
-            <input type="text" id= "username" name="username" value="" required> 
+            <input type="text" id= "username" name="username" placeholder="Εισάγεται όνομα χρήστη" value="" required> 
             
             <label for="psw">Password:</label>
-            <input type="password" id= "psw" name="psw" value="" required>
+            <input type="password" id= "psw" name="psw" placeholder="Εισάγεται κωδικό" value="" required>
 
             <label for="psw_check">Re-enter your password:</label>
-            <input type="password" id= "psw_check" name="psw_check" value="" required>
+            <input type="password" id= "psw_check" name="psw_check" placeholder="Εισάγεται κωδικό" value="" required>
 
             <button type="submit" id="submit_form">Login</button>     
         </form>
+        <div id="psw_requierments">
+            <h3>Ο κωδικός πρέπει να Έχει:</h3>
+            <p id="letter" class="invalid">Τουλάχιστον <b>ΕΝΑ πεζό</b> γράμμα</p>
+            <p id="capital" class="invalid">Τουλάχιστον <b>ΕΝΑ κεφαλαίο</b> γράμμα</p>
+            <p id="number" class="invalid">Τουλάχιστον <b>ΕΝΑΝ αριθμό</b></p>
+            <p id="length" class="invalid">Τουλάχιστον <b>8 χαρακτήρες</b></p>
+            <p id="symbol" class="invalid">Τουλάχιστον <b>ΕΝΑ σύμβολο</b>(!,@,#,&,-,_)</p>
+        </div>
 
         <form class="questionnair">
             <legend>Ερωτηματολόγιο:</legend>
