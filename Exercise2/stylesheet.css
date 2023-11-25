@@ -2,8 +2,7 @@
 body
 {
     background: #e7eaf6; 
-    font-family:'Courier New', Courier, monospace;
-    
+    font-family: 'mymonospace';
 }
 
 /*styling the header*/
@@ -56,7 +55,7 @@ ul
 #anchor_navigation
 {
     position: sticky;   
-    top: 0;
+    top: 1em;
 }
 
 #anchor_navigation li
@@ -105,12 +104,6 @@ a
 {
     text-align:left;
 } 
-
-/*styling the width of categories*/
-#categories
-{
-    width: 10%;
-}
 
 /* Styling the dropdown content */
 .dropbtn 
@@ -180,6 +173,7 @@ a
     background-color: white;
     border: 10px solid #256b94;
     border-width: 0.5em;
+    border-radius: 2em;
 }
 .latest_adv>p, .gpu_adv>p, .phone_adv>p
 {
@@ -233,6 +227,7 @@ fieldset>label,fieldset>legend
     padding-bottom: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
+    border-radius:10px;
 }
 #name , #surname, #email, #txt_phone_number, #txt_ad_code
 {
@@ -252,10 +247,6 @@ fieldset>label,fieldset>legend
     width: fit-content;
 
 }
-.support
-{
-    margin-top: 7em;
-}
  
 /*styling the buttons*/
 button:hover
@@ -264,11 +255,9 @@ button:hover
 }
 
 /* Styling the sidebar */
-aside
+.sidebar
 {
-    height: 60%; 
     width: 430px; 
-    position: fixed; 
     z-index: 1; 
     top: 13%; 
     right: 0;
@@ -282,13 +271,30 @@ aside
     margin: 1em;
 
 } 
-.product_ad
-{
-    margin-top: 5em;
-}
+
 /* resizing the product photos*/
 .product_photos > img
 {
     width: 10em;
     height: 10em;
+}
+
+.yt_video, .ps5_unbox, .ryzen_unbox
+{
+    width: 560px;
+    height: 315px;
+}
+
+.ps5, .ryzen_5
+{
+    text-align: center;
+}
+#pic2
+{
+    float: left;
+}
+.support
+{
+    border: 5px solid #256b94;
+    border-radius: 15px;
 }

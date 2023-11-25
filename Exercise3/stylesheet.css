@@ -1,9 +1,9 @@
+
 /*styling the background*/
 body
 {
     background: #e7eaf6; 
-    font-family:'Courier New', Courier, monospace;
-    
+    font-family: 'mymonospace';
 }
 
 /*styling the header*/
@@ -228,6 +228,7 @@ fieldset>label,fieldset>legend
     padding-bottom: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
+    border-radius:10px;
 }
 #name , #surname, #email, #txt_phone_number, #txt_ad_code
 {
@@ -293,8 +294,19 @@ button:hover
 {
     float: left;
 }
+.support
+{
+    border: 5px solid #256b94;
+    border-radius: 15px;
+}
 
 /*-------------------------Exercise 3-------------------------*/
+/*setting the font*/
+@font-face {
+    font-family: 'mymonospace';
+    src: local('/assets/MonospaceTypewriter.ttf') format('ttf');
+}
+
 /*styling the website using flexbox and grid*/
 
 /*using flex in navigation bars*/
@@ -344,7 +356,7 @@ body
 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px 50px 1fr 2fr 100px;
+    grid-template-rows: 100px 50px 1fr 1fr 100px;
     row-gap: 1em;
     column-gap: 1em;
     justify-content: center;
