@@ -304,7 +304,7 @@ button:hover
 /*setting the font*/
 @font-face {
     font-family: 'mymonospace';
-    src: local('/assets/MonospaceTypewriter.ttf') format('ttf');
+    src: local('/assets/MonospaceTypewriter.ttf');
 }
 
 /*styling the website using flexbox and grid*/
