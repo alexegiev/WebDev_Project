@@ -561,12 +561,19 @@ footer ul
     grid-row: 4/5;
 
 }
+#form_name
+{
+    text-align: center;
+    font-weight:bold;
+    font-size: large;
+    margin-bottom: 1em;
+}
 
 #name , #surname, #email, #txt_phone_number, 
 #txt_home_number, #address, #username, #psw, #psw_check, 
 #contact
 {
-    margin: 1em; 
+    margin: 1em;    
 }
 
 #suggestions
@@ -578,14 +585,14 @@ footer ul
 
 form 
 {
-    border: 5px solid #256b94;
+    border: 3px solid #256b94;
+    border-radius: 15px;
 }
   
 /* Styling the  inputs */
 input[type=text], input[type=password] 
 {
     width: 95%;
-    /* padding: 12px 20px; */
     margin: 8px 0;
     display: inline-block;
     border: 2px solid #256b94;
@@ -640,7 +647,11 @@ input:invalid
     position: relative;
     padding: 20px;
     margin-top: 10px;
-    height: fit-content;
+    height: min-content;
+    border: 3px solid #256b94;
+    border-radius: 15px;
+    width: min-content;
+    text-align: center;
 }
   
 #psw_requierments p
@@ -648,18 +659,19 @@ input:invalid
     padding: 10px 35px;
     font-size: 18px;
 }
+#psw_requierments h3
+{
+    font-size: large;
+    font-weight: bold;
+    text-decoration:underline;
+}
   
 /* Add a green text color and a checkmark when the requirements are right */
 .valid
 {
     color: green;
 }
-
-.valid_psw
-{
-    color: green;
-}
-  
+ 
 .valid:before 
 {
     position: relative;
@@ -667,22 +679,12 @@ input:invalid
     content: "✔"; 
 }
  
-.valid_psw:before
-{
-    position: relative;
-    left: -35px;
-    content: "✔"; 
-}
 /* Add a red text color and an "x" icon when the requirements are wrong */
 .invalid 
 {
     color: red;
 }
-.invalid_psw
-{
-    color: red;
-}
-  
+ 
 .invalid:before 
 {
     position: relative;
@@ -690,9 +692,3 @@ input:invalid
     content: "✖"; 
 }
 
-.invalid_psw:before
-{
-    position: relative;
-    left: -35px;
-    content: "✖"; 
-}

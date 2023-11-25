@@ -29,7 +29,7 @@
         </nav>
 
         <form class="personal_info" >
-            <legend>Στοιχεία Χρήστη</legend>
+            <legend id="form_name">Στοιχεία Χρήστη</legend>
             <label for="name">Όνομα:</label>
             <input type="text" id="name" name="name" placeholder="Εισάγεται όνομα" value="" required> 
     
@@ -56,7 +56,7 @@
         </form>
 
         <form class="login_info">
-            <legend>Στοιχεία Πρόσβασης Χρήστη:</legend>
+            <legend id="form_name">Στοιχεία Πρόσβασης Χρήστη:</legend>
             <label for="username">Username:</label>
             <input type="text" id= "username" name="username" placeholder="Εισάγεται όνομα χρήστη" value="" required> 
             
@@ -68,22 +68,16 @@
 
             <button type="submit" id="submit_form">Login</button>     
         </form>
-        <div id="username_requierments">
-            <h3>Το όνομα χρήστη πρέπει να έχει:</h3>
-            <p id="letter" class="invalid">Τουλάχιστον <b>ΕΝΑ πεζό</b> γράμμα</p>
-            <p id="number" class="invalid">Τουλάχιστον <b>ΕΝΑΝ αριθμό</b></p>
-            <p id="length" class="invalid">Τουλάχιστον <b>6 χαρακτήρες</b></p>
-        </div>
         <div id="psw_requierments">
             <h3>Ο κωδικός πρέπει να έχει:</h3>
-            <p id="letter_psw" class="invalid_psw">Τουλάχιστον <b>ΕΝΑ πεζό</b> γράμμα</p>
-            <p id="capital_psw" class="invalid_psw">Τουλάχιστον <b>ΕΝΑ κεφαλαίο</b> γράμμα</p>
-            <p id="number_psw" class="invalid_psw">Τουλάχιστον <b>ΕΝΑΝ αριθμό</b></p>
-            <p id="length_psw" class="invalid_psw">Τουλάχιστον <b>8 χαρακτήρες</b></p>
+            <p id="letter" class="invalid">Τουλάχιστον <b>ΕΝΑ πεζό</b> γράμμα</p>
+            <p id="capital" class="invalid">Τουλάχιστον <b>ΕΝΑ κεφαλαίο</b> γράμμα</p>
+            <p id="number" class="invalid">Τουλάχιστον <b>ΕΝΑΝ αριθμό</b></p>
+            <p id="length" class="invalid">Τουλάχιστον <b>8 χαρακτήρες</b></p>
         </div>
 
         <form class="questionnair">
-            <legend>Ερωτηματολόγιο:</legend>
+            <legend id="form_name">Ερωτηματολόγιο:</legend>
             <!-- Question 1 -->
             <label for="ad_pref"> 1. Για ποια/ες κατηγορίες αγγελιών ενδιαφέρεστε περισσότερο;</label>
             <label for="cat1"> Υπολογιστές
@@ -123,7 +117,7 @@
             </label>
                         
             <!-- Question 4 -->
-            <label for="">4. Apple ή Android; </label>
+            <label for="apple">4. Apple ή Android; </label>
             <label for="apple">Apple
                 <input type="checkbox" id="apple" name="apple" value="apple">
             </label>
