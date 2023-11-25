@@ -17,7 +17,7 @@ function main()
     var user_ok = /^(?=.*\d)(?=.*[a-z]).{6,15}$/
     var psw_ok = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/
     var email_ok = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    //var address_ok = /^([a-zA-Z]{3,10} +(\w)? + [0-9]{1,3}).{5,30}$/
+    var address_ok = /^[a-zA-Z\s]+[0-9]{1,3}$/
     var phone_ok = /^(?=.[0-9]).{10,15}$/
     
     var letter = document.getElementById("letter");
