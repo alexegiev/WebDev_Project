@@ -228,6 +228,7 @@ fieldset>label,fieldset>legend
     padding-bottom: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
+    border-radius:10px;
 }
 #name , #surname, #email, #txt_phone_number, #txt_ad_code
 {
@@ -584,22 +585,26 @@ form
 input[type=text], input[type=password] 
 {
     width: 95%;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #256b94;
+    border: 2px solid #256b94;
     box-sizing: border-box;
+    padding:10px;
+    border-radius:10px;
 }
+
+  
+input:valid 
+{
+    border: 2px solid green;
+} 
 
 input:invalid
 {
     border: 2px solid red;
 }
-  
-input:valid 
-{
-    border: 2px solid green;
-}  
+
 
 #psw_requierments 
 {

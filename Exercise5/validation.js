@@ -20,7 +20,12 @@ function main()
     //var address_ok = /^([a-zA-Z]{3,10} +(\w)? + [0-9]{1,3}).{5,30}$/
     var phone_ok = /^(?=.[0-9]).{10,15}$/
     
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
 
+    
     // login form validation
     username.addEventListener('change', function(evt){
         if(username.value.match(user_ok)) 
@@ -112,18 +117,6 @@ function main()
             length.classList.remove("valid");
             length.classList.add("invalid");
         }
-
-        // var symbol = 
-        // if(password.value.match(symbol)) 
-        // {
-        //     chars.classList.remove("invalid");
-        //     chars.classList.add("valid");
-        // } else 
-        // {
-        //     chars.classList.remove("valid");
-        //     chars.classList.add("invalid");
-        // }
-      
     }
 
 
