@@ -19,12 +19,12 @@ function main()
     var email_ok = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     var address_ok = /^[a-zA-Z\s]+[0-9]{1,3}$/
     var phone_ok = /^(?=.[0-9]).{10,15}$/
-    
+    // for checking if pass word meets the requierments
     var letter = document.getElementById("letter");
     var capital = document.getElementById("capital");
     var number = document.getElementById("number");
     var length = document.getElementById("length");
-
+    
 
     // login form validation
     username.addEventListener('change', function(evt){
@@ -37,15 +37,7 @@ function main()
             evt.target.setCustomValidity('Εισάγεται έγκυρο username')
         }
     })   
-    //username check
-    username.onfocus = function() 
-    {
-        document.getElementById("username_requierments").style.display = "block";
-    }
-    username.onblur = function()
-    {
-        document.getElementById("username_requierments").style.display = "none";
-    }
+
     // password check
     password.addEventListener('change', function(evt){
         if(password.value.match(psw_ok)) 
@@ -196,4 +188,5 @@ function main()
             evt.target.setCustomValidity('Εισάγεται έγκυρο αριθμό')
         }
     })
+
 }
