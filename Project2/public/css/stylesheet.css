@@ -465,6 +465,19 @@ footer
     
 }
 
+#all_phones_list
+{
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+
+#produced_list
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
 /*using grid and setting the ads in place*/
 .adverts
 {
