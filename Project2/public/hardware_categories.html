@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en, el">
+    <head>
+        <title>Κινητά</title>
+        <link rel="icon" type="icon" href="./assets/website_logo.png">
+        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+
+        <!-- Load the Handlebars library. The Handlebars object is 
+        now available in the rest of the scripts 
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <!--
+            Load the JS code for the page. The code is located inside the public folder.
+            However, express serves this content under root path (see appropriate command in index.js)
+        -->
+        <script src="./js/main.js" type="text/javascript"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header class="main_head"> 
+            <h1><a href="index.html"><img src="./assets//website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>       
+        </header>
+        <nav class="main_nav">
+            <ul>
+                <li><a href="index.html">Αρχική</a></li>
+                <li id="pressed_nav_link"><a href="index.html">Κατηγορίες</a></li>
+                <li><a href="#">Ποιοί Είμαστε</a></li>
+                <li><a href="#">Τεχνική Υποστήριξη</a></li>
+                <li><a href="#">Εγγραφή Χρήστη</a></li>
+            </ul>
+        </nav>
+
+        <footer class="main_footer">
+            <ul>
+                <li><a href="index.html"><img src="./assets//website_logo.png" alt="ElectroFind Logo"></a></li>
+                <ul id="contact_means">
+                    <ul id="emails">Emails: 
+                        <li><address>p3200004@aueb</address></li>
+                        <li><address>p3200062@aueb.gr</address></li>
+                    </ul>
+                    <ul id="phone">Τηλέφωνο: 
+                        <li>210-2424424</li>
+                    </ul>
+                </ul>
+                <ul id="social_media_buttons">
+                    <li><a href="https://www.facebook.com/"><img src="./assets//facebook_logo.png" alt="facebook logo"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="./assets//instagram_logo.png" alt="instagram logo"></a></li>
+                    <li><a href="https://twitter.com/"><img src="./assets//twitter_logo.png" alt="twitter logo"></a></li>
+                </ul>
+            </ul>
+        </footer>
+    </body>
+
+</html>

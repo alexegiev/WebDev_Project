@@ -272,12 +272,18 @@ button:hover
     margin: 1em;
 }
 
-.product > img
+.product > a
 {
     display: block;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    
+}
+
+.product > a > img
+{
+    display: block;
+    height: 150px;
 }
 /* resizing the product photos*/
 .product_photos > img
