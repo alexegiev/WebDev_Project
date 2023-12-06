@@ -1,34 +1,113 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en, el">
+    <head>
+        <title>Κατηγορίες</title>
+        <link rel="icon" type="icon" href="./assets/website_logo.png">
+        <link rel="stylesheet" media= '(min-width: 1201px)'type="text/css" href="./css/stylesheet.css">
 
-<head>
-    <title>My application</title>
-    <meta charset="UTF-8">
+        <!-- Load the Handlebars library. The Handlebars object is 
+        now available in the rest of the scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- Load the Handlebars library. The Handlebars object is 
-    now available in the rest of the scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <!--
+            Load the JS code for the page. The code is located inside the public folder.
+            However, express serves this content under root path (see appropriate command in index.js)
+        -->
+        <script src="./js/main.js" type="text/javascript"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
 
-    <!--
-        Load the JS code for the page. The code is located inside the public folder.
-        However, express serves this content under root path (see appropriate command in index.js)
-    -->
-    <script src="/js/main.js" type="text/javascript"></script>
+    <body class="categories_body">
+        <header class="main_head"> 
+            <h1><a href="index.html"><img src="./assets//website_logo.png" alt="ElectroFind Logo">ElectroFind</a></h1>       
+        </header>
+        <nav class="main_nav">
+            <ul>
+                <li><a href="index.html">Αρχική</a></li>
+                <li id="pressed_nav_link"><a href="index.html">Κατηγορίες</a></li>
+                <li><a href="#">Ποιοί Είμαστε</a></li>
+                <li><a href="#">Τεχνική Υποστήριξη</a></li>
+                <li><a href="#">Εγγραφή Χρήστη</a></li>
+            </ul>
+        </nav>
+        
+        <section class="categories_container">
 
-    <!--
-        Load CSS stylesheets from folder public/css/style.css.
-        Express serves this content, also, under the root path.
-    -->
-    <link rel="stylesheet" href="/css/style.css">
+            <article class="categories">
 
-</head>
+                <section class="product">
+                    <img src="./assets//desktop.png" alt="Desktop photo">
+                    <section class="dropdown">      
+                        <button class="dropbtn">Υπολογιστές</button>
+                        <div class="dropdown-content">
+                            <a href="#">Desktop</a>
+                            <a href="#">Laptops</a>
+                        </div>
+                    </section>
+                </section>
 
-<body>
-    <h1>Application start page</h1>
+                <section class="product">
+                    <img src="./assets//smartphones.png" alt="Phone photo">
+                    <section class="dropdown">
+                        <button class="dropbtn">Κινητά Τηλέφωνα</button>
+                        <div class="dropdown-content">
+                            <a href="android_categories.html">Android</a>
+                            <a href="#">Apple</a>
+                        </div>
+                    </section>
+                </section>
 
-    <p>The page should be loaded from your Node server at URL location <a href="http://localhost:8080/">http://localhost:8080/</a></p>
-    <p>Create appropriate request handlers in file <code>index.js</code> </p>
+                <section class="product">
+                    <img src="./assets//consoles.png" alt="Console photo">
+                    <section class="dropdown">
+                        <button class="dropbtn">Gaming</button>
+                        <div class="dropdown-content">
+                            <a href="#">Consoles</a>
+                            <a href="#">Games</a>
+                            <a href="#">Peripherals</a>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="product">
+                    <img src="./assets//hardware.png" alt="Hardware photo">
+                    <section class="dropdown">
+                        <button class="dropbtn">Αναβάθμιση Υπολογιστή</button>
+                        <div class="dropdown-content">
+                            <a href="#">CPU</a>
+                            <a href="gpu_categories.html">GPU</a>
+                            <a href="#">HDD</a>
+                            <a href="#">SSD</a>
+                            <a href="#">Motherboards</a>
+                            <a href="#">Towers</a>
+                        </div>
+                    </section>
+                </section>
+
+            
+            </article>
+        </section>
 
 
-</body>
-
+        <footer class="main_footer">
+            <ul>
+                <li><a href="index.html"><img src="./assets//website_logo.png" alt="ElectroFind Logo"></a></li>
+                <ul id="contact_means">
+                    <ul id="emails">Emails: 
+                        <li><address>p3200004@aueb</address></li>
+                        <li><address>p3200062@aueb.gr</address></li>
+                    </ul>
+                    <ul id="phone">Τηλέφωνο: 
+                        <li>210-2424424</li>
+                    </ul>
+                </ul>
+                <ul id="social_media_buttons">
+                    <li><a href="https://www.facebook.com/"><img src="./assets//facebook_logo.png" alt="facebook logo"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="./assets//instagram_logo.png" alt="instagram logo"></a></li>
+                    <li><a href="https://twitter.com/"><img src="./assets//twitter_logo.png" alt="twitter logo"></a></li>
+                </ul>
+            </ul>
+        </footer>
+    </body>
 </html>
