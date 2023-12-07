@@ -417,7 +417,7 @@ footer
 }
 
 /* using flex in categories  */
-.categories 
+#categories 
 {
     display: flex;
     flex-wrap: nowrap;

@@ -1,60 +1,106 @@
-// function countProducts(products)
-// {
-//     return products.length > 0 ?
-//     `<p>Βρέθηκαν ${products.length} αποτελέσματα</p>` :
-//     `<p>Δεν βρέθηκαν αποτελέσματα</p>`
-// }
+var categoriesJSON = 
+`{
+    "categories": 
+    [
+        {
+            "mainHref": "#",
+            "img": "./assets//desktop.png",
+            "id": "Υπολογιστές",
+            "buttons": 
+            [
+                {
+                    "buttonName":"Desktops",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "Laptops",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "mainHref": "phone_categories.html",
+            "img": "./assets//smartphones.png",
+            "id": "Κινητά Τηλέφωνα",
+            "buttons": 
+            [
+                {
+                    "buttonName":"Android",
+                    "href": "android_categories.html"
+                },
+                {
+                    "buttonName": "Apple",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "mainHref": "#",
+            "img": "./assets//consoles.png",
+            "id": "Gaming",
+            "buttons": 
+            [
+                {
+                    "buttonName":"Consoles",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "Games",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "Peripherals",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "mainHref": "hardware_categories.html",
+            "img": "./assets//hardware.png",
+            "id": "Αναβαθμίσεις Υπολογιστών",
+            "buttons": 
+            [
+                {
+                    "buttonName":"CPU",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "GPU",
+                    "href": "gpu_categories.html"
+                },
+                {
+                    "buttonName": "HDD",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "SDD",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "Motherboard",
+                    "href": "#"
+                },
+                {
+                    "buttonName": "Towers",
+                    "href": "#"
+                }
+            ]
+        }
+    ]    
+}
+`
 
-// function createProduct(products)
-// {
-//     let content = `
-//     <h1>Αποτελέσματα Αναζήτησης</h1> 
-//     ${countProducts(products)}
-//     <ul id="produced_list">
-//         ${products
-//             .map(function (product) {
-//                 return `<li>${product}</li>`
-//             })
-//             .join('\n')}
-//     </ul>`
-//     return content
-// }
+categoriesTemplates = {}
 
-// window.addEventListener('load', function () {
-//     let products = ['Iphone', 'Samsung', 'Huawei', 'Xiaomi', 'Sony', 'LG', 'Nokia', 'Motorola', 'OnePlus', 'Google']
-//     let placeholder = document.getElementById('all_phones_list')
-//     placeholder.innerHTML = createProduct(products)
-// })
-
-// window.onload = function () {
-//     let products = ['Iphone', 'Samsung', 'Huawei', 'Xiaomi', 'Sony', 'LG', 'Nokia', 'Motorola', 'OnePlus', 'Google']
-//     let placeholder = document.getElementById('all_phones_list')
-//     placeholder.innerHTML = templates.product({ products: products })
-// }
-
-// templates.product = Handlebars.compile(`
-//     {{#if products.length}}
-//         <p>Βρέθηκαν {{products.length}} αποτελέσματα</p>
-//     {{else}}
-//         <p>Δεν βρέθηκαν αποτελέσματα</p>
-//     {{/if}}
-//     <ul id="produced_list">
-//         {{#each products}}
-//             <li>{{this}}</li>
-//         {{/each}}
-//     </ul>
-// `)
-window.addEventListener('load', init);
-
-function init() {
+window.onload = function () {
     let categoriesObj = JSON.parse(categoriesJSON);
-    let categoriesPlaceholder = document.getElementsByClassName("categories")
-    categoriesPlaceholder.innerHTML = templates.categories({ categories: categoriesObj.categories })
+    let categoriesPlaceholder = document.getElementById("categories")
+    categoriesPlaceholder.innerHTML = categoriesTemplates.categories({ categories: categoriesObj.categories })
 }
 
-templates.categories = Handlebars.compile(`
+categoriesTemplates.categories = Handlebars.compile(`
     {{#each categories}}
-        <section class="category">
+        <section class="product">
             <a href="{{this.mainHref}}">
                 <img src="{{this.img}}" alt="{{this.id}}">
             </a>
