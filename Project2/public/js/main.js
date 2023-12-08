@@ -1,104 +1,9 @@
-var categoriesJSON = 
-`{
-    "categories": 
-    [
-        {
-            "mainHref": "#",
-            "img": "./assets//desktop.png",
-            "id": "Υπολογιστές",
-            "buttons": 
-            [
-                {
-                    "buttonName":"Desktops",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "Laptops",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "mainHref": "phone_categories.html",
-            "img": "./assets//smartphones.png",
-            "id": "Κινητά Τηλέφωνα",
-            "buttons": 
-            [
-                {
-                    "buttonName":"Android",
-                    "href": "android_categories.html"
-                },
-                {
-                    "buttonName": "Apple",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "mainHref": "#",
-            "img": "./assets//consoles.png",
-            "id": "Gaming",
-            "buttons": 
-            [
-                {
-                    "buttonName":"Consoles",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "Games",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "Peripherals",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "mainHref": "hardware_categories.html",
-            "img": "./assets//hardware.png",
-            "id": "Αναβαθμίσεις Υπολογιστών",
-            "buttons": 
-            [
-                {
-                    "buttonName":"CPU",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "GPU",
-                    "href": "gpu_categories.html"
-                },
-                {
-                    "buttonName": "HDD",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "SDD",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "Motherboard",
-                    "href": "#"
-                },
-                {
-                    "buttonName": "Towers",
-                    "href": "#"
-                }
-            ]
-        }
-    ]    
-}
-`
-
+// Authors: Alexegiev Theodore, Karagianni Andriana
 categoriesTemplates = {}
+window.addEventListener('load', initCategories);
 
-window.onload = function () {
-    let categoriesObj = JSON.parse(categoriesJSON);
-    let categoriesPlaceholder = document.getElementById("categories")
-    categoriesPlaceholder.innerHTML = categoriesTemplates.categories({ categories: categoriesObj.categories })
-}
-
-categoriesTemplates.categories = Handlebars.compile(`
+function categorieHandlebarsTemplate() {
+    categoriesTemplates.categories = Handlebars.compile(`
     {{#each categories}}
         <section class="product">
             <a href="{{this.mainHref}}">
@@ -114,4 +19,16 @@ categoriesTemplates.categories = Handlebars.compile(`
             </section>       
         </section>
     {{/each}}
-`)
+    `)
+}
+
+function createCategories(catObj){
+    let categoriesPlaceholder = document.getElementById("categories")
+    categoriesPlaceholder.innerHTML = categoriesTemplates.categories({ categories: catObj.categories })
+}
+
+function initCategories() {
+    let categoriesObj = JSON.parse(categoriesJSON);
+    categorieHandlebarsTemplate()
+    createCategories(categoriesObj)
+}
