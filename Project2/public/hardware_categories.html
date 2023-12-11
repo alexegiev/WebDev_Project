@@ -14,7 +14,8 @@
             Load the JS code for the page. The code is located inside the public folder.
             However, express serves this content under root path (see appropriate command in index.js)
         -->
-        <script src="./js/main.js" type="text/javascript"></script>
+        <script src="./js/hardware_template.js" type="text/javascript"></script>
+        <script src="../models/hardware_Data.js" type="text/javascript"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -25,12 +26,15 @@
         <nav class="main_nav">
             <ul>
                 <li><a href="index.html">Αρχική</a></li>
-                <li id="pressed_nav_link"><a href="index.html">Κατηγορίες</a></li>
                 <li><a href="#">Ποιοί Είμαστε</a></li>
                 <li><a href="#">Τεχνική Υποστήριξη</a></li>
                 <li><a href="#">Εγγραφή Χρήστη</a></li>
             </ul>
         </nav>
+        <section id="all_hardware_list">
+            
+        </section>
+
 
         <footer class="main_footer">
             <ul>

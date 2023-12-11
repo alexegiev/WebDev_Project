@@ -167,8 +167,9 @@ a
     border-radius: 10px;
 }
 
+
 /*styling the ads*/
-.latest_adv,.gpu_adv, .phone_adv
+.adv
 {
     width: min-content;
     background-color: white;
@@ -176,7 +177,7 @@ a
     border-width: 0.5em;
     border-radius: 2em;
 }
-.latest_adv>p, .gpu_adv>p, .phone_adv>p
+.adv>p
 {
     text-align: center;
 }
@@ -465,7 +466,7 @@ footer
     
 }
 
-#all_phones_list
+#all_phones_list , #all_hardware_list
 {
     grid-column: 2/4;
     grid-row: 3/5;
@@ -476,6 +477,16 @@ footer
     display: flex;
     flex-direction: row;
     gap: 1em;
+}
+
+#all_phones_list, #all_hardware_list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, auto));
+    column-gap: 0;
+    grid-column: 1/5;
+    grid-row: 3/5;
+    justify-content: center;
 }
 
 /*using grid and setting the ads in place*/
