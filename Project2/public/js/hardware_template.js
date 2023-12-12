@@ -26,7 +26,7 @@ function hardwareHandlebarsTemplate() {
 }
 
 function createHardware(hwObj){
-    let hwPlaceholder = document.getElementById("all_hardware_list")
+    let hwPlaceholder = document.getElementById("adverts")
     hwPlaceholder.innerHTML = hardwareTemplates.hardware({ hardware: hwObj.hardware})
 }
 

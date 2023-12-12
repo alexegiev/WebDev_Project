@@ -466,7 +466,7 @@ footer
     
 }
 
-#all_phones_list , #all_hardware_list
+#adverts
 {
     grid-column: 2/4;
     grid-row: 3/5;
@@ -479,13 +479,14 @@ footer
     gap: 1em;
 }
 
-#all_phones_list, #all_hardware_list
+#adverts
 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20em, auto));
     column-gap: 0;
     grid-column: 1/5;
     grid-row: 3/5;
+    row-gap: 1em;
     justify-content: center;
 }
 

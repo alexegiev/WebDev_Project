@@ -5,6 +5,15 @@
             <title>Τηλέφωνα Android</title>
             <link rel="icon" type="icon" href="./assets/website_logo.png">
             <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+           <!-- Load the Handlebars library. The Handlebars object is now available in the rest of the scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+            <!--
+                Load the JS code for the page. The code is located inside the public folder.
+                However, express serves this content under root path (see appropriate command in index.js)
+            -->
+            <script src="./js/sub_phones_template.js" type="text/javascript"></script>
+            <script src="../models/phones_Data.js" type="text/javascript"></script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
         </head>
@@ -24,46 +33,7 @@
             </ul>
         </nav>
         <section id="adverts">
-            <!-- <article class="phone_adv">
-                <h1>Xiaomi Redmi Note 12 Pro 5G 8/256GB Black</h1>
-                <img src="./assets/xiaominote12pro.jpg" alt="xiaominote12">
-                <p class="price">379,90&nbsp;€</p>
-                <p>Xiaomi Redmi Note 12 Pro 5G<br>Κατάσταση: Καινούργιο<br>RAM: 8GB<br>Χωρητικότητα: 256GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-    
-            <article class="phone_adv">
-                <h1>Samsung Galaxy S23+ 256GB Green</h1>
-                <img src="./assets/samsunggalaxyS23.jpg" alt="galaxy23">
-                <p class="price">1.249,00&nbsp;€</p>
-                <p>Samsung Galaxy S23+<br>Κατάσταση: Καινούργιο<br>RAM: 8GB<br>Χωρητικότητα: 256GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-    
-        
-            <article class="phone_adv">
-                <h1>Realme 11 Pro 256GB 5G Astral Black</h1>
-                <img src="./assets/realme11pro.jpg" alt="realme11pro">
-                <p class="price">240,00&nbsp;€</p>
-                <p>Realme 11 Pro 5G <br>Κατάσταση: Μεταχειρισμένο <br>RAM: 8GB<br>Χωρητικότητα: 256GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
             
-            <article class="phone_adv">
-                <h1>Xiaomi Redmi 12C 3/32GB Ocean Blue</h1>
-                <img src="./assets/xiaomi12c.jpg" alt="xiaomi12c">
-                <p class="price">85,00&nbsp;€</p>
-                <p>Xiaomi Redmi 12C<br>Κατάσταση: Μεταχειρισμένο <br>RAM: 3GB<br>Χωρητικότητα: 32GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-            
-            <article class="phone_adv">
-                <h1>Nokia G22 4/128GB Grey </h1>
-                <img src="./assets/nokiaG22.jpg" alt="nokiaG22">
-                <p class="price">169,00&nbsp;€</p>
-                <p>Nokia G22<br>Κατάσταση:  Καινούργιο <br>RAM: 4GB<br>Χωρητικότητα: 128GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article> -->
 
         </section>
         

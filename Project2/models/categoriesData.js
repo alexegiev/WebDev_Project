@@ -30,7 +30,7 @@ var categoriesJSON =
                 },
                 {
                     "buttonName": "Apple",
-                    "href": "#"
+                    "href": "apple_categories.html"
                 }
             ]
         },
@@ -62,7 +62,7 @@ var categoriesJSON =
             [
                 {
                     "buttonName":"CPU",
-                    "href": "#"
+                    "href": "cpu_categories.html"
                 },
                 {
                     "buttonName": "GPU",

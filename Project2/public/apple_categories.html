@@ -2,9 +2,19 @@
 <html lang="en, el">
     <head>
         <head>
-            <title>Τηλέφωνα Android</title>
+            <title>Τηλέφωνα Apple</title>
             <link rel="icon" type="icon" href="./assets/website_logo.png">
             <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+            <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+            <!-- Load the Handlebars library. The Handlebars object is now available in the rest of the scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+ 
+            <!-- Load the JS code for the page. The code is located inside the public folder.However,
+                express serves this content under root path 
+                (see appropriate command in index.js)
+            -->
+            <script src="./js/sub_phones_template.js" type="text/javascript"></script>
+            <script src="../models/phones_Data.js" type="text/javascript"></script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
         </head>
@@ -24,45 +34,7 @@
             </ul>
         </nav>
         <section id="adverts">
-            <article class="phone_adv">
-                <h1>Apple iPhone 15 Pro Max 5G 8GB/256GB Blue Titanium</h1>
-                <img src="./assets/iphone_15promax.jpeg" alt="iphone15pmax">
-                <p class="price">1.499,00&nbsp;€</p>
-                <p>Apple iPhone 15 Pro Max 5G<br>Κατάσταση: Καινούργιο<br>RAM: 8GB <br>Χωρητικότητα: 256GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-
-            <article class="phone_adv">
-                <h1>Apple iPhone 14 Plus 5G (6GB/128GB) Purple</h1>
-                <img src="./assets/iphone_14plus.jpeg" alt="iphone14plus">
-                <p class="price">859,00&nbsp;€</p>
-                <p>Apple iPhone 14 Plus 5G<br>Κατάσταση: Καινούργιο<br>RAM: 6GB <br>Χωρητικότητα: 128GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-
-            <article class="phone_adv">
-                <h1>Apple iPhone 13 5G (4GB/256GB) Blue</h1>
-                <img src="./assets/iphone_13.jpeg" alt="iphone13">
-                <p class="price">559,99&nbsp;€</p>
-                <p>Apple iPhone 13 5G<br>Κατάσταση: Μεταχειρισμένο<br>RAM: 4GB <br>Χωρητικότητα: 256GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
             
-            <article class="phone_adv">
-                <h1>Apple iPhone 11 (4GB/64GB) White</h1>
-                <img src="./assets/iphone_11.jpeg" alt="iphone11">
-                <p class="price">329,99&nbsp;€</p>
-                <p>Apple iPhone 11 <br>Κατάσταση: Μεταχειρισμένο<br>RAM: 4GB <br>Χωρητικότητα: 64GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
-
-            <article class="phone_adv">
-                <h1>Apple iPhone SE 2022 5G (4GB/128GB) Starlight</h1>
-                <img src="./assets/iphone_SE.jpeg" alt="iphoneSE">
-                <p class="price">530,00&nbsp;€</p>
-                <p>Apple iPhone SE 2022 5G <br>Κατάσταση: Καινούργιο<br>RAM: 4GB <br>Χωρητικότητα: 128GB</p>
-                <p><button><a href="#">Δείτε περισσότερα</a></button></p>
-            </article>
         </section>
         
 
