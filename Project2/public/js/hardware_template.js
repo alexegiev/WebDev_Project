@@ -10,10 +10,15 @@ function hardwareHandlebarsTemplate() {
             <img src="{{this.img}}" alt="{{this.id}}">
             <p>{{price}}</p> 
             <p>{{type}}</p>
-            <p>{{condition}}</p>  
-            <p>{{Vram}}</p>  
+            <p>{{condition}}</p> 
+            {{#if Vram}} 
+                <p>{{Vram}}</p>  
+            {{/if}}
             <p>{{manufacturer}}</p> 
             <p>{{chipset}}</p>
+            {{#if threads}}
+                <p>{{threads}}</p>
+            {{/if}}
             <p><button><a href="{{this.buttonhref}}">Δείτε περισσότερα</a></button></p>            
         </article>
     {{/each}}

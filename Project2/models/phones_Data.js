@@ -64,7 +64,69 @@ var phonesJSON =
             "capacity":"Χωρητικότητα: 128GB",
             "buttonhref":"#"
            
-        }   
+        },
+        {"mainHref": "#",
+            "img":"./assets/iphone_15promax.jpeg" ,
+            "os": "Λειτουργικό: IOS",
+            "id": "6",
+            "name": "Apple iPhone 15 Pro Max 5G 8GB/256GB Blue Titanium",
+            "price": " 1.499,00 €",
+            "condition": "Κατάσταση: Καινούργιο",
+            "ram":"RAM: 8GB",
+            "capacity":"Χωρητικότητα: 256GB",
+            "buttonhref":"#"
+           
+        },
+        {"mainHref": "#",
+            "img":"./assets/iphone_14plus.jpeg" ,
+            "os": "Λειτουργικό: IOS",
+            "id": "7",
+            "name": "Apple iPhone 14 Plus 5G (6GB/128GB) Purple",
+            "price": "859,00 €",
+            "condition": "Κατάσταση: Καινούργιο",
+            "ram":"RAM: 6GB",
+            "capacity":"Χωρητικότητα: 128GB",
+            "buttonhref":"#"
+           
+        },
+        {"mainHref": "#",
+            "img":"./assets/iphone_13.jpeg" ,
+            "os": "Λειτουργικό: IOS",
+            "id": "8",
+            "name": "Apple iPhone 13 5G (4GB/256GB) Blue",
+            "price": "559,99 €",
+            "condition": "Κατάσταση: Μεταχειρισμένο",
+            "ram":"RAM: 4GB",
+            "capacity":"Χωρητικότητα: 256GB",
+            "buttonhref":"#"
+           
+        },
+        {"mainHref": "#",
+        "img":"./assets/iphone_11.jpeg" ,
+        "os": "Λειτουργικό: IOS",
+        "id": "10",
+        "name": "Apple iPhone 11 (4GB/64GB) White",
+        "price": "329,99 €",
+        "condition": "Κατάσταση: Μεταχειρισμένο",
+        "ram":"RAM: 4GB",
+        "capacity":"Χωρητικότητα: 64GB",
+        "buttonhref":"#"
+       
+        },
+        {"mainHref": "#",
+            "img":"./assets/iphone_SE.jpeg" ,
+            "os": "Λειτουργικό: IOS",
+            "id": "9",
+            "name": "Apple iPhone SE 2022 5G (4GB/128GB) Starlight",
+            "price": "530,00 €",
+            "condition": "Κατάσταση: Καινούργιο",
+            "ram":"RAM: 4GB",
+            "capacity":"Χωρητικότητα: 128GB",
+            "buttonhref":"#"
+        
+        }
+       
+
     ]     
 }
 `
