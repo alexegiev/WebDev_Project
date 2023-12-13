@@ -1,5 +1,4 @@
 // Authors: Alexegiev Theodore, Karagianni Andriana
-const categoriesJSON = require('../models/categoriesData');
 categoriesTemplates = {}
 window.addEventListener('load', initCategories);
 
