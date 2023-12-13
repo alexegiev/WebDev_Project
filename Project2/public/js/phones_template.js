@@ -1,5 +1,5 @@
-// Authors: Alexegiev Theodore, Karagianni Andriana
-phonesTemplates = {}
+import {phonesJSON} from '../models/phonesData.js'
+const phonesTemplates = {}
 window.addEventListener('load', initPhones);
 
 function phonesHandlebarsTemplate() {

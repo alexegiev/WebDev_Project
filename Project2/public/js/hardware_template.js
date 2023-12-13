@@ -1,5 +1,5 @@
-// Authors: Alexegiev Theodore, Karagianni Andriana
-hardwareTemplates = {}
+import {hardwareJSON} from "../models/hardwareData.js";
+const hardwareTemplates = {}
 window.addEventListener('load', initHardware);
 
 function hardwareHandlebarsTemplate() {

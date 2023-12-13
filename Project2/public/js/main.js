@@ -1,5 +1,5 @@
-// Authors: Alexegiev Theodore, Karagianni Andriana
-categoriesTemplates = {}
+import {categoriesJSON} from '../models/categoriesData.js'
+const categoriesTemplates = {}
 window.addEventListener('load', initCategories);
 
 function categorieHandlebarsTemplate() {

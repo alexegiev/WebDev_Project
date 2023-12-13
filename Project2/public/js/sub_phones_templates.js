@@ -1,5 +1,5 @@
 // Authors: Alexegiev Theodore, Karagianni Andriana
-phonesTemplates = {}
+const phonesTemplates = {}
 window.addEventListener('load', initPhones);
 
 function phonesHandlebarsTemplate() {
