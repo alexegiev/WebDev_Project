@@ -89,3 +89,5 @@ var categoriesJSON =
     ]    
 }
 `
+
+module.exports = categoriesJSON;
