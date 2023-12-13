@@ -5,8 +5,6 @@ A repository for Web Development class
 <br>
 <br>
 <br>
-<br>
-
 Goals
 =====
 
