@@ -5,7 +5,8 @@ export var categoriesJSON =
         {
             "mainHref": "#",
             "img": "./assets//desktop.png",
-            "id": "Υπολογιστές",
+            "name": "Υπολογιστές",
+            "id": "1",
             "buttons": 
             [
                 {
@@ -21,7 +22,8 @@ export var categoriesJSON =
         {
             "mainHref": "phone_categories.html",
             "img": "./assets//smartphones.png",
-            "id": "Κινητά Τηλέφωνα",
+            "name": "Κινητά Τηλέφωνα",
+            "id": "2",
             "buttons": 
             [
                 {
@@ -37,7 +39,8 @@ export var categoriesJSON =
         {
             "mainHref": "#",
             "img": "./assets//consoles.png",
-            "id": "Gaming",
+            "name": "Gaming",
+            "id": "3",
             "buttons": 
             [
                 {
@@ -57,7 +60,8 @@ export var categoriesJSON =
         {
             "mainHref": "hardware_categories.html",
             "img": "./assets//hardware.png",
-            "id": "Αναβαθμίσεις Υπολογιστών",
+            "name": "Αναβαθμίσεις Υπολογιστών",
+            "id": "4",
             "buttons": 
             [
                 {

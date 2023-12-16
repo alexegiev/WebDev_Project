@@ -7,7 +7,7 @@ function phonesHandlebarsTemplate() {
     {{#each phone}}
         <article class="ad_desc">
             <h1>{{name}}</h1>
-            <img src="{{img}}" alt="{{id}}">
+            <img src="{{img}}" alt="{{name}}">
             <p>{{price}}</p> 
             <p>{{condition}}</p> 
             <p>{{os}}</p>   

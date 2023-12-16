@@ -7,10 +7,10 @@ function categorieHandlebarsTemplate() {
     {{#each categories}}
         <section class="product">
             <a href="{{this.mainHref}}">
-                <img src="{{this.img}}" alt="{{this.id}}">
+                <img src="{{this.img}}" alt="{{this.name}}">
             </a>
             <section class="dropdown">
-                <button class="dropbtn">{{this.id}}</button>
+                <button class="dropbtn">{{this.name}}</button>
                 <div class="dropdown-content">
                     {{#each this.buttons}}
                         <a href="{{this.href}}">{{this.buttonName}}</a>

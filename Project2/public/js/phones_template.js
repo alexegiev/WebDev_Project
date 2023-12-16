@@ -7,7 +7,7 @@ function phonesHandlebarsTemplate() {
     {{#each phone}}
         <article class="adv">
             <h1>{{this.name}}</h1>
-            <img src="{{this.img}}" alt="{{this.id}}">
+            <img src="{{this.img}}" alt="{{this.name}}">
             <p>{{price}}</p> 
             <p>{{condition}}</p> 
             <p>{{os}}</p>   
@@ -24,7 +24,7 @@ function createPhones(phoneObj){
     phonesPlaceholder.innerHTML = phonesTemplates.phone({ phone: phoneObj.phones })
 }
 
-function initPhones() {
+export function initPhones() {
     let phonesObj = JSON.parse(phonesJSON);
     phonesHandlebarsTemplate()
     createPhones(phonesObj)
