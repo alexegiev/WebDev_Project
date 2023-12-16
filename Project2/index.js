@@ -32,7 +32,7 @@ app.get('/', function(req, res){
     })
 })
 
-app.get('/category/:categoryId', function(req, res){
+app.get('/category?:categoryId', function(req, res){
     var options = {
         root: path.join(__dirname, 'public')
     }

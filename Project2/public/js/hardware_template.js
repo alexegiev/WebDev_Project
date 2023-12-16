@@ -6,8 +6,8 @@ function hardwareHandlebarsTemplate() {
     hardwareTemplates.hardware = Handlebars.compile(`
     {{#each hardware}}
         <article class="adv">
-            <h1>{{this.name}}</h1>
-            <img src="{{this.img}}" alt="{{this.name}}">
+            <h1>{{name}}</h1>
+            <img src="{{img}}" alt="{{name}}">
             <p>{{price}}</p> 
             <p>{{type}}</p>
             <p>{{condition}}</p> 
@@ -19,7 +19,7 @@ function hardwareHandlebarsTemplate() {
             {{#if threads}}
                 <p>{{threads}}</p>
             {{/if}}
-            <p><button><a href="{{this.buttonhref}}">Δείτε περισσότερα</a></button></p>            
+            <p><button><a href="{{buttonhref}}">Δείτε περισσότερα</a></button></p>            
         </article>
     {{/each}}
     `)
@@ -30,7 +30,7 @@ function createHardware(hwObj){
     hwPlaceholder.innerHTML = hardwareTemplates.hardware({ hardware: hwObj.hardware})
 }
 
-export function initHardware() {
+function initHardware() {
     let hardwareObj = JSON.parse(hardwareJSON);
     hardwareHandlebarsTemplate()
     createHardware(hardwareObj)

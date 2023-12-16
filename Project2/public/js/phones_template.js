@@ -1,5 +1,9 @@
 import {phonesJSON} from '../models/phonesData.js'
 const phonesTemplates = {}
+
+import {hardwareJSON} from "../models/hardwareData.js";
+const hardwareTemplates = {}
+
 window.addEventListener('load', initPhones);
 
 function phonesHandlebarsTemplate() {

@@ -4,17 +4,17 @@ export var phonesJSON =
     [
         {
             "mainHref": "#",
-            "img": "./assets/xiaominote12pro.jpg",
+            "img": "/assets/xiaominote12pro.jpg",
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: Αndroid",
@@ -31,17 +31,17 @@ export var phonesJSON =
         },  
         {
             "mainHref": "#",
-            "img": "./assets/samsunggalaxyS23.jpg",
+            "img": "/assets/samsunggalaxyS23.jpg",
             "images": 
             [
                 {
-                    "img":"./assets/samsunggalaxyS23_1.jpg"
+                    "img":"/assets/samsunggalaxyS23_1.jpg"
                 },
                 {
-                    "img": "./assets/samsunggalaxyS23_2.jpg"
+                    "img": "/assets/samsunggalaxyS23_2.jpg"
                 },
                 {
-                    "img": "./assets/samsunggalaxyS23_3.jpg"
+                    "img": "/assets/samsunggalaxyS23_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: Αndroid",
@@ -58,17 +58,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img": "./assets/realme11pro.jpg" ,
+            "img": "/assets/realme11pro.jpg" ,
             "images": 
             [
                 {
-                    "img":"./assets/realme11pro_1.jpg"
+                    "img":"/assets/realme11pro_1.jpg"
                 },
                 {
-                    "img": "./assets/realme11pro_2.jpg"
+                    "img": "/assets/realme11pro_2.jpg"
                 },
                 {
-                    "img": "./assets/realme11pro_3.jpg"
+                    "img": "/assets/realme11pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: Αndroid",
@@ -85,17 +85,17 @@ export var phonesJSON =
         },
         {   
             "mainHref": "#",
-            "img": "./assets/xiaomi12c.jpg",
+            "img": "/assets/xiaomi12c.jpg",
             "images": 
             [
                 {
-                    "img":"./assets/xiaom12c_1.jpg"
+                    "img":"/assets/xiaom12c_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaomi12c_2.jpg"
+                    "img": "/assets/xiaomi12c_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaomi12c_3.jpg"
+                    "img": "/assets/xiaomi12c_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: Αndroid",
@@ -112,17 +112,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/nokiaG22.jpg" ,
+            "img":"/assets/nokiaG22.jpg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: Αndroid",
@@ -139,17 +139,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/iphone_15promax.jpeg" ,
+            "img":"/assets/iphone_15promax.jpeg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: IOS",
@@ -166,17 +166,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/iphone_14plus.jpeg" ,
+            "img":"/assets/iphone_14plus.jpeg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: IOS",
@@ -193,17 +193,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/iphone_13.jpeg" ,
+            "img":"/assets/iphone_13.jpeg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: IOS",
@@ -220,17 +220,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/iphone_11.jpeg" ,
+            "img":"/assets/iphone_11.jpeg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: IOS",
@@ -247,17 +247,17 @@ export var phonesJSON =
         },
         {
             "mainHref": "#",
-            "img":"./assets/iphone_SE.jpeg" ,
+            "img":"/assets/iphone_SE.jpeg" ,
             "images": 
             [
                 {
-                    "img":"./assets/xiaominote12pro_1.jpg"
+                    "img":"/assets/xiaominote12pro_1.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_2.jpg"
+                    "img": "/assets/xiaominote12pro_2.jpg"
                 },
                 {
-                    "img": "./assets/xiaominote12pro_3.jpg"
+                    "img": "/assets/xiaominote12pro_3.jpg"
                 }
             ],
             "os": "Λειτουργικό: IOS",
