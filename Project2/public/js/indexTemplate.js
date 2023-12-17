@@ -23,7 +23,7 @@ function categorieHandlebarsTemplate() {
     categoriesTemplates.categories = Handlebars.compile(`
     {{#each categories}}
         <section class="product">
-            <img src="{{this.img_url}}" alt="{{this.name}}">
+            <a href = "category.html?id={{this.id}}"> <img src="{{this.img_url}}" alt="{{this.name}}"></a>
             <h1>{{this.title}}</h1>     
         </section>
     {{/each}}
