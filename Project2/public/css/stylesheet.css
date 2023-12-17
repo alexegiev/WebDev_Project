@@ -182,6 +182,22 @@ a
     text-align: center;
 }
 
+#subcategories_container
+{
+    grid-column: 1/5;
+    display: flex;
+    flex-direction: row;
+    column-gap: 3em;
+}
+
+.subcategory
+{
+    width: fit-content;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
 /*Styling the area of the avatars*/
 .photo_avatars_holder
 {
@@ -409,7 +425,7 @@ footer
 .main_menu_welcome
 {
 
-    grid-column: 2/4;
+    grid-column: 1/2;
     grid-row: 3/4;
     height: fit-content;
     justify-content: center;
@@ -423,6 +439,11 @@ footer
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+}
+
+.subcategory
+{
+    grid-column: 2/4;
 }
 
 /*setting the categories in place*/

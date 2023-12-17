@@ -1,4 +1,7 @@
+//get url for fetch()
 let wikiAdsUrl = 'https://wiki-ads.onrender.com/categories'
+
+//create nessesary headers for fetch()
 const httpHeaders = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
@@ -6,21 +9,23 @@ const httpHeaders = {
 
 const myHeaders = new Headers(httpHeaders)
 
+//fetch data from wikiAdsUrl
 fetch(wikiAdsUrl,myHeaders)
 .then(response => response.json())
 .then(obj => {
-    initCategories(obj)
+    initIndex(obj)             //pass data to initIndex()
     console.log(obj)
 })
 .catch(err => {
-    console.log('Error ')
+    console.log('Error ')       //catch error
 })
 
-const categoriesTemplates = {}
-window.addEventListener('load', initCategories);
+//create handlebars template
+const indexTemplates = {}
+window.addEventListener('load', initIndex);
 
-function categorieHandlebarsTemplate() {
-    categoriesTemplates.categories = Handlebars.compile(`
+function indexHandlebarTemplate() {        
+    indexTemplates.categories = Handlebars.compile(`
     {{#each categories}}
         <section class="product">
             <a href = "category.html?id={{this.id}}"> <img src="{{this.img_url}}" alt="{{this.name}}"></a>
@@ -30,15 +35,17 @@ function categorieHandlebarsTemplate() {
     `)  
 }
 
-function createCategories(categoriesObj){
+//create categories
+function createIndex(categoriesObj){
     let categoriesPlaceholder = document.getElementById("categories")
-    categoriesPlaceholder.innerHTML = categoriesTemplates.categories({ categories: categoriesObj })
+    categoriesPlaceholder.innerHTML = indexTemplates.categories({ categories: categoriesObj })
 }
 
-function initCategories(obj) {
+//init categories
+function initIndex(obj) {
     let categoriesObj = obj
-    categorieHandlebarsTemplate()
-    createCategories(categoriesObj)
+    indexHandlebarTemplate()
+    createIndex(categoriesObj)
 }
 
 
