@@ -14,7 +14,6 @@ fetch(wikiAdsUrl,myHeaders)
 .then(response => response.json())
 .then(obj => {
     initIndex(obj)             //pass data to initIndex()
-    console.log(obj)
 })
 .catch(err => {
     console.log('Error ')       //catch error
