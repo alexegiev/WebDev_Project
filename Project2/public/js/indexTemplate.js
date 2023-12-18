@@ -27,7 +27,7 @@ function indexHandlebarTemplate() {
     indexTemplates.categories = Handlebars.compile(`
     {{#each categories}}
         <section class="product">
-            <a href = "category.html?id={{this.id}}"> <img src="{{this.img_url}}" alt="{{this.name}}"></a>
+            <a href = "category.html?id={{this.id}}"> <img src="https://wiki-ads.onrender.com/{{this.img_url}}" alt="{{this.name}}"></a>
             <h1>{{this.title}}</h1>     
         </section>
     {{/each}}
