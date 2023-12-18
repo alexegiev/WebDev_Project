@@ -6,8 +6,8 @@ const categoryId = new URLSearchParams(queryStr);
 let wikiAdsUrl = 'https://wiki-ads.onrender.com/categories/' + categoryId.get('id') + '/subcategories'
 let wikiAdsUrlSubcategories = 'https://wiki-ads.onrender.com/subcategories'
 
-let sub = []
-let advertsContainer = []
+let subcategories = []    //array for subcategories
+let advertsContainer = []   //array for adverts
 
 //create nessesary headers for fetch()
 const httpHeaders = {
@@ -24,18 +24,19 @@ fetch(wikiAdsUrlSubcategories, myHeaders)
     initCategories(obj)             //pass data to initCategories()
 })
 .catch(err => {
-    console.log('Error ')       //catch error
+    console.log(err)       //catch error
 })
 
 //create handlebars template
 const categoriesTemplates = {}
 
 function categoriesHandlebarTemplate() {        
-    categoriesTemplates.advs = Handlebars.compile(`
-    {{#each adv}}
-        <article class="subcategory">
-           <h1>{{title}}</h1>
-        </article>
+    categoriesTemplates.adverts = Handlebars.compile(`
+    {{#each advert}}
+        <section class="subcategories">
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
+        </section>
     {{/each}}
     `)  
 }
@@ -44,35 +45,36 @@ function categoriesHandlebarTemplate() {
 function createCategories(advertsObj){
     console.log(advertsObj)
     let advertsPlaceholder = document.getElementById("subcategories_container")
-    advertsPlaceholder.innerHTML = categoriesTemplates.advs({ adv: advertsObj })
+    advertsPlaceholder.innerHTML = categoriesTemplates.adverts({ advert: advertsObj })
 }
 
 //init categories
 function initCategories(obj) {        
-    sub = obj.map(id => (id.category_id == categoryId.get('id') && id))
-    createSubcategories(sub)
+    subcategories = obj.map(id => (id.category_id == categoryId.get('id') && id))
+    createSubcategories(subcategories)
 }
 
 
 function createSubcategories(sub){
     categoriesHandlebarTemplate()
-    new Promise((getAllAdverts) =>{
-        for(let i = 0; i <= sub.length - 1; i++){
-            if(sub[i] != false){
-                fetch('https://wiki-ads.onrender.com/ads?subcategory=' + sub[i].id, myHeaders)
-                .then(response => response.json())
-                .then(obj => {
-                    addAdverts(obj)             //pass data to initCategories()
-                })
-                .catch(err => {
-                    console.log('Error ')       //catch error
-                })
-            }
-        }
-    }
-    .then(createCategories(advertsContainer))
-}
-
-function addAdverts(obj){
-    advertsContainer.push(obj)
+    let fetchPromises = sub.filter(item => item !== false).map(item => 
+        fetch('https://wiki-ads.onrender.com/ads?subcategory=' + item.id, myHeaders)
+            .then(response => response.json())
+            .then(obj => {
+                if(obj.length != 0){
+                    advertsContainer.push(obj);
+                }
+            })
+    );
+    
+    Promise.all(fetchPromises)
+        .then(() => {
+            console.log(advertsContainer);
+            const flattenedAdvertsContainer = advertsContainer.flat();
+            console.log(flattenedAdvertsContainer);
+            createCategories(flattenedAdvertsContainer);
+        })
+        .catch(err => {
+            console.log('Error ', err); //catch error
+        });
 }
