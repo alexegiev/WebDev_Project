@@ -13,6 +13,7 @@ const myHeaders = new Headers(httpHeaders)
 fetch(wikiAdsUrl,myHeaders)
 .then(response => response.json())
 .then(obj => {
+    console.log(obj)
     initIndex(obj)             //pass data to initIndex()
 })
 .catch(err => {
