@@ -49,8 +49,7 @@ function createCategories(advertsObj){
 }
 
 //init categories
-function initCategories(obj) {       
-    console.log(obj[0].category_id) 
+function initCategories(obj) {        
     subcategories = obj.map(id => (id.category_id == categoryId.get('id') && id))
     createSubcategories(subcategories)
 }
