@@ -34,8 +34,9 @@ function categoriesHandlebarTemplate() {
     categoriesTemplates.adverts = Handlebars.compile(`
     {{#each advert}}
         <section class="subcategories">
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
+            <h1>{{this.title}}</h1>
+            <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
+            <p>{{this.description}}</p>
         </section>
     {{/each}}
     `)  

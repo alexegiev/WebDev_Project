@@ -43,3 +43,15 @@ app.get('/category?:categoryId', function(req, res){
         console.log(err)
     })
 })
+
+app.get('/subcategory?:subcategoryId', function(req, res){
+    var options = {
+        root: path.join(__dirname, 'public')
+    }
+
+    const categoryId = req.params.categoryId
+
+    res.sendFile('category.html', options, function(err){
+        console.log(err)
+    })
+})
