@@ -770,3 +770,30 @@ input:invalid
     left: -35px;
     content: "✖"; 
 }
+
+.subcategories img
+{
+    width: 30em;
+    height: 30em;
+}
+
+#adverts_container img
+{
+    width: 20em;
+    height: 20em;
+}
+
+table 
+{
+    border:#256b94 5px solid;
+    border-radius: 15px;
+    width: fit-content;
+}
+
+tr, td
+{
+    border: 1px solid #256b94;
+    padding: 10px;
+    border-radius: 10px;    
+}
+

@@ -27,14 +27,43 @@ fetch(wikiAdsUrl,myHeaders)
 const advertsTemplates = {}
 window.addEventListener('load', initAdverts);
 
+Handlebars.registerHelper('split', function(content, options) {
+    if (content) {
+        var temp = content.split(options);
+        return temp;
+    }
+});
+
 function advertsHandlebarTemplate() {        
     advertsTemplates.adverts = Handlebars.compile(`
-    {{#each advert}}
-        <section class="product">
-            <h1>{{this.title}}</h1>     
-        </section>
-    {{/each}}
-    `)  
+    {{#if advert.length}}
+        {{#each advert}}
+            <section class="product">
+                <h1>{{this.title}}</h1>
+                {{#each this.images}}
+                    <img src="https://wiki-ads.onrender.com/{{this}}" alt="image">
+                {{/each}}
+                <p>{{this.description}}</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Χαρακτηριστικά</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each (split this.features ';')}}
+                            <tr>
+                                <td>{{this}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+        {{/each}}
+    {{else}}
+        <p>Συγνώμη, δεν υπάρχουν διαθέσιμες αγγελίες αυτή τη στιγμή.</p>
+    {{/if}}
+`)
 }
 
 //create categories

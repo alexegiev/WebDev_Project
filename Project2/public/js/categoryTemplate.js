@@ -32,13 +32,17 @@ const categoriesTemplates = {}
 
 function categoriesHandlebarTemplate() {        
     categoriesTemplates.adverts = Handlebars.compile(`
-    {{#each advert}}
-        <section class="subcategories">
-            <h1>{{this.title}}</h1>
-            <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
-            <p>{{this.description}}</p>
-        </section>
-    {{/each}}
+    {{#if advert.length}}
+        {{#each advert}}
+            <section class="subcategories">
+                <h1>{{this.title}}</h1>
+                <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
+                <p>{{this.description}}</p>
+            </section>
+        {{/each}}
+    {{else}}
+        <p>Συγγνώμη, δεν υπάρχουν διαθέσιμες αγγελίες αυτή τη στιγμή.</p>
+    {{/if}}
     `)  
 }
 
