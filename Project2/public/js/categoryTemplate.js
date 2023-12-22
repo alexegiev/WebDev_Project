@@ -35,11 +35,12 @@ function categoriesHandlebarTemplate() {
     {{#if advert.length}}
         {{#each advert}}
             <section class="subcategories">
-                <h1>{{this.title}}</h1>
+                <h1>{{this.title}}</button></h1>
                 <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
                 <p>{{this.description}}</p>
+                <button class="fave"><img src ="./assets//favourites.png"></button> 
             </section>
-        {{/each}}
+        {{/each}} 
     {{else}}
         <p>Συγγνώμη, δεν υπάρχουν διαθέσιμες αγγελίες αυτή τη στιγμή.</p>
     {{/if}}
