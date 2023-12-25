@@ -60,9 +60,11 @@ function initCategories(obj) {
     createSubcategories(subcategories)
 }
 
-
+//create subcategories
 function createSubcategories(sub){
     categoriesHandlebarTemplate()
+
+    //create array of promises
     let fetchPromises = sub.filter(item => item !== false).map(item => 
         fetch('https://wiki-ads.onrender.com/ads?subcategory=' + item.id, myHeaders)
             .then(response => response.json())
@@ -73,6 +75,7 @@ function createSubcategories(sub){
             })
     );
     
+    //wait for all promises to resolve
     Promise.all(fetchPromises)
         .then(() => {
             console.log(advertsContainer);
