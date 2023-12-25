@@ -119,5 +119,6 @@ loginForm.addEventListener('submit', (event) => {
         headers,
         body: JSON.stringify(body)
     })
-    .then(response => console.log(response))
+    .then(response => response.json())
+    .then(obj => {console.log(obj)})
 });

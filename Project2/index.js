@@ -1,4 +1,5 @@
 const express = require('express')
+const { v4: uuidv4 } = require('uuid')
 const path = require('path')
 const app = express()
 const port = 8080
@@ -61,7 +62,11 @@ app.post('/login', function(req, res){
         root: path.join(__dirname, 'public')
     }
 
+    // Get the username and password values
     const { username, password } = req.body;
 
-    res.sendStatus(200)
+    //Create Session ID
+    const sessionId = uuidv4()
+    
+    res.json({ sessionId : sessionId })
 })
