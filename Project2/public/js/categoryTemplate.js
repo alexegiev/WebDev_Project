@@ -1,3 +1,5 @@
+import { initButtonFunctionality } from './favoriteService.js';
+
 //get windows url to get the category id
 const queryStr = window.location.search;
 const categoryId = new URLSearchParams(queryStr);
@@ -35,7 +37,7 @@ function categoriesHandlebarTemplate() {
     {{#if advert.length}}
         {{#each advert}}
             <section class="subcategories">
-                <h1>{{this.title}}</button></h1>
+                <h1>{{this.title}}</h1>
                 <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
                 <p>{{this.description}}</p>
                 <button class="fave"><img src ="./assets//favourites.png"></button> 
@@ -82,6 +84,7 @@ function createSubcategories(sub){
             const flattenedAdvertsContainer = advertsContainer.flat();
             console.log(flattenedAdvertsContainer);
             createCategories(flattenedAdvertsContainer);
+            initButtonFunctionality();
         })
         .catch(err => {
             console.log('Error ', err); //catch error
