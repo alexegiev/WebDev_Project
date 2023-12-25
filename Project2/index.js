@@ -69,7 +69,7 @@ app.post('/login', function(req, res){
     if(registeredCustomers.users.find(user => user.username === username && user.password === password)){
         //Create Session ID
         const sessionId = uuidv4()
-        res.json({ sessionId : sessionId })
+        res.status(200).json({ sessionId : sessionId })
     }
     else{
         res.status(401).json( {message : 'Invalid username or password'})
