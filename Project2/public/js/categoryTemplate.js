@@ -87,3 +87,37 @@ function createSubcategories(sub){
             console.log('Error ', err); //catch error
         });
 }
+
+// Get the form element
+const loginForm = document.querySelector('form');
+
+// Add event listener for form submission
+loginForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the username and password values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Reset login form
+    loginForm.reset();
+
+    // Create the fetch request body
+    const body = {
+        username,
+        password
+    }
+
+    // Create the fetch request headers
+    const headers = {
+        'Content-Type': 'application/json'
+    }
+
+    // Create the fetch request
+    fetch('/login', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body)
+    })
+    .then(response => console.log(response))
+});

@@ -55,3 +55,13 @@ app.get('/subcategory?:subcategoryId', function(req, res){
         console.log(err)
     })
 })
+
+app.post('/login', function(req, res){
+    var options = {
+        root: path.join(__dirname, 'public')
+    }
+
+    const { username, password } = req.body;
+
+    res.sendStatus(200)
+})
