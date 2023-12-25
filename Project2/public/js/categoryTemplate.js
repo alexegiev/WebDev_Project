@@ -40,6 +40,8 @@ function categoriesHandlebarTemplate() {
                 <h1>{{this.title}}</h1>
                 <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
                 <p>{{this.description}}</p>
+                <p class="advId">{{this.id}}</p>
+                <p class="subcategoryId">{{this.subcategory_id}}</p>
                 <button class="fave"><img src ="./assets//favourites.png"></button> 
             </section>
         {{/each}} 

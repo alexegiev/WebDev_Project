@@ -75,3 +75,11 @@ app.post('/login', function(req, res){
         res.status(401).json( {message : 'Invalid username or password'})
     }
 })
+
+app.post('/afs', function(req, res){
+    var options = {
+        root: path.join(__dirname, 'public')
+    }
+
+    
+})

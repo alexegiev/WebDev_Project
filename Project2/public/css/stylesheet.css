@@ -635,6 +635,14 @@ input:invalid
     content: "✖"; 
 }
 
+.advId
+{
+    display: none;
+}
+.subcategoryId
+{
+    display: none;
+}
 .subcategories img
 {
     width: 30em;
