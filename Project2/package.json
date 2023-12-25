@@ -1,7 +1,7 @@
 {
-  "name": "inf165-webdev-project",
+  "name": "WebDev_Project",
   "version": "1.0.0",
-  "description": "Template project for webdev assignment 2",
+  "description": "WebDev_Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bzafiris/inf165-webdev-project.git"
+    "url": "git+https://github.com/alexegiev/WebDev_Project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bzafiris/inf165-webdev-project/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/bzafiris/inf165-webdev-project#readme",
+  "homepage": "https://github.com/alexegiev/WebDev_Project.git#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
