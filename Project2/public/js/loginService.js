@@ -1,9 +1,16 @@
+// Initialize the local storage
+window.onload = function() {
+    localStorage.clear();
+}
+
 // Get the form element
 const loginForm = document.querySelector('form')
 
 // Get the message element
 const messageElement = document.getElementById('message')
 
+// Get the user login element
+const userLogin = document.getElementById('user_login')
 // Add event listener for form submission
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent the default form submission
@@ -42,9 +49,13 @@ loginForm.addEventListener('submit', (event) => {
     })
     .then(obj => {
         // Update the message element with the success message
-        localStorage.loggedUser = ('user', JSON.stringify({username: username, password: password, sessionId: obj.sessionId}))
+        userLogin.className = 'user_login_success'
         messageElement.textContent = 'Login successful'
         messageElement.className = 'message-success'
+
+        // Store the username and session ID in local storage
+        const user = { username: username, sessionId: obj.sessionId };
+        localStorage.setItem('user', JSON.stringify(user));
     })
     .catch(error => {
         // Update the message element with the error message

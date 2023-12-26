@@ -46,28 +46,27 @@ export function initButtonFunctionality(){
 
         const myHeaders = new Headers(options)
 
-        fetch('/afs', myHeaders)
-        .then(response => {
-            if(response.ok){
-                //fetch data from wikiAdsUrl
-                fetch(wikiAdsUrlAdvert, myHeaders)
-                .then(response => response.json())
-                .then(obj => obj.find(advert => advert.id == advId))
-                .then(advert => { 
-                    const advertId = advert.id
-                    const advertTitle = advert.title
-                    const advertDescription = advert.description
-                    const advertPrice = advert.cost
-                    const advertImageUrl = 'https://wiki-ads.onrender.com/' + advert.images[0]
-                    console.log('Added to favorites')
-                })
-            }
-            else{
-                throw new Error('You need to login to add to favorites')
-            }
-        })  
-        .catch(err => {
-            console.log(err)       //catch error
-        })
-    }
+        //fetch data from wikiAdsUrl
+        if(!(JSON.parse(localStorage.getItem('user')) === null)){
+            const user = JSON.parse(localStorage.getItem('user'))            
+            const username = user.username
+            const sessionId = user.sessionId
+
+            //create fetch request to get the advert we want
+            fetch(wikiAdsUrlAdvert, myHeaders)
+            .then(response => response.json())
+            .then(obj => obj.find(advert => advert.id == advId))
+            .then(advert => { 
+                const advertId = advert.id
+                const advertTitle = advert.title
+                const advertDescription = advert.description
+                const advertPrice = advert.cost
+                const advertImageUrl = 'https://wiki-ads.onrender.com/' + advert.images[0]
+                console.log('Added to favorites')
+            })
+        }
+        else{
+            alert('Παρακαλώ συνδεθείτε για προσθήκη στη λίστα αγαπημένων')
+        }
+    } 
 }

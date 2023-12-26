@@ -6,6 +6,10 @@
     color: red;
 }
 
+.user_login_success {
+    display: none;
+}
+
 /*styling the background*/
 body
 {
