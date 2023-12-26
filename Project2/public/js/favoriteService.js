@@ -62,7 +62,24 @@ export function initButtonFunctionality(){
                 const advertDescription = advert.description
                 const advertPrice = advert.cost
                 const advertImageUrl = 'https://wiki-ads.onrender.com/' + advert.images[0]
-                console.log('Added to favorites')
+
+                //create fetch request to add the advert to the user's favourites
+                fetch('afs', {
+                    method: 'POST',
+                    headers: httpHeaders,
+                    body: JSON.stringify({
+                        username,
+                        sessionId,
+                        advertId,
+                        advertTitle,
+                        advertDescription,
+                        advertPrice,
+                        advertImageUrl
+                    })
+                })
+                .then(response => {
+                    console.log(response.json())
+                })
             })
         }
         else{

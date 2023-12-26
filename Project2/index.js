@@ -1,6 +1,8 @@
 const express = require('express')
 const { v4: uuidv4 } = require('uuid')
-const registeredCustomers = require('./public/models/registeredCostumers');
+const registeredCustomers = require('./public/models/registeredCostumers')
+const favorites = require('./public/models/costumersFavorites')
+const fs = require('fs')
 const path = require('path')
 const app = express()
 const port = 8080
@@ -75,9 +77,36 @@ app.post('/login', function(req, res){
     }
 })
 
-app.get('/afs', function(req, res){
+app.post('/afs', function(req, res){
     var options = {
         root: path.join(__dirname, 'public')
     }
 
+    // Get username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUr
+    const { username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl } = req.body;
+
+    //check if user's list exists in favorites
+    if(favorites[username] === undefined){
+        favorites[username] = []
+        console.log('Created new list for user ' + username)
+    }
+
+    //check if advert is already in user's list
+    if(favorites[username].find(advert => advert.advertId === advertId)){
+        res.status(401).json( {message : 'Advert already in favorites'})
+    }
+    else{
+        favorites[username].push({ advertId, advertTitle, advertDescription, advertPrice, advertImageUrl })
+        res.status(200).json( {message : 'Advert added to favorites'})
+    }
+
+    fs.writeFile('public/models/costumersFavorites.json', JSON.stringify(favorites), options, function(err) {
+        if(err) {
+            console.log('Error writing to costumersFavorites.json:', err);
+        } else {
+            console.log('Successfully wrote to costumersFavorites.jsons');
+        }
+    })
+
+    console.log(favorites)
 })
