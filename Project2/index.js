@@ -5,6 +5,9 @@ const path = require('path')
 const app = express()
 const port = 8080
 
+let loggedUsername
+let sessionId
+
 app.use
 
 app.listen(port)
@@ -68,7 +71,8 @@ app.post('/login', function(req, res){
 
     if(registeredCustomers.users.find(user => user.username === username && user.password === password)){
         //Create Session ID
-        const sessionId = uuidv4()
+        sessionId = uuidv4()
+        loggedUsername = username
         res.status(200).json({ sessionId : sessionId })
     }
     else{
@@ -76,10 +80,15 @@ app.post('/login', function(req, res){
     }
 })
 
-app.post('/afs', function(req, res){
+app.get('/afs', function(req, res){
     var options = {
         root: path.join(__dirname, 'public')
     }
 
-    
+    if(loggedUsername == null){
+        res.status(401).json({ message : 'Unauthorized'})
+    }
+    else{
+        res.status(200).json({ message : 'Authorized'})
+    }
 })
