@@ -68,8 +68,11 @@ app.post('/login', function(req, res){
     const { username, password } = req.body;
 
     if(registeredCustomers.users.find(user => user.username === username && user.password === password)){
+        const user = registeredCustomers.users.find(user => user.username === username);
         //Create Session ID
         sessionId = uuidv4()
+        user.userSessionId = sessionId
+        console.log(registeredCustomers)
         res.status(200).json({ sessionId : sessionId })
     }
     else{
@@ -111,11 +114,50 @@ app.post('/afs', function(req, res){
     console.log(favorites)
 })
 
-app.get('/frs/:user/:id', function(req, res){
+app.post('/frs', function(req, res){
     // Access the parameters
-    var user = req.params.user;
-    var id = req.params.id;
+    var user = req.body.username;
+    var id = req.body.sessionId
+    // Find the user in registeredCustomers
+    const registeredUser = registeredCustomers.users.find(u => u.username === user);
 
-    // Redirect to the URL with the desired format
-    res.redirect(`/favorite-ads.html?username=${user}&sessionId=${id}`);
-})
+    // Check if the user exists and the sessionId matches
+    if (registeredUser && registeredUser.userSessionId === id) {
+        // Redirect to the URL with the desired format
+        res.redirect(`/favorite-ads.html?username=${user}&sessionId=${id}`);
+    } else {
+        // Send an error response if the sessionId does not match
+        console.log('Invalid sessionId for this user');
+        res.status(403).send('Invalid sessionId for this user');
+    }
+});
+
+app.post('/favorites', function(req, res){
+    var options = {
+        root: path.join(__dirname, 'public')
+    }
+
+    const username = req.body.username;
+    // Read the contents of the costumersFavorites.json file
+    fs.readFile('./public/models/costumersFavorites.json', 'utf8', (err, data) => {
+        if (err) {
+            // Handle the error if the file cannot be read
+            console.error(err);
+            res.status(500).send('Could not read favorites data');
+        } else {
+            // Parse the JSON data
+            const favoritesData = JSON.parse(data);
+            
+            // Find the favorites for the specified username
+            const userFavorites = favoritesData[username];
+
+            if (userFavorites) {
+                // Send the user's favorites as the response
+                res.send(userFavorites);
+            } else {
+                // Send a 404 response if the user's favorites are not found
+                res.status(404).send('Favorites not found for this user');
+            }
+        }
+    });
+});
