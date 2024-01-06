@@ -26,19 +26,40 @@ fetch('/frs', {
             })
             .then(response => response.json())
             .then(obj => {
-                const source = document.getElementById('favorites-template').innerHTML;
-
-                // Compile the template
-                const template = Handlebars.compile(source);
-            
-                // Generate the HTML from the favorites data
-                const html = template(favorites);
-            
-                // Insert the HTML into the page
-                document.getElementById('favorites-container').innerHTML = html;
+                console.log(obj)
+                initFavorites(obj)
             })
         }
         else{
             throw new Error('Invalid username or sessionId')
         }
     })
+    .catch(err => {
+        console.log(err)
+    })
+
+//create handlebars template
+const favoritesTemplates = {}
+
+function createFavorites(favoritesObj){
+    let favoritesPlaceholder = document.getElementById("subcategories_container")
+    favoritesPlaceholder.innerHTML = favoritesTemplates.favorites({ favorites: favoritesObj })
+}
+
+//init categories
+function initFavorites(obj){
+    favoritesTemplates.favorites = Handlebars.compile(`
+    {{#if favorite.length}}
+        {{#each favorite}}
+            <section class="favorites">
+                <h1>{{this.title}}</h1>
+                <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
+                <p>{{this.description}}</p>
+            </section>
+        {{/each}} 
+    {{else}}
+        <p>Δεν έχετε αγαπημένες αγγελίες.</p>
+    {{/if}}
+    `)  
+    createFavorites(obj)
+}
