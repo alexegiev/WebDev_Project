@@ -100,7 +100,7 @@ app.post('/afs', function(req, res){
         res.status(200).json( {message : 'Advert added to favorites'})
     }
 
-    fs.writeFile('public/models/costumersFavorites.json', JSON.stringify(favorites), options, function(err) {
+    fs.writeFile('public/models/costumersFavorites.json', JSON.stringify(favorites, null, 2), options, function(err) {
         if(err) {
             console.log('Error writing to costumersFavorites.json:', err);
         } else {
@@ -109,4 +109,13 @@ app.post('/afs', function(req, res){
     })
 
     console.log(favorites)
+})
+
+app.get('/frs/:user/:id', function(req, res){
+    // Access the parameters
+    var user = req.params.user;
+    var id = req.params.id;
+
+    // Redirect to the URL with the desired format
+    res.redirect(`/favorite-ads.html?username=${user}&sessionId=${id}`);
 })

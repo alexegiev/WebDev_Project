@@ -11,6 +11,10 @@ const messageElement = document.getElementById('message')
 
 // Get the user login element
 const userLogin = document.getElementById('user_login')
+
+//Get the nav bar element
+let navBar = document.querySelector('.main_nav > ul');
+
 // Add event listener for form submission
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent the default form submission
@@ -48,6 +52,13 @@ loginForm.addEventListener('submit', (event) => {
         }
     })
     .then(obj => {
+        let favorites = document.createElement('li')
+        let link = document.createElement('a')
+        link.href = 'favorite-ads.html?username=' + username + '&sessionId=' + obj.sessionId
+        link.textContent = 'Αγαπημένα'
+        favorites.appendChild(link)
+        navBar.appendChild(favorites)
+
         // Update the message element with the success message
         userLogin.className = 'user_login_success'
         messageElement.textContent = 'Login successful'

@@ -53,7 +53,6 @@ function categoriesHandlebarTemplate() {
 
 //create categories
 function createCategories(advertsObj){
-    console.log(advertsObj)
     let advertsPlaceholder = document.getElementById("subcategories_container")
     advertsPlaceholder.innerHTML = categoriesTemplates.adverts({ advert: advertsObj })
 }
@@ -82,9 +81,7 @@ function createSubcategories(sub){
     //wait for all promises to resolve
     Promise.all(fetchPromises)
         .then(() => {
-            console.log(advertsContainer);
             const flattenedAdvertsContainer = advertsContainer.flat();
-            console.log(flattenedAdvertsContainer);
             createCategories(flattenedAdvertsContainer);
             initButtonFunctionality();
         })
