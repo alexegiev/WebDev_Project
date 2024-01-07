@@ -53,6 +53,7 @@ function categoriesHandlebarTemplate() {
 
 //create categories
 function createCategories(advertsObj){
+    console.log(advertsObj)
     let advertsPlaceholder = document.getElementById("subcategories_container")
     advertsPlaceholder.innerHTML = categoriesTemplates.adverts({ advert: advertsObj })
 }

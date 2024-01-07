@@ -26,7 +26,6 @@ fetch('/frs', {
             })
             .then(response => response.json())
             .then(obj => {
-                console.log(obj)
                 initFavorites(obj)
             })
         }
@@ -42,24 +41,24 @@ fetch('/frs', {
 const favoritesTemplates = {}
 
 function createFavorites(favoritesObj){
+    console.log(favoritesObj)
     let favoritesPlaceholder = document.getElementById("subcategories_container")
-    favoritesPlaceholder.innerHTML = favoritesTemplates.favorites({ favorites: favoritesObj })
+    favoritesPlaceholder.innerHTML = favoritesTemplates.favorites({ favorite: favoritesObj })
 }
 
 //init categories
 function initFavorites(obj){
     favoritesTemplates.favorites = Handlebars.compile(`
-    {{#if favorite.length}}
-        {{#each favorite}}
-            <section class="favorites">
-                <h1>{{this.title}}</h1>
-                <img src="https://wiki-ads.onrender.com/{{this.images.[0]}}" alt="image">
-                <p>{{this.description}}</p>
-            </section>
-        {{/each}} 
-    {{else}}
-        <p>Δεν έχετε αγαπημένες αγγελίες.</p>
-    {{/if}}
+        {{#if favorite.length}}
+            {{#each favorite}}
+                <section class="favorites">
+                    <h1>{{this.advertTitle}}</h1>
+                    <p>{{this.advertDescription}}</p>
+                </section>
+            {{/each}} 
+        {{else}}
+            <p>Δεν έχετε αγαπημένες αγγελίες.</p>
+        {{/if}}
     `)  
     createFavorites(obj)
 }
