@@ -49,16 +49,17 @@ function createFavorites(favoritesObj){
 //init categories
 function initFavorites(obj){
     favoritesTemplates.favorites = Handlebars.compile(`
-        {{#if favorite.length}}
-            {{#each favorite}}
-                <section class="favorites">
-                    <h1>{{this.advertTitle}}</h1>
-                    <p>{{this.advertDescription}}</p>
-                </section>
-            {{/each}} 
-        {{else}}
-            <p>Δεν έχετε αγαπημένες αγγελίες.</p>
-        {{/if}}
+    {{#if favorite.length}}
+        {{#each favorite}}
+            <section class="favorites">
+                <h1>{{this.advertTitle}}</h1>
+                <img src="{{this.advertImageUrl}}" alt="image">
+                <p>{{this.advertDescription}}</p>
+            </section>
+        {{/each}} 
+    {{else}}
+        <p>Δεν έχετε αγαπημένες αγγελίες.</p>
+    {{/if}}
     `)  
     createFavorites(obj)
 }
