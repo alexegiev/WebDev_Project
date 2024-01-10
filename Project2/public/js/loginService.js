@@ -1,3 +1,7 @@
+// Import the UserDAO class
+import UserDAO from '../models/dao/usersDAO.js'
+const userDAO = new UserDAO(false)
+
 // Initialize the local storage
 window.onload = function() {
     localStorage.clear();
@@ -25,33 +29,18 @@ loginForm.addEventListener('submit', (event) => {
 
     // Reset login form
     loginForm.reset();
-
-    // Create the fetch request body
-    const body = {
-        username,
-        password
-    }
-
-    // Create the fetch request headers
-    const headers = {
-        'Content-Type': 'application/json'
-    }
-
-    // Create the fetch request
-    fetch('/login', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(body)
-    })
+    userDAO.login(username, password)
     .then(response => {
-        if(response.ok){
-            return response.json()
+        if(response.statusCode === 401){
+            throw new Error(response.message)
         }
         else{
-            throw new Error('Invalid username or password')
+            console.log(response)
+            return Promise.resolve(response)
         }
     })
     .then(obj => {
+        console.log(obj)
         let favorites = document.createElement('li')
         let link = document.createElement('a')
         link.href = 'favorite-ads.html?username=' + username + '&sessionId=' + obj.sessionId

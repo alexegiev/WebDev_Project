@@ -15,4 +15,5 @@ const registeredCustomers = {
         }
     ]
 }
-module.exports = registeredCustomers;
+
+export default registeredCustomers
