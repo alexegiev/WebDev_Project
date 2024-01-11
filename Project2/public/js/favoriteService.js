@@ -1,5 +1,3 @@
-import FavoriteDAO from "../models/dao/favoritesDAO.js";
-const favoriteDAO = new FavoriteDAO(false);
 export function initButtonFunctionality(){
 
     // Find all buttons with the class fave
@@ -65,17 +63,22 @@ export function initButtonFunctionality(){
                 const advertPrice = advert.cost
                 const advertImageUrl = 'https://wiki-ads.onrender.com/' + advert.images[0]
 
-                favoriteDAO.addFavorites(username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl)
+                //create fetch request to add the advert to the user's favourites
+                fetch('afs', {
+                    method: 'POST',
+                    headers: httpHeaders,
+                    body: JSON.stringify({
+                        username,
+                        sessionId,
+                        advertId,
+                        advertTitle,
+                        advertDescription,
+                        advertPrice,
+                        advertImageUrl
+                    })
+                })
                 .then(response => {
-                    if(response.statusCode === 201){
-                        return response
-                    }
-                    else if (response.statusCode === 409){
-                        throw new Error(response.message)
-                    }
-                    else{
-                        throw new Error(response.message)
-                    }
+                    console.log(response.json())
                 })
             })
         }
