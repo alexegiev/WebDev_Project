@@ -26,6 +26,7 @@ fetch('/frs', {
             })
             .then(response => response.json())
             .then(obj => {
+                console.log(obj)
                 initFavorites(obj)
             })
         }

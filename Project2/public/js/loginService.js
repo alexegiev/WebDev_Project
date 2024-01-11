@@ -36,7 +36,6 @@ loginForm.addEventListener('submit', (event) => {
     const headers = {
         'Content-Type': 'application/json'
     }
-
     // Create the fetch request
     fetch('/login', {
         method: 'POST',
