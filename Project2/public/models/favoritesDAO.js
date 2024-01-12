@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 class FavoriteDAO{
-    constructor(useDatabase = false){
+    constructor(useDatabase){
         this.useDatabase = useDatabase
     }
 

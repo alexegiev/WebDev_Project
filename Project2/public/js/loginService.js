@@ -51,6 +51,7 @@ loginForm.addEventListener('submit', (event) => {
         }
     })
     .then(obj => {
+        console.log(obj)
         let favorites = document.createElement('li')
         let link = document.createElement('a')
         link.href = 'favorite-ads.html?username=' + username + '&sessionId=' + obj.sessionId
