@@ -104,20 +104,22 @@ app.post('/login', function(req, res){
 
 app.post('/afs', function(req, res){
 
-    // Get username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUr
+    // Get username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl
     const { username, sessionId, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl } = req.body;
 
     const favorite = new FavoriteDAO(useDB)
-    if(favorite.addFavorite(username, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl) === "Already exists"){
-        res.status(401).json( {message : 'Advert already in favorites'})
-    }
-    else{
-        res.status(200).json( {message : 'Advert added to favorites'})
-        console.log("From index.js after added to favorites:")
-        console.log(registeredCustomers)
-    }
-
-
+    favorite.addFavorite(username, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl)
+    .then(result => {
+        if(result === "Already exists"){
+            res.status(401).json( {message : 'Advert already in favorites'})
+        } else {
+            res.status(200).json( {message : 'Advert added to favorites'})
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'An error occurred while adding the advert to favorites' })
+    });
 })
 
 app.post('/frs', function(req, res){

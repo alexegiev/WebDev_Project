@@ -1,4 +1,5 @@
 const favorites = require('./costumersFavorites')
+const { connectDB,getDB } = require('../database')
 const fs = require('fs')
 const path = require('path')
 
@@ -15,37 +16,69 @@ class FavoriteDAO{
         }
     }
 
-    addFavoriteMemory (username, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl){
-            //check if user's list exists in favorites
-        if(favorites[username] === undefined){
-            favorites[username] = []
-            console.log('Created new list for user ' + username)
-        }
+    addFavoriteMemory(username, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl) {
+        return new Promise((resolve, reject) => {
+            // Check if user's list exists in favorites
+            if (favorites[username] === undefined) {
+                favorites[username] = [];
+                console.log('Created new list for user ' + username);
+            }
+    
+            // Check if advert is already in user's list
+            if (favorites[username].find(advert => advert.advertId === advertId)) {
+                resolve("Already exists");
+            } else {
+                // Add advert to user's list
+                favorites[username].push({
+                    advertId,
+                    advertTitle,
+                    advertDescription,
+                    advertPrice,
+                    advertImageUrl
+                });
+                console.log('Added advert ' + advertId + ' to user ' + username + ' favorites');
+    
+                fs.writeFile(path.join(__dirname, 'costumersFavorites.json'), JSON.stringify(favorites, null, 2), function(err) {
+                    if (err) {
+                        console.log('Error writing to costumersFavorites.json:', err);
+                        reject('Error writing to costumersFavorites.json');
+                    } else {
+                        resolve('Advert added to favorites');
+                    }
+                });
+            }
+        });
+    }
 
-        //check if advert is already in user's list
-        if(favorites[username].find(advert => advert.advertId === advertId)){
-            return "Already exists"
-        }
-        else{
-            //add advert to user's list
-            favorites[username].push({
-                advertId,
-                advertTitle,
-                advertDescription,
-                advertPrice,
-                advertImageUrl
-            })
-            console.log('Added advert ' + advertId + ' to user ' + username + ' favorites')
-
-            fs.writeFile(path.join(__dirname, 'costumersFavorites.json'), JSON.stringify(favorites, null, 2), function(err) {
-                if(err) {
-                    console.log('Error writing to costumersFavorites.json:', err);
+    addFavoriteDatabase(username, advertId, advertTitle, advertDescription, advertPrice, advertImageUrl) {
+        return new Promise((resolve, reject) => {
+            const db = getDB();
+            const collection = db.collection('CostumersFavorites');
+            collection.findOne({}, { projection: { [username]: 1, _id: 0 } })
+            .then(user => {
+                if (user) {
+                    const userExists = user[username].find(advert => advert.advertId === advertId);
+                    if (userExists) {
+                        resolve("Already exists");
+                    } else {
+                        collection.updateOne(
+                            { [username]: { $exists: true } },
+                            { $push: { [username]: { advertId, advertTitle, advertDescription, advertPrice, advertImageUrl } } }
+                        )
+                        .then(() => {
+                            resolve('Advert added to favorites');
+                        })
+                        .catch(err => console.error(`Failed to add advert to favorites: ${err}`));
+                    }
                 } else {
-                    console.log('Successfully wrote to costumersFavorites.json');
+                    collection.insertOne({ [username]: [{ advertId, advertTitle, advertDescription, advertPrice, advertImageUrl }] })
+                    .then(() => {
+                        resolve('Advert added to favorites');
+                    })
+                    .catch(err => console.error(`Failed to add advert to favorites: ${err}`));
                 }
             })
-            return "Added"
-        }
+        })
     }
 
     getFavorites (username){
@@ -83,6 +116,22 @@ class FavoriteDAO{
                 }
             });
         });
+    }
+
+    getFavoritesDatabase(username) {
+        return new Promise((resolve, reject) => {
+            const db = getDB();
+            const collection = db.collection('CostumersFavorites');
+            collection.findOne({}, { projection: { [username]: 1, _id: 0 } })
+            .then(user => {
+                if (user) {
+                    resolve(user[username]); // this will log the data for 'username1'
+                } else {
+                    reject('User not found');
+                }
+            })
+            .catch(err => console.error(`Failed to find document: ${err}`));
+        })
     }
     
 }

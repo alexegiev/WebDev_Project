@@ -1,8 +1,8 @@
 const registeredCustomers = require('./registeredCostumers')
 const { connectDB, getDB } = require('../database')
 const { ObjectId } = require('mongodb')
-
 const { v4: uuidv4 } = require('uuid')
+
 class UserDAO{
     constructor (useDatabase){
         this.useDatabase = useDatabase
@@ -83,10 +83,17 @@ class UserDAO{
         }
     }
 
-    getUserMemory (username){
-        console.log("From dao userMemory:")
-        console.log(registeredCustomers)
-        return registeredCustomers.users.find(user => user.username === username)
+    getUserMemory(username) {
+        return new Promise((resolve, reject) => {
+            console.log("From dao userMemory:");
+            console.log(registeredCustomers);
+            const user = registeredCustomers.users.find(user => user.username === username);
+            if (user) {
+                resolve(user);
+            } else {
+                reject('User not found');
+            }
+        });
     }
 
     getUserDatabase (username){
@@ -102,7 +109,7 @@ class UserDAO{
                     resolve(userExists);
                 } else {
                     resolve(false);
-                }                
+                }
             })
         })
     }
