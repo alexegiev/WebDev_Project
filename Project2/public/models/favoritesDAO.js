@@ -23,7 +23,7 @@ class FavoriteDAO{
                 favorites[username] = [];
                 console.log('Created new list for user ' + username);
             }
-    
+
             // Check if advert is already in user's list
             if (favorites[username].find(advert => advert.advertId === advertId)) {
                 resolve("Already exists");
@@ -105,7 +105,7 @@ class FavoriteDAO{
                     const userFavorites = favoritesData[username];
                     console.log("From favoritesDAO:")
                     console.log(userFavorites)
-    
+
                     if (userFavorites) {
                         // Resolve the promise with the user's favorites
                         resolve(userFavorites);

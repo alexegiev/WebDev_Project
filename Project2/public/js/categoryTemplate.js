@@ -62,7 +62,7 @@ fetch(wikiAdsUrl, myHeaders)
         filters.appendChild(radio);
         filters.appendChild(label);
     }
-    document.body.appendChild(filters); // Append the sidebar menu to the body or wherever you want it to appear
+    document.body.appendChild(filters)
 })
 .catch(err => {
     console.log(err); // Catch error
@@ -91,7 +91,6 @@ function filterAdverts(selectedSubcategory) {
                 }
             })
     }
-    // Now you have an array of filtered adverts. Use this to update your page.
     createCategories(filteredAdverts);
 }
 
@@ -116,12 +115,10 @@ function updatePage(filteredAdverts) {
     initButtonFunctionality();
 }
 
-// ----------------------
-
 //create handlebars template
 const categoriesTemplates = {}
 
-function categoriesHandlebarTemplate() {   
+function categoriesHandlebarTemplate() {
     categoriesTemplates.adverts = Handlebars.compile(`
     {{#if advert.length}}
         {{#each advert}}
@@ -133,13 +130,11 @@ function categoriesHandlebarTemplate() {
                 <p class="subcategoryId">{{this.subcategory_id}}</p>
                 <button class="fave"><img src ="./assets//favourites.png"></button> 
             </section>
-        {{/each}} 
+        {{/each}}
     {{else}}
         <p>Συγγνώμη, δεν υπάρχουν διαθέσιμες αγγελίες αυτή τη στιγμή.</p>
     {{/if}}
-    `)  
-
-
+    `)
 }
 
 //create categories

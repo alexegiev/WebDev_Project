@@ -73,8 +73,6 @@ class UserDAO{
         })
     }
 
-
-
     getUser (username){
         if (this.useDatabase){
             return this.getUserDatabase(username)

@@ -8,7 +8,6 @@ const client = new MongoClient(uri, {
         deprecationErrors: true,
     },
 })
-    
 
 let db
 

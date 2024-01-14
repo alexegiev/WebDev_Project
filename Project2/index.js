@@ -5,10 +5,9 @@ const FavoriteDAO = require('./public/models/favoritesDAO')
 const registeredCustomers = require('./public/models/registeredCostumers')
 const fs = require('fs')
 const path = require('path')
-const { log } = require('console')
 const app = express()
 const port = 8080
-const useDB = true // Change to true to use database instead of memory and files
+const useDB = false // Change to true to use database instead of memory and files
 app.use
 
 if (useDB) {
