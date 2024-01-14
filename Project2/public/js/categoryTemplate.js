@@ -29,10 +29,124 @@ fetch(wikiAdsUrlSubcategories, myHeaders)
     console.log(err)       //catch error
 })
 
+// --------- FILTERS -------------
+
+// Fetch subcategories from the API
+fetch(wikiAdsUrl, myHeaders)
+.then(response => response.json())
+.then(subcategories => {
+    // Create sidebar menu dynamically
+    let filters = document.createElement('section');
+    filters.id = 'filters';
+    let allOption = document.createElement('input');
+    allOption.type = 'radio';
+    allOption.id = 'all';
+    allOption.name = 'subcategory';
+    allOption.value = 'all';
+    allOption.checked = true;
+    let allLabel = document.createElement('label');
+    allLabel.htmlFor = 'all';
+    allLabel.textContent = 'All';
+    filters.appendChild(allOption);
+    filters.appendChild(allLabel);
+    for (let subcategory of subcategories) {
+        console.log(subcategory);
+        let radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.id = subcategory.id;
+        radio.name = 'subcategory';
+        radio.value = subcategory.id;
+        let label = document.createElement('label');
+        label.htmlFor = subcategory.id;
+        label.textContent = subcategory.title;
+        filters.appendChild(radio);
+        filters.appendChild(label);
+    }
+    document.body.appendChild(filters); // Append the sidebar menu to the body or wherever you want it to appear
+
+    // Attach event listener to the sidebar menu
+    document.getElementById('filters').addEventListener('change', function(event) {
+        let selectedSubcategory = event.target.value;
+        // Now you have the selected subcategory. Use this to filter your adverts.
+        filterAdverts(selectedSubcategory);
+    });
+})
+.catch(err => {
+    console.log(err); // Catch error
+});
+
+// Fetch adverts from the API once when the page loads
+let adverts;
+fetch('https://wiki-ads.onrender.com/adverts', myHeaders)
+.then(response => response.json())
+.then(data => {
+    adverts = data;
+})
+.catch(err => {
+    console.log(err); // Catch error
+});
+
+// Function to filter adverts
+function filterAdverts(selectedSubcategory) {
+    let filteredAdverts;
+    if (selectedSubcategory === 'all') {
+        filteredAdverts = adverts;
+    } else {
+        filteredAdverts = adverts.filter(advert => advert.subcategory_id === selectedSubcategory);
+    }
+    // Now you have an array of filtered adverts. Use this to update your page.
+    updatePage(filteredAdverts);
+}
+
+
+document.getElementById('filterForm').addEventListener('change', function(event) {
+    // Get the selected subcategory
+    let selectedSubcategory = event.target.value;
+
+    // Filter the adverts by subcategory
+    let filteredAdverts = adverts.filter(advert => advert.subcategory_id === selectedSubcategory);
+
+    // Update the page with the filtered adverts
+    updatePage(filteredAdverts);
+});
+function updatePage(filteredAdverts) {
+    // Prepare the new adverts HTML
+    let newAdvertsHtml = '';
+
+    // Add the filtered adverts
+    if (filteredAdverts.length > 0) {
+        for (let advert of filteredAdverts) {
+            newAdvertsHtml += categoriesTemplates.adverts({ advert: [advert] });
+        }
+    } else {
+        newAdvertsHtml = '<p>No adverts found for the selected subcategories.</p>';
+    }
+
+    // Update the adverts on the page
+    let advertsPlaceholder = document.getElementById("subcategories_container");
+    advertsPlaceholder.innerHTML = newAdvertsHtml;
+
+    // Re-initialize button functionality
+    initButtonFunctionality();
+}
+
+// ----------------------
+
 //create handlebars template
 const categoriesTemplates = {}
 
-function categoriesHandlebarTemplate() {        
+function categoriesHandlebarTemplate() {   
+    //-------- FILTERS TEMPLATE ------------
+    categoriesTemplates.filters = Handlebars.compile(`
+        <form id="filterForm">
+            {{#each this.subcategories}}
+                <input type="radio" id="{{this.id}}" name="subcategory" value="{{this.id}}">
+                <label for="{{this.id}}">{{this.title}}</label><br>
+            {{/each}}
+        </form>
+    `);  
+    //--------------------
+
     categoriesTemplates.adverts = Handlebars.compile(`
     {{#if advert.length}}
         {{#each advert}}
@@ -49,6 +163,8 @@ function categoriesHandlebarTemplate() {
         <p>Συγγνώμη, δεν υπάρχουν διαθέσιμες αγγελίες αυτή τη στιγμή.</p>
     {{/if}}
     `)  
+
+
 }
 
 //create categories

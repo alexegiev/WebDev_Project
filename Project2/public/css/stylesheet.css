@@ -616,3 +616,13 @@ tr, td
 {
     text-align: left;
 }
+
+#filters
+{
+    grid-column: 4/5;
+    grid-row-start: 4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}   
