@@ -63,24 +63,6 @@ fetch(wikiAdsUrl, myHeaders)
         filters.appendChild(label);
     }
     document.body.appendChild(filters); // Append the sidebar menu to the body or wherever you want it to appear
-
-    // Attach event listener to the sidebar menu
-    document.getElementById('filters').addEventListener('change', function(event) {
-        let selectedSubcategory = event.target.value;
-        // Now you have the selected subcategory. Use this to filter your adverts.
-        filterAdverts(selectedSubcategory);
-    });
-})
-.catch(err => {
-    console.log(err); // Catch error
-});
-
-// Fetch adverts from the API once when the page loads
-let adverts;
-fetch('https://wiki-ads.onrender.com/adverts', myHeaders)
-.then(response => response.json())
-.then(data => {
-    adverts = data;
 })
 .catch(err => {
     console.log(err); // Catch error
@@ -90,25 +72,29 @@ fetch('https://wiki-ads.onrender.com/adverts', myHeaders)
 function filterAdverts(selectedSubcategory) {
     let filteredAdverts;
     if (selectedSubcategory === 'all') {
-        filteredAdverts = adverts;
+        //fetch data from wikiAdsUrl
+        fetch(wikiAdsUrlSubcategories, myHeaders)
+        .then(response => response.json())
+        .then(obj => {
+            initCategories(obj)             //pass data to initCategories()
+        })
+        .catch(err => {
+            console.log(err)       //catch error
+        })
     } else {
-        filteredAdverts = adverts.filter(advert => advert.subcategory_id === selectedSubcategory);
+        fetch('https://wiki-ads.onrender.com/ads?subcategory=' + selectedSubcategory, myHeaders)
+            .then(response => response.json())
+            .then(obj => {
+                console.log(obj)
+                if(obj.length != 0){
+                    updatePage(obj);
+                }
+            })
     }
     // Now you have an array of filtered adverts. Use this to update your page.
-    updatePage(filteredAdverts);
+    createCategories(filteredAdverts);
 }
 
-
-document.getElementById('filterForm').addEventListener('change', function(event) {
-    // Get the selected subcategory
-    let selectedSubcategory = event.target.value;
-
-    // Filter the adverts by subcategory
-    let filteredAdverts = adverts.filter(advert => advert.subcategory_id === selectedSubcategory);
-
-    // Update the page with the filtered adverts
-    updatePage(filteredAdverts);
-});
 function updatePage(filteredAdverts) {
     // Prepare the new adverts HTML
     let newAdvertsHtml = '';
@@ -172,6 +158,12 @@ function createCategories(advertsObj){
     console.log(advertsObj)
     let advertsPlaceholder = document.getElementById("subcategories_container")
     advertsPlaceholder.innerHTML = categoriesTemplates.adverts({ advert: advertsObj })
+    document.getElementById('filters').addEventListener('change', function(event) {
+        let selectedSubcategory = event.target.value;
+        // Now you have the selected subcategory. Use this to filter your adverts.
+        console.log(selectedSubcategory);
+        filterAdverts(selectedSubcategory);
+    });
 }
 
 //init categories
@@ -193,7 +185,7 @@ function createSubcategories(sub){
                     advertsContainer.push(obj);
                 }
             })
-    );
+        );
     
     //wait for all promises to resolve
     Promise.all(fetchPromises)
