@@ -620,9 +620,42 @@ tr, td
 #filters
 {
     grid-column: 4/5;
-    grid-row-start: 4;
+    grid-row: 2/3;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-}   
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items:stretch;
+    height: fit-content;
+    font-weight: bold;
+}
+#filters
+{
+    border-radius:15px;
+    border: 5px solid #256b94;
+    padding: 0.5em;
+    margin-top: 20em;
+
+}
+/* Hide the default radio button */
+input[type="radio"] {
+    display: none;
+}
+
+/* Create a custom radio button */
+input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #256b94;
+    background-color: #fff;
+}
+
+/* Style the custom radio button when it's checked */
+input[type="radio"]:checked + label:before {
+    background-color: #256b94;
+}
+
+

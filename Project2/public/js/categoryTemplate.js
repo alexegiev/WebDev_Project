@@ -122,17 +122,6 @@ function updatePage(filteredAdverts) {
 const categoriesTemplates = {}
 
 function categoriesHandlebarTemplate() {   
-    //-------- FILTERS TEMPLATE ------------
-    categoriesTemplates.filters = Handlebars.compile(`
-        <form id="filterForm">
-            {{#each this.subcategories}}
-                <input type="radio" id="{{this.id}}" name="subcategory" value="{{this.id}}">
-                <label for="{{this.id}}">{{this.title}}</label><br>
-            {{/each}}
-        </form>
-    `);  
-    //--------------------
-
     categoriesTemplates.adverts = Handlebars.compile(`
     {{#if advert.length}}
         {{#each advert}}
