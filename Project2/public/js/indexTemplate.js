@@ -11,7 +11,7 @@ const myHeaders = new Headers(httpHeaders)
 
 let completeList = []
 let categoriesContainer = []         //contains an array with all categories
-let subcategoriesContainer = [] //contains all subcategories
+let subcategoriesContainer = []      //contains all subcategories
 //fetch data from wikiAdsUrl
 fetch(wikiAdsUrl,myHeaders)
 .then(response => response.json())
@@ -23,7 +23,9 @@ fetch(wikiAdsUrl,myHeaders)
     console.log('Error ')       //catch error
 })
 
+//get subcategories of each category
 function getSubcategories(categoriesObj){
+    //create an array with promises for each category
     let fetchSubcategories = categoriesObj.filter(item => item !== false).map(item => 
         fetch('https://wiki-ads.onrender.com/categories/' + item.id + '/subcategories', myHeaders)
             .then(response => response.json())
@@ -32,6 +34,7 @@ function getSubcategories(categoriesObj){
             })
     );
     
+    //wait for all promises to be resolved
     Promise.all(fetchSubcategories)
         .then(() => {
             for(let i = 0; i <= categoriesContainer.length - 1; i++){
@@ -55,8 +58,7 @@ function getSubcategories(categoriesObj){
         });
 }
 
-
-//create handlebars template
+//create handlebars template for index 
 const indexTemplates = {}
 window.addEventListener('load', initIndex);
 

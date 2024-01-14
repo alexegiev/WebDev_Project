@@ -34,6 +34,7 @@ Handlebars.registerHelper('split', function(content, options) {
     }
 });
 
+//create handlebars template 
 function advertsHandlebarTemplate() {        
     advertsTemplates.adverts = Handlebars.compile(`
     {{#if advert.length}}

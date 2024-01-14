@@ -7,7 +7,7 @@ let body = {
     username,
     sessionId
 }
-// Fetch the favorites data from the server
+// Fetch the favorites data from the server 
 fetch('/frs', {
     method: 'POST',
     headers: {

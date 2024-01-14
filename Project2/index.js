@@ -10,6 +10,7 @@ const port = 8080
 const useDB = false // Change to true to use database instead of memory and files
 app.use
 
+// checking if MongoDB is used
 if (useDB) {
     connectDB().then(() => {
         console.log('Connected to database')

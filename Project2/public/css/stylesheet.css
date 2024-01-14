@@ -540,6 +540,7 @@ input:invalid
     content: "✖"; 
 }
 
+/* styling the ads */
 .advId
 {
     display: none;
@@ -580,12 +581,14 @@ tr, td
     border-radius: 10px;    
 }
 
+/* styling the user login  */
 #user_login
 {
     grid-column: 4/5;
     grid-row: 3/4;
 }   
 
+/* styling the favourites page */
 .fave 
 {
     border: none;
@@ -617,6 +620,7 @@ tr, td
     text-align: left;
 }
 
+/* styling the filters */
 #filters
 {
     grid-column: 4/5;
@@ -636,12 +640,11 @@ tr, td
     margin-top: 20em;
 
 }
-/* Hide the default radio button */
+/*styling the button for the filters*/
 input[type="radio"] {
     display: none;
 }
 
-/* Create a custom radio button */
 input[type="radio"] + label:before {
     content: '';
     display: inline-block;
@@ -653,7 +656,6 @@ input[type="radio"] + label:before {
     background-color: #fff;
 }
 
-/* Style the custom radio button when it's checked */
 input[type="radio"]:checked + label:before {
     background-color: #256b94;
 }

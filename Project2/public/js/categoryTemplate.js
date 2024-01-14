@@ -29,13 +29,14 @@ fetch(wikiAdsUrlSubcategories, myHeaders)
     console.log(err)       //catch error
 })
 
-// --------- FILTERS -------------
+// --------- BONUS1 - FILTERS -------------
 
 // Fetch subcategories from the API
 fetch(wikiAdsUrl, myHeaders)
 .then(response => response.json())
 .then(subcategories => {
-    // Create sidebar menu dynamically
+    // Create filters dynamically on each page when loaded
+    // showing all subcategories
     let filters = document.createElement('section');
     filters.id = 'filters';
     let allOption = document.createElement('input');
@@ -49,6 +50,7 @@ fetch(wikiAdsUrl, myHeaders)
     allLabel.textContent = 'All';
     filters.appendChild(allOption);
     filters.appendChild(allLabel);
+    // showing ads for each subcategory when radio button is clicked
     for (let subcategory of subcategories) {
         console.log(subcategory);
         let radio = document.createElement('input');
@@ -68,7 +70,7 @@ fetch(wikiAdsUrl, myHeaders)
     console.log(err); // Catch error
 });
 
-// Function to filter adverts
+// Function to filter adverts depending on the selected subcategory
 function filterAdverts(selectedSubcategory) {
     let filteredAdverts;
     if (selectedSubcategory === 'all') {
@@ -82,7 +84,7 @@ function filterAdverts(selectedSubcategory) {
             console.log(err)       //catch error
         })
     } else {
-        fetch('https://wiki-ads.onrender.com/ads?subcategory=' + selectedSubcategory, myHeaders)
+        fetch('https://wiki-ads.onrender.com/ads?subcategory=' + selectedSubcategory, myHeaders)    //fetch data from wikiAdsUrl
             .then(response => response.json())
             .then(obj => {
                 console.log(obj)
@@ -91,9 +93,10 @@ function filterAdverts(selectedSubcategory) {
                 }
             })
     }
-    createCategories(filteredAdverts);
+    createCategories(filteredAdverts);  
 }
 
+//updating page with the filtered adverts
 function updatePage(filteredAdverts) {
     // Prepare the new adverts HTML
     let newAdvertsHtml = '';
@@ -137,7 +140,7 @@ function categoriesHandlebarTemplate() {
     `)
 }
 
-//create categories
+//create categories using handlebars
 function createCategories(advertsObj){
     console.log(advertsObj)
     let advertsPlaceholder = document.getElementById("subcategories_container")
@@ -150,13 +153,13 @@ function createCategories(advertsObj){
     });
 }
 
-//init categories
+//init categories 
 function initCategories(obj) {        
     subcategories = obj.map(id => (id.category_id == categoryId.get('id') && id))
     createSubcategories(subcategories)
 }
 
-//create subcategories
+//create subcategories using promises
 function createSubcategories(sub){
     categoriesHandlebarTemplate()
 

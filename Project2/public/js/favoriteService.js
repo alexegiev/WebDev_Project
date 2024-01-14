@@ -1,13 +1,14 @@
 export function initButtonFunctionality(){
 
-    // Find all buttons with the class fave
+    // Find all buttons with the class='fave'
     const faveButtons = document.querySelectorAll('.fave')
 
-    // Add onclick event listener to each button
+    // Add event listener to each button when clicked
     faveButtons.forEach(button => {
         button.addEventListener('click', handleClick)
     })
 
+    //handling the click event
     function handleClick(event) {
         // Find the parent section of the clicked button
         const parentSection = event.target.closest('.subcategories');
@@ -24,7 +25,6 @@ export function initButtonFunctionality(){
         // Get the content from the <p> element
         const subcategoryId = subcategoryIdElement.textContent;
 
-        
         //get windows url to get the category id
         const queryStr = window.location.search;
         const categoryId = new URLSearchParams(queryStr);
@@ -83,7 +83,7 @@ export function initButtonFunctionality(){
             })
         }
         else{
-            alert('Παρακαλώ συνδεθείτε για προσθήκη στη λίστα αγαπημένων')
+            alert('Παρακαλώ συνδεθείτε για προσθήκη στη λίστα αγαπημένων')  //alert user to login before adding to favourites
         }
     } 
 }
